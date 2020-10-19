@@ -13,6 +13,42 @@ namespace CyberCity {
     public partial class SiteMaster {
         
         /// <summary>
+        /// MainMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel MainMenu;
+        
+        /// <summary>
+        /// SPMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SPMenu;
+        
+        /// <summary>
+        /// volunteerMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel volunteerMenu;
+        
+        /// <summary>
+        /// teacherMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel teacherMenu;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
