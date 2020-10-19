@@ -12,6 +12,43 @@ namespace CyberCity
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            
+
+            if (Session["UserType"] == null)
+            {
+                SPMenu.Visible = false;
+                volunteerMenu.Visible = false;
+                teacherMenu.Visible = false;
+                MainMenu.Visible = true;
+                
+            }
+            else if (Session["UserType"].ToString() == "S")
+            {
+                MainMenu.Visible = false;
+                volunteerMenu.Visible = false;
+                teacherMenu.Visible = false;
+                SPMenu.Visible = true;
+                
+
+            }
+            else if (Session["UserType"].ToString() == "V")
+            {
+                MainMenu.Visible = false;
+                teacherMenu.Visible = false;
+                SPMenu.Visible = false;
+                volunteerMenu.Visible = true;
+                
+            }
+            else if (Session["UserType"].ToString() == "T")
+            {
+                MainMenu.Visible = false;               
+                SPMenu.Visible = true;
+                volunteerMenu.Visible = false;
+                teacherMenu.Visible = true;
+            }
+            
+
+            
         }
     }
 }

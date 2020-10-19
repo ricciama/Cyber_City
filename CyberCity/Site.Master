@@ -39,8 +39,11 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+
+        <%-- Menu for when no one is logged in --%>
+        <asp:Panel ID="MainMenu" runat="server">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="main">
+                            <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
@@ -63,7 +66,76 @@
                     </ul>
                 </div>
             </div>
-        </div>
+            </div>
+        </asp:Panel>
+
+        <%-- Menu for when a student / parent is logged in --%>
+        <asp:Panel ID="SPMenu" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="spMain">
+                            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                </div>
+                <div id="spNavbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/HomePage">Home</a></li>
+                        <li><a runat="server" href="~/StudentSchedule">Schedule</a></li>
+                        <li><a runat="server" href="~/StudentProfile">Profile</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </asp:Panel>
+
+        <%-- Menu for when Volunteer is logged in --%>
+        <asp:Panel ID="volunteerMenu" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="vMain">
+                            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                </div>
+                <div id="vNavbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/HomePage">Home</a></li>
+                        <li><a runat="server" href="~/VolunteerSchedule">Schedule</a></li>
+                        <li><a runat="server" href="~/VolunteerProfile">Profile</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </asp:Panel>
+
+        <%-- Menu for when Teacher is logged in --%>
+                <asp:Panel ID="teacherMenu" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="tMain">
+                            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                </div>
+                <div id="tnavbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/HomePage">Home</a></li>
+                        <li><a runat="server" href="~/TeacherSchedule">Schedule</a></li>
+                        <li><a runat="server" href="~/TeacherGroup">Group</a></li>
+                        <li><a runat="server" href="~/TeacherProfile">Profile</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </asp:Panel>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
