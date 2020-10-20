@@ -35,7 +35,7 @@
 
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
-                    <asp:Button ID="loginbtn" runat="server" Text="Login" CssClass="loginbtn" />
+                    <asp:Button ID="loginbtn" runat="server" Text="Login" CssClass="loginbtn" OnClick="loginbtn_Click"/>
                 </asp:TableCell>
             </asp:TableRow>
 
