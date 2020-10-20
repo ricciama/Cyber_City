@@ -1,0 +1,16 @@
+﻿body {
+}
+
+table.PerformanceTable{
+    table-layout: fixed;
+    width:auto;
+}
+
+table{
+    padding:inherit;
+    width:auto;
+}
+
+.cellPadding{
+    padding: 10px;
+}

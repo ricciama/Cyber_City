@@ -125,10 +125,11 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\buildings.jpg" />
     <Content Include="Images\loginguy.PNG" />
     <Content Include="Images\sitting.jpg" />
     <Content Include="Login.aspx" />
-    <Content Include="loginStyle.css" />
+    <Content Include="css\loginStyle.css" />
     <Content Include="ParentAccount.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -159,6 +160,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="css\StudentCreateAccountSheet.css" />
     <Content Include="StudentProfile.aspx" />
     <Content Include="StudentSchedule.aspx" />
     <Content Include="TeacherAccount.aspx" />
@@ -169,6 +171,7 @@
     <Content Include="VolunteerAccount.aspx" />
     <Content Include="VolunteerProfile.aspx" />
     <Content Include="VolunteerSchedule.aspx" />
+    <Content Include="css\volunteerTable.css" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />

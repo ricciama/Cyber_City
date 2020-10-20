@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CyberCity.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="loginStyle.css" rel="stylesheet" />
+    <link href="css/loginStyle.css" rel="stylesheet" />
 
     
     <div class ="loginbox">

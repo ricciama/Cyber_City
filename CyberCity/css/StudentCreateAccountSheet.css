@@ -1,0 +1,120 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Images/buildings.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    color: white;
+    padding: 80px 40px;
+    top: 40%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.h2 {
+    text-align: center;
+    color: White;
+    align-content: center;
+    position: center;
+    float: none;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.accountBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 600px;
+    /*padding: 80px;*/
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+}
+
+.firstName {
+    margin-left: 30px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.LastName {
+    margin-right: 20px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.email {
+    margin-left: 30px;
+    margin-top: .75%;
+    font-size: 16px;
+    width: 200px;
+}
+
+.phone {
+    margin-right: 20px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.SFirstName {
+    margin-left: 30px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.SLastName {
+    margin-right: 20px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.school {
+    margin-left: 30px;
+    font-size: 16px;
+    width: 207px;
+}
+
+.teacher {
+    margin-right: 20px;
+    font-size: 16px;
+    width: 207px;
+}
+
+.username {
+    margin-left: 30px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.password {
+    margin-right: 20px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.reEnter {
+    margin-left: 30px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.create {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 20px;
+    /*margin-left:200px;*/
+    background-color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+    margin-top: 50px;
+}
