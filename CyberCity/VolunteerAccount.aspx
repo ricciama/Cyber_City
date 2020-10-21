@@ -67,7 +67,7 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Shirt size and Organization --%>
+            <%-- Shirt size and Lunch --%>
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
@@ -82,19 +82,11 @@
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:TextBox ID="txtOrgName" runat="server" CssClass="form-control" placeholder="JMU Organization Name"></asp:TextBox>
-                    </div>
-                </asp:TableCell>             
-            </asp:TableRow>
-            <%-- Lunch --%>
-            <asp:TableRow HorizontalAlign="Center">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                     <div class="form-group form-control">
-                        <asp:Label ID="lblLunch" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
+                        <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
                         <asp:CheckBox ID="chkLunch" runat="server"/>
                     </div>
-                </asp:TableCell>
+                </asp:TableCell>           
             </asp:TableRow>
             <%-- Login credentials Logo --%>
             <asp:TableRow>
@@ -119,7 +111,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="Label1" runat="server" Text="Re-type Passowrd" Font-Bold="True"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
