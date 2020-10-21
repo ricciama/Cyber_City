@@ -20,7 +20,7 @@ namespace CyberCity
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = false;
                 MainMenu.Visible = true;
-                
+
             }
             else if (Session["UserType"].ToString() == "S")
             {
@@ -41,7 +41,7 @@ namespace CyberCity
             }
             else if (Session["UserType"].ToString() == "T")
             {
-                MainMenu.Visible = false;               
+                MainMenu.Visible = false;
                 SPMenu.Visible = true;
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = true;
