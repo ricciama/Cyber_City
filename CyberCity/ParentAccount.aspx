@@ -36,12 +36,12 @@
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerFN" runat="server" placeholder="Student First Name"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtStudentFN" runat="server" placeholder="Student First Name"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerLN" runat="server" placeholder=" Student Last Name"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtStudentLN" runat="server" placeholder=" Student Last Name"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -49,7 +49,7 @@
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtStudentDOB" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -69,12 +69,12 @@
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtParentPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtParentEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
