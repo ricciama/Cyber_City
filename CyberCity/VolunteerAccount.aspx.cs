@@ -104,6 +104,17 @@ namespace CyberCity
                 sc.Close();
             }
 
+            // Clears Textboxes
+            txtVolunteerFN.Text = null;
+            txtVolunteerLN.Text = null;
+            txtVolunteerEmail.Text = null;
+            txtVolunteerDOB.Text = null;
+            txtVolunteerPhone.Text = null;
+            txtUsernme.Text = null;
+            txtPassword.Text = null;
+            txtPassword2.Text = null;
+            this.ddlGender.ClearSelection();
+            this.ddlShirtSize.ClearSelection();
         }
     }
 }
