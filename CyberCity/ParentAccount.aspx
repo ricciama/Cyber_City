@@ -1,87 +1,137 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ParentAccount.aspx.cs" Inherits="CyberCity.ParentAccount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="css/StudentCreateAccountSheet.css" rel="stylesheet" />
-    <div>
-            <div class="header" >
-        <h1 > Create Student Account</h1>
-
-        <div class="accountBox">
-            <asp:Table ID="accountForm" runat="server" HorizontalAlign="Center">
-                <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">
-                        <h2 class="h2">Personal Information</h2>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="Table1" runat="server">
-                <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Left">
-                        <asp:TextBox ID="fistName" runat="server" placeholder=" Gardian First Name" CssClass="firstName" ></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="lastName" runat="server" placeholder=" Gardian Last Name" CssClass="LastName" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                         <asp:TextBox ID="email" runat="server" placeholder="Email" CssClass="email" ></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="phone" runat="server" placeholder="Phone Number" CssClass="phone" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:TextBox ID="StudentfirstName" runat="server" placeholder="Student First Name" CssClass="SFirstName" ></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="StudentLastName" runat="server" placeholder="Student Last Name" CssClass="SLastName" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:DropDownList ID="schoolddl" runat="server" CssClass="school">
-                            <asp:ListItem>Select Your School</asp:ListItem>
+    
+    <link href="css/volunteerTable.css" rel="stylesheet" />
+    
+    <br />
+    <br />
+    <asp:Panel ID="Panel2" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+        <br />
+        <br />
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
+            <asp:TableRow HorizontalAlign="Center" >
+                <asp:TableCell ColumnSpan="2">
+                    <img width="100" src="Images/loginguy.png"/>
+                </asp:TableCell>            
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center">
+                <asp:TableCell ColumnSpan="2">                    
+                    <h4>Create Student Account</h4>              
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Parent First and Last Name --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div class="form-group">
+                        <asp:TextBox ID="txtParentFN" runat="server" CssClass="form-control" placeholder="Guardian First Name"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div class="form-group">
+                        <asp:TextBox ID="txtParentLN" runat="server" CssClass="form-control" placeholder="Guardian Last Name"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Student First and Last name --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
+                    <div class="form-group">
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerFN" runat="server" placeholder="Student First Name"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
+                    <div class="form-group">
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerLN" runat="server" placeholder=" Student Last Name"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Date of Birth and Gender --%>
+            <asp:TableRow HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
+                    <div class="form-group">
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div >
+                            <div class="form-group">
+                                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                                    <asp:ListItem Value ="0" Text="Select Gender"></asp:ListItem>
+                                    <asp:ListItem Value="Male" Text="Male"></asp:ListItem>
+                                    <asp:ListItem Value="Female" Text="Female"></asp:ListItem>
+                                    <asp:ListItem Value="Non-Binary" Text="Non-Binary"></asp:ListItem>
+                                </asp:DropDownList>
+                        </div>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Phone and email --%>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div class="form-group">
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div class="form-group">                   
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Allergies and Ethinicity --%>
+            <asp:TableRow HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
+                    <div class="form-group">
+                        <asp:DropDownList ID="ddlEthnicity" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="0" Text="Select Ethnicity"></asp:ListItem>
+                            <asp:ListItem Value="White/Caucasion"></asp:ListItem>
+                            <asp:ListItem Value="Hispanic or Latino" Text="Hispanic or Latino"></asp:ListItem>
+                            <asp:ListItem Value="Black or African American" Text="Black or African American"></asp:ListItem>
+                            <asp:ListItem Value="Native Hawaiian" Text="Native Hawaiian"></asp:ListItem>
+                            <asp:ListItem Value="Asian" Text="Asian"></asp:ListItem>
+                            <asp:ListItem Value="Middle Eastern / North African" Text="Middle Eastern / North African"></asp:ListItem>
+                            <asp:ListItem Value="Other/Prefer not to say" Text="Other/Prefer not to say"></asp:ListItem>
                         </asp:DropDownList>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:DropDownList ID="teacherddl" runat="server" CssClass="teacher">
-                            <asp:ListItem>Select Your Teacher</asp:ListItem>
-                        </asp:DropDownList>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
-                <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="center">
-                        <h2 class="h2"> Account Information</h2>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="Table3" runat="server">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:TextBox ID="username" runat="server" placeholder="Username" CssClass="username" ></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="password" runat="server" placeholder="Password" CssClass="password" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                         <asp:TextBox ID="reenter" runat="server" placeholder="Re-Enter Password" CssClass="reEnter" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="createbutton" runat="server" HorizontalAlign=" center">
-                <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">
-                        <asp:Button ID="createAccount" runat="server" Text="Create Account" CssClass="create" />
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            </>
-        </div>
-    </div>
-        </div>
+                    </div>
+                </asp:TableCell>             
+            </asp:TableRow>
+            <%-- Login credentials Logo --%>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <span class="badge badge-pill badge-info">Login Credentials</span>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Username and Password --%>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <asp:Label ID="lblUserName" runat="server" Text="Username" Font-Bold="True"></asp:Label>
+                    <div class="form-group">
+                        <asp:TextBox class="form-control" ID="txtUsernme" runat="server" placeholder="Username" ReadOnly="True"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
+                    <div class="form-group">
+                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <asp:Label ID="Label1" runat="server" Text="Re-type Passowrd" Font-Bold="True"></asp:Label>
+                    <div class="form-group">
+                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Register Button --%>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <div class="form-group">
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </asp:Panel>
 </asp:Content>

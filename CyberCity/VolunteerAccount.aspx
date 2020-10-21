@@ -67,7 +67,7 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Shirt size and lunch --%>
+            <%-- Shirt size and Organization --%>
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
@@ -83,18 +83,16 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:TextBox ID="txtOrgName" runat="server" CssClass="form-control" placeholder="Organization Name"></asp:TextBox>
+                        <asp:TextBox ID="txtOrgName" runat="server" CssClass="form-control" placeholder="JMU Organization Name"></asp:TextBox>
                     </div>
                 </asp:TableCell>             
             </asp:TableRow>
-            <%-- Organization Name --%>
+            <%-- Lunch --%>
             <asp:TableRow HorizontalAlign="Center">
-                <asp:TableCell>
-                    <asp:Label ID="lblLunch" runat="server" Text="Lunch?" CssClass="form-control" Font-Bold="True"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" >                  
-                    <div class="form-group">                                
-                        <asp:CheckBox ID="chkLunch" runat="server" CssClass="form-control"/>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
+                    <div class="form-group form-control">
+                        <asp:Label ID="lblLunch" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
+                        <asp:CheckBox ID="chkLunch" runat="server"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
