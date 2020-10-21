@@ -12,7 +12,7 @@ namespace CyberCity
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
+
 
             if (Session["UserType"] == null)
             {
@@ -20,7 +20,7 @@ namespace CyberCity
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = false;
                 MainMenu.Visible = true;
-                
+
             }
             else if (Session["UserType"].ToString() == "S")
             {
@@ -28,7 +28,7 @@ namespace CyberCity
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = false;
                 SPMenu.Visible = true;
-                
+
 
             }
             else if (Session["UserType"].ToString() == "V")
@@ -37,18 +37,27 @@ namespace CyberCity
                 orgRepMenu.Visible = false;
                 SPMenu.Visible = false;
                 volunteerMenu.Visible = true;
-                
+
             }
-            else if (Session["UserType"].ToString() == "T")
+            else if (Session["UserType"].ToString() == "OR")
             {
-                MainMenu.Visible = false;               
+                MainMenu.Visible = false;
                 SPMenu.Visible = true;
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = true;
             }
-            
+            else if (Session["UserType"].ToString() == "C")
+            {
+                MainMenu.Visible = false;
+                SPMenu.Visible = true;
+                volunteerMenu.Visible = false;
+                orgRepMenu.Visible = false;
+                coordinatorMenu.Visible = true;
+            }
 
-            
+
+
+
         }
     }
 }
