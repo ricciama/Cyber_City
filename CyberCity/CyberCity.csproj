@@ -130,6 +130,10 @@
     <Content Include="Images\sitting.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="css\loginStyle.css" />
+    <Content Include="OrgRepAccount.aspx" />
+    <Content Include="OrgRepGroup.aspx" />
+    <Content Include="OrgRepProfile.aspx" />
+    <Content Include="OrgRepSchedule.aspx" />
     <Content Include="ParentAccount.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,10 +167,6 @@
     <Content Include="css\StudentCreateAccountSheet.css" />
     <Content Include="StudentProfile.aspx" />
     <Content Include="StudentSchedule.aspx" />
-    <Content Include="TeacherAccount.aspx" />
-    <Content Include="TeacherGroup.aspx" />
-    <Content Include="TeacherProfile.aspx" />
-    <Content Include="TeacherSchedule.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VolunteerAccount.aspx" />
     <Content Include="VolunteerProfile.aspx" />
@@ -186,6 +186,34 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="OrgRepAccount.aspx.cs">
+      <DependentUpon>OrgRepAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrgRepAccount.aspx.designer.cs">
+      <DependentUpon>OrgRepAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrgRepGroup.aspx.cs">
+      <DependentUpon>OrgRepGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrgRepGroup.aspx.designer.cs">
+      <DependentUpon>OrgRepGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrgRepProfile.aspx.cs">
+      <DependentUpon>OrgRepProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrgRepProfile.aspx.designer.cs">
+      <DependentUpon>OrgRepProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrgRepSchedule.aspx.cs">
+      <DependentUpon>OrgRepSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrgRepSchedule.aspx.designer.cs">
+      <DependentUpon>OrgRepSchedule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -246,34 +274,6 @@
     </Compile>
     <Compile Include="StudentSchedule.aspx.designer.cs">
       <DependentUpon>StudentSchedule.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherAccount.aspx.cs">
-      <DependentUpon>TeacherAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeacherAccount.aspx.designer.cs">
-      <DependentUpon>TeacherAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherGroup.aspx.cs">
-      <DependentUpon>TeacherGroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeacherGroup.aspx.designer.cs">
-      <DependentUpon>TeacherGroup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherProfile.aspx.cs">
-      <DependentUpon>TeacherProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeacherProfile.aspx.designer.cs">
-      <DependentUpon>TeacherProfile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherSchedule.aspx.cs">
-      <DependentUpon>TeacherSchedule.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeacherSchedule.aspx.designer.cs">
-      <DependentUpon>TeacherSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

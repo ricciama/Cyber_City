@@ -18,7 +18,7 @@ namespace CyberCity
             {
                 SPMenu.Visible = false;
                 volunteerMenu.Visible = false;
-                teacherMenu.Visible = false;
+                orgRepMenu.Visible = false;
                 MainMenu.Visible = true;
                 
             }
@@ -26,7 +26,7 @@ namespace CyberCity
             {
                 MainMenu.Visible = false;
                 volunteerMenu.Visible = false;
-                teacherMenu.Visible = false;
+                orgRepMenu.Visible = false;
                 SPMenu.Visible = true;
                 
 
@@ -34,7 +34,7 @@ namespace CyberCity
             else if (Session["UserType"].ToString() == "V")
             {
                 MainMenu.Visible = false;
-                teacherMenu.Visible = false;
+                orgRepMenu.Visible = false;
                 SPMenu.Visible = false;
                 volunteerMenu.Visible = true;
                 
@@ -44,7 +44,7 @@ namespace CyberCity
                 MainMenu.Visible = false;               
                 SPMenu.Visible = true;
                 volunteerMenu.Visible = false;
-                teacherMenu.Visible = true;
+                orgRepMenu.Visible = true;
             }
             
 

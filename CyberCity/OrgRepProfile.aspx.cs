@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CyberCity
 {
-    public partial class TeacherProfile : System.Web.UI.Page
+    public partial class OrgRepProfile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

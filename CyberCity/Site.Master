@@ -58,7 +58,7 @@
                         <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown04">Create Account<span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="TeacherAccount.aspx">Teacher</a>
+                            <a class="dropdown-item" href="OrgRepAccount.aspx">Teacher</a>
                             <a class="dropdown-item" href="VolunteerAccount.aspx">Volunteer</a>
                             <a class="dropdown-item" href="ParentAccount.aspx">Parent</a>
                         </div>
@@ -114,8 +114,8 @@
             </div>
         </asp:Panel>
 
-        <%-- Menu for when Teacher is logged in --%>
-                <asp:Panel ID="teacherMenu" runat="server" Visible="false">
+        <%-- Menu for when an Organizational Rep is logged in --%>
+        <asp:Panel ID="orgRepMenu" runat="server" Visible="false">
             <div class="navbar navbar-inverse navbar-fixed-top" id="tMain">
                             <div class="container">
                 <div class="navbar-header">
@@ -124,16 +124,54 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
                 </div>
-                <div id="tnavbar" class="navbar-collapse collapse">
+                <div id="tNavbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/HomePage">Home</a></li>
-                        <li><a runat="server" href="~/TeacherSchedule">Schedule</a></li>
-                        <li><a runat="server" href="~/TeacherGroup">Group</a></li>
-                        <li><a runat="server" href="~/TeacherProfile">Profile</a></li>
+                        <li><a runat="server" href="~/OrgRepSchedule">Schedule</a></li>
+                        <li><a runat="server" href="~/OrgRepGroup">Group</a></li>
+                        <li><a runat="server" href="~/OrgRepProfile">Profile</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                     </ul>
                 </div>
             </div>
+            </div>
+        </asp:Panel>
+
+        <%-- Menu for when Coordinator is logged in --%>
+        <asp:Panel ID="coordinatorMenu" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="cMain">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                    </div>
+                    <div id="cNavbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/HomePage">Home</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="ddlCreateEntity">
+                                    <a class="dropdown-item" href="#">Event</a>
+                                    <a class="dropdown-item" href="#">Program</a>
+                                    <a class="dropdown-item" href="#">School</a>
+                                    <a class="dropdown-item" href="OrgRepAccount.aspx">Organizationl Representative</a>
+                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlEdit/Remove">Edit/Remove<span class="caret"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
+                                    <a class="dropdown-item" href="#">Event</a>
+                                    <a class="dropdown-item" href="#">Program</a>
+                                    <a class="dropdown-item" href="#">School</a>
+                                    <a class="dropdown-item" href="#">Organizationl Representative</a>
+                                 </div>
+                            </li>
+                            <li><a runat="server" href="#">Profile</a></li>                            
+                        </ul>
+                    </div>
+                </div>
             </div>
         </asp:Panel>
 
