@@ -11,7 +11,7 @@ namespace CyberCity
 {
 
 
-    public partial class TeacherGroup
+    public partial class OrgRepProfile
     {
     }
 }
