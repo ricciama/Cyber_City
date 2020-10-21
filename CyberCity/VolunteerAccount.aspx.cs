@@ -49,8 +49,8 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Volunteer] (FName, LName, TShirtSize, DOB, Email, Phone, LunchTicket, Gender) " +
-                    "Values (@FirstName, @LastName, @ShirtSize, @DOB, @Email, @Phone, @LunchTicket, @Gender)";
+                String sql = "Insert into [Volunteer] (FName, LName, TShirtSize, DOB, Email, Phone, LunchTicket, Gender, Username) " +
+                    "Values (@FirstName, @LastName, @ShirtSize, @DOB, @Email, @Phone, @LunchTicket, @Gender, @Username)";
 
                 sqlCommand = new SqlCommand(sql, cnn);
 
@@ -62,6 +62,7 @@ namespace CyberCity
                 sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtVolunteerFN.Text));
                 sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtVolunteerLN.Text));
                 sqlCommand.Parameters.AddWithValue("@DOB", HttpUtility.HtmlEncode(txtVolunteerDOB.Text));
+                sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
 
                 //Converts the lunchTicket checkbox to an integer in order to be stored in the database
                 int lunchTicket = 0;

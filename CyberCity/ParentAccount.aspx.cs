@@ -51,8 +51,8 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Student] (StudentFName, StudentLName, ParentFName, ParentLName, ParentEmail, ParentPhone, DOB, Gender, Ethnicity) " +
-                    "Values (@StudentFName, @StudentLName, @ParentFName, @ParentLName, @ParentEmail, @ParentPhone, @DOB, @Gender, @Ethnicity)";
+                String sql = "Insert into [Student] (StudentFName, StudentLName, ParentFName, ParentLName, ParentEmail, ParentPhone, DOB, Gender, Ethnicity, Username) " +
+                    "Values (@StudentFName, @StudentLName, @ParentFName, @ParentLName, @ParentEmail, @ParentPhone, @DOB, @Gender, @Ethnicity, @Username)";
 
                 sqlCommand = new SqlCommand(sql, cnn);
 
@@ -70,6 +70,7 @@ namespace CyberCity
                 sqlCommand.Parameters.AddWithValue("@DOB", HttpUtility.HtmlEncode(txtStudentDOB.Text));
                 sqlCommand.Parameters.AddWithValue("@Gender", HttpUtility.HtmlEncode(ddlGender.SelectedValue));
                 sqlCommand.Parameters.AddWithValue("@Ethnicity", HttpUtility.HtmlEncode(ddlEthnicity.SelectedValue));
+                sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
 
 
                 sqlCommand.ExecuteNonQuery();

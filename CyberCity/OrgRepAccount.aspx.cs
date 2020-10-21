@@ -77,8 +77,8 @@ namespace CyberCity
 
             cnn = new SqlConnection(connectionString);
 
-            String sql = "Insert into [OrgRep] (FName, LName, Email, PhoneNumber, OrganizationID, Code, GradesTaught,Lunchticket) " +
-                "Values (@FName, @LName, @Email, @PhoneNumber, @OrganizationID, @Code, @GradesTaught, @Lunchticket)";
+            String sql = "Insert into [OrgRep] (FName, LName, Email, PhoneNumber, OrganizationID, Code, GradesTaught,Lunchticket, Username) " +
+                "Values (@FName, @LName, @Email, @PhoneNumber, @OrganizationID, @Code, @GradesTaught, @Lunchticket, @Username)";
 
             sqlCommand = new SqlCommand(sql, cnn);
 
@@ -93,6 +93,7 @@ namespace CyberCity
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", HttpUtility.HtmlEncode(txtOrgRepPhone.Text));
             sqlCommand.Parameters.AddWithValue("@OrganizationID", HttpUtility.HtmlEncode(ddlOrgName.SelectedItem.Value));
             sqlCommand.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtCode.Text));
+                sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
 
             //checks grades taught and stores in databas
             String gradesTaught = "";
