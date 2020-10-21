@@ -52,7 +52,7 @@ namespace CyberCity
                 cnn = new SqlConnection(connectionString);
 
                 String sql = "Insert into [Student] (StudentFName, StudentLName, ParentFName, ParentLName, ParentEmail, ParentPhone, DOB, Gender, Ethnicity) " +
-                    "Values (@StudentFName, @StudentLName, @ParentFName, @ParentFName, @ParentEmail, @ParentPhone, @DOB, @Gender, @Ethnicity)";
+                    "Values (@StudentFName, @StudentLName, @ParentFName, @ParentLName, @ParentEmail, @ParentPhone, @DOB, @Gender, @Ethnicity)";
 
                 sqlCommand = new SqlCommand(sql, cnn);
 
