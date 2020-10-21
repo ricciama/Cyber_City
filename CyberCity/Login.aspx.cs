@@ -59,6 +59,7 @@ namespace CyberCity
 
                     string type = sqlCommand1.ExecuteScalar().ToString();
                     Session["UserType"] = type;
+                    Response.Redirect("HomePage.aspx");
                 }
 
                 sc.Close();
