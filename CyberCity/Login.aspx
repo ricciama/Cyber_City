@@ -29,7 +29,7 @@
 
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtPassword" runat="server" placeholder="***************" CssClass="txtPassword"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" placeholder="***************" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
 
