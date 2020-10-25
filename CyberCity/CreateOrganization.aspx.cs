@@ -7,9 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace CyberCity
 {
-    public partial class EditSchool : System.Web.UI.Page
+    public partial class CreateOrganization : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreateOrg_Click(object sender, EventArgs e)
         {
 
         }

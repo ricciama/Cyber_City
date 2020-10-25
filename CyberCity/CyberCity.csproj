@@ -113,12 +113,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateEvent.aspx" />
+    <Content Include="CreateOrganization.aspx" />
     <Content Include="CreateProgram.aspx" />
-    <Content Include="CreateSchool.aspx" />
     <Content Include="EditEvent.aspx" />
+    <Content Include="EditOrganization.aspx" />
     <Content Include="EditOrgRep.aspx" />
     <Content Include="EditProgram.aspx" />
-    <Content Include="EditSchool.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -201,6 +201,13 @@
     <Compile Include="CreateEvent.aspx.designer.cs">
       <DependentUpon>CreateEvent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateOrganization.aspx.cs">
+      <DependentUpon>CreateOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateOrganization.aspx.designer.cs">
+      <DependentUpon>CreateOrganization.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateProgram.aspx.cs">
       <DependentUpon>CreateProgram.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,19 +215,19 @@
     <Compile Include="CreateProgram.aspx.designer.cs">
       <DependentUpon>CreateProgram.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CreateSchool.aspx.cs">
-      <DependentUpon>CreateSchool.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateSchool.aspx.designer.cs">
-      <DependentUpon>CreateSchool.aspx</DependentUpon>
-    </Compile>
     <Compile Include="EditEvent.aspx.cs">
       <DependentUpon>EditEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditEvent.aspx.designer.cs">
       <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrganization.aspx.cs">
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditOrganization.aspx.designer.cs">
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditOrgRep.aspx.cs">
       <DependentUpon>EditOrgRep.aspx</DependentUpon>
@@ -235,13 +242,6 @@
     </Compile>
     <Compile Include="EditProgram.aspx.designer.cs">
       <DependentUpon>EditProgram.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditSchool.aspx.cs">
-      <DependentUpon>EditSchool.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditSchool.aspx.designer.cs">
-      <DependentUpon>EditSchool.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrgRepAccount.aspx.cs">
       <DependentUpon>OrgRepAccount.aspx</DependentUpon>

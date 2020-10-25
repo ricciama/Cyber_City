@@ -10,69 +10,78 @@
 namespace CyberCity {
     
     
-    public partial class EditEvent {
+    public partial class CreateOrganization {
         
         /// <summary>
-        /// Panel2 control.
+        /// pnlCreateOrg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Panel pnlCreateOrg;
         
         /// <summary>
-        /// tblEvent control.
+        /// tblCreateOrg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblEvent;
+        protected global::System.Web.UI.WebControls.Table tblCreateOrg;
         
         /// <summary>
-        /// txtEventName control.
+        /// txtOrgName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEventName;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgName;
         
         /// <summary>
-        /// txtEventTime control.
+        /// txtOrgAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEventTime;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgAddress;
         
         /// <summary>
-        /// txtEventLocation control.
+        /// txtOrgContactName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEventLocation;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgContactName;
         
         /// <summary>
-        /// ddlProgram control.
+        /// txtOrgPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgPhone;
         
         /// <summary>
-        /// btnCreateEvent control.
+        /// txtOrgEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateEvent;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgEmail;
+        
+        /// <summary>
+        /// btnCreateOrg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCreateOrg;
     }
 }
