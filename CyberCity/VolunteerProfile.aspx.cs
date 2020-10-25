@@ -83,6 +83,8 @@ namespace CyberCity
 
             sqlConnection.Close();
 
+            tblConfirmation.Visible = true;
+
         }
     }
 }
