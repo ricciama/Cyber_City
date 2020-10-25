@@ -36,7 +36,7 @@
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -111,7 +111,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

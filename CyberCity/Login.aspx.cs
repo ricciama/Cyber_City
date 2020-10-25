@@ -43,7 +43,7 @@ namespace CyberCity
 
                     if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
                     {
-                        Session["Username"] = txtUsername.ToString();
+                        Session["Username"] = txtUsername.Text.ToString();
                         typeTrigger = true;
                     }
                 }
