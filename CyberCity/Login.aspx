@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/loginStyle.css" rel="stylesheet" />
-
     
     <div class ="loginbox">
         <asp:Image ID="userLogoin" runat="server" ImageUrl="/Images/loginguy.PNG" CssClass="userPhoto" />
