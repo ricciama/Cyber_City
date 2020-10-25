@@ -55,7 +55,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCreateEvent" runat="server" Text="Create Event" OnClick="btnCreateEvent_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditEvent" runat="server" Text="Create Event" OnClick="btnEditEvent_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

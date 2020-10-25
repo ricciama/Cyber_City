@@ -22,9 +22,16 @@
             </asp:TableRow>
             <%-- Event Name and Time--%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
+                <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventName" runat="server" placeholder="Event Name"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
+                    <div class="form-group">
+                        <asp:TextBox CssClass="form-control" ID="txtEventDate" runat="server" placeholder="Event Date" TextMode="Date"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
@@ -37,7 +44,7 @@
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtEventLocation" runat="server" placeholder="Location - Ex: Hartman Hall 1207"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtEventLocation" runat="server" placeholder="Location Ex: Hartman Hall 1207" Width="250"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">

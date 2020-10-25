@@ -157,19 +157,19 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="ddlCreateEntity">
-                                    <a class="dropdown-item" href="~/CreateEvent">Event</a>
-                                    <a class="dropdown-item" href="~/CreateProgram">Program</a>
-                                    <a class="dropdown-item" href="~/CreateOrganization">School</a>
+                                    <a class="dropdown-item" href="CreateEvent.aspx">Event</a>
+                                    <a class="dropdown-item" href="CreateProgram.aspx">Program</a>
+                                    <a class="dropdown-item" href="CreateOrganization.aspx">School</a>
                                     <a class="dropdown-item" href="OrgRepAccount.aspx">Organizationl Representative</a>
                                  </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlEdit/Remove">Edit/Remove<span class="caret"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
-                                    <a class="dropdown-item" href="~/EditEvent">Event</a>
-                                    <a class="dropdown-item" href="~/EditProgram">Program</a>
-                                    <a class="dropdown-item" href="~/EditOrganization">School</a>
-                                    <a class="dropdown-item" href="~/EditOrgRep">Organizationl Representative</a>
+                                    <a class="dropdown-item" href="EditEvent.aspx">Event</a>
+                                    <a class="dropdown-item" href="EditProgram.aspx">Program</a>
+                                    <a class="dropdown-item" href="EditOrganization.aspx">School</a>
+                                    <a class="dropdown-item" href="EditOrgRep.aspx">Organizationl Representative</a>
                                  </div>
                             </li>
                             <li><a runat="server" href="#">Profile</a></li>                            
