@@ -44,6 +44,7 @@
                     <div >
                         <div class="form-group">
                             <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Select Program" Value="0"></asp:ListItem>
 
                             </asp:DropDownList>
                         </div>
