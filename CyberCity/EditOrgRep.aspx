@@ -1,13 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrgRepAccount.aspx.cs" Inherits="CyberCity.OrgRepAccount" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrgRep.aspx.cs" Inherits="CyberCity.EditOrgRep" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="css/CreatingEntity.css" rel="stylesheet" />
+
+     <link href="css/CreatingEntity.css" rel="stylesheet" />
     
     <br />
     <br />
-    <asp:Panel ID="OrgRepAcct" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+    <asp:Panel ID="pnlEditOrgRep" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
         <br />
         <br />
-        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
+        <asp:Table ID="tblEditOrgRep" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
 
             <asp:TableRow HorizontalAlign="Center" >
                 <asp:TableCell ColumnSpan="2">
@@ -16,7 +17,7 @@
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell ColumnSpan="2">                    
-                    <h4>Organizational Representative Sign up</h4>              
+                    <h4>Edit Organizational Representative</h4>              
                 </asp:TableCell>
             </asp:TableRow>
             <%-- First and Last name --%>
@@ -118,7 +119,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditOrgRep" runat="server" Text="Register" OnClick="btnEditOrgRep_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

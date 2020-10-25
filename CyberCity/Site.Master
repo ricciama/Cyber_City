@@ -16,6 +16,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="Scripts/WebForms/popper.js"></script>
 
+
 </head>
 <body>
     <form runat="server">
@@ -58,37 +59,40 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="navMain">Create Account<span class="caret"></span></a>
                                     <div class="dropdown-menu" aria-labelledby="navMain">
-                                        <a class="dropdown-item" href="OrgRepAccount.aspx">Teacher</a> &nbsp;
-                                        <a class="dropdown-item" href="VolunteerAccount.aspx">Volunteer</a> &nbsp;
+                                        <a class="dropdown-item" href="OrgRepAccount.aspx">Teacher</a>
+                                        <a class="dropdown-item" href="VolunteerAccount.aspx">Volunteer</a>
                                         <a class="dropdown-item" href="ParentAccount.aspx">Parent</a>
                                     </div>
-                            </li>
+                                </li>
                             <li><a runat="server" href="~/Login">Login</a></li>
+                            
                         </ul>
                     </div>
                 </div>
             </div>
         </asp:Panel>
 
+
         <%-- Menu for when a student / parent is logged in --%>
         <asp:Panel ID="SPMenu" runat="server" Visible="false">
             <div class="navbar navbar-inverse navbar-fixed-top" id="spMain">
-                            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a>
+                    </div>
+                    <div id="spNavbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/HomePage">Home</a></li>
+                            <li><a runat="server" href="~/StudentSchedule">Schedule</a></li>
+                            <li><a runat="server" href="~/StudentProfile">Profile</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="spNavbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/HomePage">Home</a></li>
-                        <li><a runat="server" href="~/StudentSchedule">Schedule</a></li>
-                        <li><a runat="server" href="~/StudentProfile">Profile</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                    </ul>
-                </div>
-            </div>
             </div>
         </asp:Panel>
 
@@ -153,19 +157,19 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="ddlCreateEntity">
-                                    <a class="dropdown-item" href="#">Event</a>
-                                    <a class="dropdown-item" href="#">Program</a>
-                                    <a class="dropdown-item" href="#">School</a>
+                                    <a class="dropdown-item" href="CreateEvent.aspx">Event</a>
+                                    <a class="dropdown-item" href="CreateProgram.aspx">Program</a>
+                                    <a class="dropdown-item" href="CreateOrganization.aspx">School</a>
                                     <a class="dropdown-item" href="OrgRepAccount.aspx">Organizationl Representative</a>
                                  </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlEdit/Remove">Edit/Remove<span class="caret"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
-                                    <a class="dropdown-item" href="#">Event</a>
-                                    <a class="dropdown-item" href="#">Program</a>
-                                    <a class="dropdown-item" href="#">School</a>
-                                    <a class="dropdown-item" href="#">Organizationl Representative</a>
+                                    <a class="dropdown-item" href="EditEvent.aspx">Event</a>
+                                    <a class="dropdown-item" href="EditProgram.aspx">Program</a>
+                                    <a class="dropdown-item" href="EditOrganization.aspx">School</a>
+                                    <a class="dropdown-item" href="EditOrgRep.aspx">Organizationl Representative</a>
                                  </div>
                             </li>
                             <li><a runat="server" href="#">Profile</a></li>                            

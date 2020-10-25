@@ -112,6 +112,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CreateEvent.aspx" />
+    <Content Include="CreateOrganization.aspx" />
+    <Content Include="CreateProgram.aspx" />
+    <Content Include="EditEvent.aspx" />
+    <Content Include="EditOrganization.aspx" />
+    <Content Include="EditOrgRep.aspx" />
+    <Content Include="EditProgram.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -130,6 +137,7 @@
     <Content Include="Images\sitting.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="css\loginStyle.css" />
+    <Content Include="css\NavBar.css" />
     <Content Include="OrgRepAccount.aspx" />
     <Content Include="OrgRepGroup.aspx" />
     <Content Include="OrgRepProfile.aspx" />
@@ -171,7 +179,7 @@
     <Content Include="VolunteerAccount.aspx" />
     <Content Include="VolunteerProfile.aspx" />
     <Content Include="VolunteerSchedule.aspx" />
-    <Content Include="css\volunteerTable.css" />
+    <Content Include="css\CreatingEntity.css" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -186,6 +194,55 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CreateEvent.aspx.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateEvent.aspx.designer.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateOrganization.aspx.cs">
+      <DependentUpon>CreateOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateOrganization.aspx.designer.cs">
+      <DependentUpon>CreateOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProgram.aspx.cs">
+      <DependentUpon>CreateProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProgram.aspx.designer.cs">
+      <DependentUpon>CreateProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditEvent.aspx.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEvent.aspx.designer.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrganization.aspx.cs">
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditOrganization.aspx.designer.cs">
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrgRep.aspx.cs">
+      <DependentUpon>EditOrgRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditOrgRep.aspx.designer.cs">
+      <DependentUpon>EditOrgRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProgram.aspx.cs">
+      <DependentUpon>EditProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProgram.aspx.designer.cs">
+      <DependentUpon>EditProgram.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OrgRepAccount.aspx.cs">
       <DependentUpon>OrgRepAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
