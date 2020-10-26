@@ -8,11 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - CyberCity</title>
 
-        <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>  
-        <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />  
-        <script src="Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
-        <script src="Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
-        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>  
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />  
+    <script src="Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
+    <script src="Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
+    <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+    <%-- custom coloring --%>
+    <style>
+        .navbar-custom{
+            background-color: #450084;
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text{
+            color: white;
+        }
+    </style>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -50,26 +62,9 @@
         </asp:ScriptManager>
 
 
-
-
-<%--        <div class="navbar">
-            <a href="HomePage.aspx">Home</a>
-            <a href="About.aspx">About</a>
-            <a href="Contact.aspx">Contact</a>
-            <div class="dropdown">
-                <button class="dropbtn">Create Account<span class="caret"></span></button>
-                <div class="dropdown-content">
-                    <a href="ParentAccount.aspx">Student</a>
-                    <a href="VolunteerAccount.aspx">Volunteer</a>
-                    <a href="OrgRepAccount.aspx">Organizational Representative</a>
-                </div>
-            </div>
-        </div>--%>
-
-
         <%-- Menu for when no one is logged in --%>
         <asp:Panel ID="MainMenu" runat="server">
-            <div class="navbar navbar-inverse navbar-fixed-top" id="main">
+            <div class="navbar navbar-custom navbar-fixed-top " id="main">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -79,18 +74,18 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
                             <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                            <li><a runat="server" href="~/HomePage">Home</a></li>
-                            <li><a runat="server" href="~/About">About</a></li>
-                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                            <li><a runat="server" style="color:white" href="~/HomePage" >Home</a></li>
+                            <li><a runat="server" style="color:white" href="~/About">About</a></li>
+                            <li><a runat="server" style="color:white" href="~/Contact">Contact</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="navMain">Create Account<span class="caret"></span></a>
+                                <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="navMain">Create Account<span class="caret"></span></a>
                                     <ul class="dropdown-menu" aria-labelledby="navMain">
-                                        <li><a class="dropdown-item" href="OrgRepAccount.aspx">Teacher</a></li>
+                                        <li><a class="dropdown-item" href="OrgRepAccount.aspx">Organizational Representative</a></li>
                                         <li><a class="dropdown-item" href="VolunteerAccount.aspx">Volunteer</a></li>
                                         <li><a class="dropdown-item" href="ParentAccount.aspx">Parent</a></li>
                                     </ul>
                                 </li>
-                            <li><a runat="server" href="~/Login">Login</a></li>                          
+                            <li><a runat="server" style="color:white" href="~/Login">Login</a></li>                          
                         </ul>
                     </div>
                 </div>
@@ -108,7 +103,7 @@
 
         <%-- Menu for when a student / parent is logged in --%>
         <asp:Panel ID="SPMenu" runat="server" Visible="false">
-            <div class="navbar navbar-inverse navbar-fixed-top" id="spMain">
+            <div class="navbar navbar-custom navbar-fixed-top" id="spMain">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -119,15 +114,15 @@
                     <div id="spNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
                             <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                            <li><a runat="server" href="~/HomePage">Home</a></li>
-                            <li><a runat="server" href="~/StudentSchedule">Schedule</a></li>
-                            <li><a runat="server" href="~/StudentProfile">Profile</a></li>
-                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
+                            <li><a runat="server" style="color:white" href="~/StudentSchedule">Schedule</a></li>
+                            <li><a runat="server" style="color:white" href="~/StudentProfile">Profile</a></li>
+                            <li><a runat="server" style="color:white" href="~/About">About</a></li>
                             <li></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-form navbar-right">
                             <li>
-                                <a><asp:Label ID="lblSPUser" runat="server" Text=""></asp:Label></a>
+                                <a><asp:Label ID="lblSPUser" runat="server" Text="" ForeColor="White"></asp:Label></a>
                             </li>
                             <li>
                                 <a><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click"/></a>
@@ -140,7 +135,7 @@
 
         <%-- Menu for when Volunteer is logged in --%>
         <asp:Panel ID="volunteerMenu" runat="server" Visible="false">
-            <div class="navbar navbar-inverse navbar-fixed-top" id="vMain">
+            <div class="navbar navbar-custom navbar-fixed-top" id="vMain">
                             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -150,14 +145,14 @@
                 <div id="vNavbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-form navbar-left">
                         <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                        <li><a runat="server" href="~/HomePage">Home</a></li>
-                        <li><a runat="server" href="~/VolunteerSchedule">Schedule</a></li>
-                        <li><a runat="server" href="~/VolunteerProfile">Profile</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
+                        <li><a runat="server" style="color:white" href="~/VolunteerSchedule">Schedule</a></li>
+                        <li><a runat="server" style="color:white" href="~/VolunteerProfile">Profile</a></li>
+                        <li><a runat="server" style="color:white" href="~/About">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-form navbar-right">
                         <li>
-                            <a><asp:Label ID="lblVUser" runat="server" Text=""></asp:Label></a>
+                            <a><asp:Label ID="lblVUser" runat="server" Text="" ForeColor="White"></asp:Label></a>
                         </li>
                         <li>
                             <a><asp:Button ID="btnLogoutV" runat="server" Text="Logout" OnClick="btnLogout_Click" /></a>
@@ -170,7 +165,7 @@
 
         <%-- Menu for when an Organizational Rep is logged in --%>
         <asp:Panel ID="orgRepMenu" runat="server" Visible="false">
-            <div class="navbar navbar-inverse navbar-fixed-top" id="tMain">
+            <div class="navbar navbar-custom navbar-fixed-top" id="tMain">
                 <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -180,11 +175,11 @@
                 <div id="tNavbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-form navbar-left">
                         <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                        <li><a runat="server" href="~/HomePage">Home</a></li>
-                        <li><a runat="server" href="~/OrgRepSchedule">Schedule</a></li>
-                        <li><a runat="server" href="~/OrgRepGroup">Group</a></li>
-                        <li><a runat="server" href="~/OrgRepProfile">Profile</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
+                        <li><a runat="server" style="color:white" href="~/OrgRepSchedule">Schedule</a></li>
+                        <li><a runat="server" style="color:white" href="~/OrgRepGroup">Group</a></li>
+                        <li><a runat="server" style="color:white" href="~/OrgRepProfile">Profile</a></li>
+                        <li><a runat="server" style="color:white" href="~/About">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-form navbar-right">
                         <li>
@@ -201,7 +196,7 @@
 
         <%-- Menu for when Coordinator is logged in --%>
         <asp:Panel ID="coordinatorMenu" runat="server" Visible="false">
-            <div class="navbar navbar-inverse navbar-fixed-top" id="cMain">
+            <div class="navbar navbar-custom navbar-fixed-top" id="cMain">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -212,9 +207,9 @@
                     <div id="cNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
                             <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                            <li><a runat="server" href="~/HomePage">Home</a></li>
+                            <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
+                                <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
                                     <ul class="dropdown-menu" aria-labelledby="ddlCreateEntity">
                                         <li><a class="dropdown-item" href="CreateEvent.aspx">Event</a></li>
                                         <li><a class="dropdown-item" href="CreateProgram.aspx">Program</a></li>
@@ -223,7 +218,7 @@
                                      </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlEdit/Remove">Edit/Remove<span class="caret"></span></a>
+                                <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlEdit/Remove">Edit/Remove<span class="caret"></span></a>
                                 <ul class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
                                     <li><a class="dropdown-item" href="EditEvent.aspx">Event</a></li>
                                     <li><a class="dropdown-item" href="EditProgram.aspx">Program</a></li>
@@ -231,13 +226,13 @@
                                     <li><a class="dropdown-item" href="EditOrgRep.aspx">Organizational Representative</a></li>
                                  </ul>
                             </li>
-                            <li><a runat="server" href="CoordinatorAccount.aspx">Create Coordinator Account</a></li>
-                            <li><a runat="server" href="CoordinatorProfile.aspx">Profile</a></li>
+                            <li><a runat="server" style="color:white" href="CoordinatorAccount.aspx">Create Coordinator Account</a></li>
+                            <li><a runat="server" style="color:white" href="CoordinatorProfile.aspx">Profile</a></li>
                             
                         </ul>
                         <ul class="nav navbar-nav navbar-form navbar-right">
                             <li>                                  
-                                <a><asp:Label ID="lblCordUser" runat="server" Text=""></asp:Label></a>                               
+                                <a><asp:Label ID="lblCordUser" runat="server" Text="" ForeColor="White"></asp:Label></a>                               
                             </li>
                             <li>                                  
                                 <a><asp:Button ID="btnLogoutC" runat="server" Text="Logout" OnClick="btnLogout_Click" /></a>                                 
