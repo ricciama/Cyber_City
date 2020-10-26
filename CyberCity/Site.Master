@@ -16,6 +16,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 
+
     <script src="Scripts/WebForms/popper.js"></script>
     <%--<link href="css/NavBar.css" rel="stylesheet" />--%>
     <link href="Content/bootstrap.css" rel="stylesheet" />
@@ -25,7 +26,6 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
