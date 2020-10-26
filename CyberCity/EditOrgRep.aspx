@@ -20,7 +20,37 @@
                     <h4>Edit Organizational Representative</h4>              
                 </asp:TableCell>
             </asp:TableRow>
+            <asp:TableRow>
+                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">                    
+                    <h4>Select Organizational Representative</h4>              
+                </asp:TableCell>
+            </asp:TableRow>
+          <asp:TableRow HorizontalAlign="Center">
+                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div >
+                        <div class="form-group">
+                            <asp:DropDownList ID="ddlOrgReps" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Select Organizational Representitive" Value="0"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </asp:TableCell>
+              <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <div >
+                        <div class="form-group">
+                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="editOrgRep" runat="server" Text="Load Organizational Representative to Edit" onclick="editOrgRep_Click"/>  
+                        </div>
+                    </div>
+                </asp:TableCell>
+                         
+              </asp:TableRow>
+            </asp:Table>
+
+    </asp:Panel>
+            
             <%-- First and Last name --%>
+    <asp:Panel ID="EditInfoPanel" runat="server">
+           <asp:Table ID="EditInfo" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">  
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
@@ -92,38 +122,26 @@
                     <span class="badge badge-pill badge-info">Login Credentials</span>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Username and Password --%>
-            <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="lblUserName" runat="server" Text="Username" Font-Bold="True"></asp:Label>
-                    <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtUsernme" runat="server" placeholder="Username"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
-                    <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
-                    <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
+          
+          
             <%-- Register Button --%>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditOrgRep" runat="server" Text="Register" OnClick="btnEditOrgRep_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCommitEdits" runat="server" Text="Commit Edits" onclick="btnCommitEdits_Click" />  
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+           </asp:Table>  
+        <br />
+        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="Label1" runat="server" Text="Profile Updated Successfully!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
         </asp:Table>
-    </asp:Panel>
+        <br />
+        </asp:Panel>
 
 </asp:Content>
