@@ -13,7 +13,6 @@ namespace CyberCity
         {
 
 
-
             if (Session["UserType"] == null)
             {
                 SPMenu.Visible = false;
@@ -29,6 +28,8 @@ namespace CyberCity
                 orgRepMenu.Visible = false;
                 SPMenu.Visible = true;
 
+                lblSPUser.Text = "Hello, " + Session["Username"].ToString();
+
 
             }
             else if (Session["UserType"].ToString() == "V")
@@ -38,6 +39,8 @@ namespace CyberCity
                 SPMenu.Visible = false;
                 volunteerMenu.Visible = true;
 
+                lblVUser.Text = "Hello, " + Session["Username"].ToString();
+
             }
             else if (Session["UserType"].ToString() == "OR")
             {
@@ -45,6 +48,8 @@ namespace CyberCity
                 SPMenu.Visible = true;
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = true;
+
+                lblOrgUser.Text = "Hello, " + Session["Username"].ToString();
             }
             else if (Session["UserType"].ToString() == "C")
             {
@@ -53,11 +58,19 @@ namespace CyberCity
                 volunteerMenu.Visible = false;
                 orgRepMenu.Visible = false;
                 coordinatorMenu.Visible = true;
+
+                lblCordUser.Text = "Hello, " + Session["Username"].ToString();
             }
 
 
 
 
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("HomePage.aspx");
         }
     }
 }
