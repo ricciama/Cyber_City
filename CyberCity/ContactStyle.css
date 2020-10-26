@@ -1,0 +1,35 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Images/contactus.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.Box {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-90%,-50%);
+    width: 500px;
+    height: 600px;
+    /*padding: 80px;*/
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+}
+
+h1 {
+    padding:5%;
+    margin: 0;
+    text-align: center;
+    color: white;
+
+}
+p {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+

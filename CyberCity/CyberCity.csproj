@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="ContactStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -133,6 +134,9 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\buildings.jpg" />
+    <Content Include="Images\contact.jpg" />
+    <Content Include="Images\contactus.jpg" />
+    <Content Include="Images\lady.jpg" />
     <Content Include="Images\loginguy.PNG" />
     <Content Include="Images\sitting.jpg" />
     <Content Include="Login.aspx" />

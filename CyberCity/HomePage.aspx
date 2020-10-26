@@ -4,6 +4,7 @@
 
     <div class="jumbotron">
         <h1>JMU Presents: CyberCity- </h1>
+        <p>“The JMU mission has always been to educate leaders. Our students exemplify that mission by not only being leaders in their academic studies, but also by leading these visiting young people to promising technology careers.” </p>
         
         <p><a href="https://www.jmu.edu/cob/cis/about/cyberday.shtml" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
@@ -14,7 +15,7 @@
             <p>
                 1. New to the site? Create an account to view your profile.
                 <br />
-                2. Login into your profile and fill out the registration forms.
+                2. Login to your profile and fill out the registration forms.
                 <br />
                 3. Already have an account? Click here to log in
             </p>
@@ -34,7 +35,7 @@
         <div class="col-md-4">
             <h2>About Us</h2>
             <p>
-                To learn more about all the great evetns we have to offer pleae visit out about page. 
+                To learn more about all the great events we have to offer please visit our about page. 
             <p>
                 <a class="btn btn-default" href="About.aspx">Learn more &raquo;</a>
                 &nbsp;
