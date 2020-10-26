@@ -155,6 +155,7 @@
     <Content Include="Images\contactus.jpg" />
     <Content Include="Images\lady.jpg" />
     <Content Include="Images\loginguy.PNG" />
+    <Content Include="Images\profile.jpg" />
     <Content Include="Images\sitting.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="css\loginStyle.css" />
