@@ -46,10 +46,10 @@
               </asp:TableRow>
             </asp:Table>
 
-    </asp:Panel>
+ 
             
             <%-- First and Last name --%>
-    <asp:Panel ID="EditInfoPanel" runat="server">
+   
            <asp:Table ID="EditInfo" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">  
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
