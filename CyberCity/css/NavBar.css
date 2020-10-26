@@ -1,7 +1,10 @@
-﻿.navbar{
+﻿body{
+    font-family: Arial. Arial, Helvetica, sans-serif
+}
+
+.navbar{
     overflow: hidden;
     background-color: #333;
-    font-family: Arial, Arial, Helvetica, sans-serif;
 }
 
 .navbar a {
@@ -56,6 +59,11 @@
     background-color: #ddd;
 }
 
-.dropwdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
+}
+
+.buttonFloat{
+    list-style: none;
+    float: left;
 }
