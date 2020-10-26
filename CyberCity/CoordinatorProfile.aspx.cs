@@ -13,5 +13,10 @@ namespace CyberCity
         {
 
         }
+
+        protected void btnEditCoordinator_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
