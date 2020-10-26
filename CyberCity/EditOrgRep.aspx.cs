@@ -106,7 +106,6 @@ namespace CyberCity
                     chkLunch.Checked = false;
                 }
             }
-
             if (gradeTaught.Contains("Elementary"))
             {
                 chkElementary.Checked = true;
@@ -131,11 +130,9 @@ namespace CyberCity
             {
                 chkNone.Checked = true;
             }
-
             sqlRead.Close();
             sqlConnection3.Close();
         }
-
         protected void btnCommitEdits_Click(object sender, EventArgs e)
         {
             string orgRepId = ddlOrgReps.SelectedValue.ToString();
