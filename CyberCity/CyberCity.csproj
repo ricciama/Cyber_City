@@ -114,6 +114,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CoordinatorAccount.aspx" />
+    <Content Include="CoordinatorProfile.aspx" />
     <Content Include="CreateEvent.aspx" />
     <Content Include="CreateOrganization.aspx" />
     <Content Include="CreateProgram.aspx" />
@@ -283,6 +285,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CoordinatorAccount.aspx.cs">
+      <DependentUpon>CoordinatorAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorAccount.aspx.designer.cs">
+      <DependentUpon>CoordinatorAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorProfile.aspx.cs">
+      <DependentUpon>CoordinatorProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorProfile.aspx.designer.cs">
+      <DependentUpon>CoordinatorProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateEvent.aspx.cs">
       <DependentUpon>CreateEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
