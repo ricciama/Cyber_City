@@ -24,12 +24,47 @@ h1 {
     margin: 0;
     text-align: center;
     color: white;
+    
 
 }
 p {
     margin: 0;
     text-align: center;
     color: white;
+    font-size =18px;
+}
+.photo1{
+    padding:7%;
+    margin-top:30px;
+    width:120px;
+    height:90px;
+    align-content: center;
+    
+}
+
+.label {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size:16px;
+}
+
+.phone {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size:16px;
+}
+
+.jmu {
+    text-align:right;
+    color: black;
+    margin: 0;
+}
+
+.jmuInfo{
+    text-align:right;
+    margin-bottom:70px;
 }
 
 

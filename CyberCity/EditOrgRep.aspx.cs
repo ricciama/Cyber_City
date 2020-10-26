@@ -76,7 +76,7 @@ namespace CyberCity
             }
             string gradeTaught = "";
             string orgRepId = ddlOrgReps.SelectedValue.ToString();
-            string orgRep = "select FName, Lname, Email, PhoneNumber, OrganizationID, Code, LunchTicket from OrgRep ";
+            string orgRep = "select FName, Lname, Email, PhoneNumber, OrganizationID, Code, LunchTicket, GradesTaught from OrgRep ";
             orgRep += "where OrgRepID = " + orgRepId + "";
            
             SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
@@ -94,6 +94,7 @@ namespace CyberCity
                 ddlOrgName.SelectedValue=(sqlRead["OrganizationID"].ToString());
                 txtOrgRepEmail.Text = (sqlRead["Email"].ToString());
                 txtCode.Text = (sqlRead["Code"].ToString());
+                gradeTaught = (sqlRead["GradesTaught"].ToString());
                 
                 int lunch = Int32.Parse(sqlRead["LunchTicket"].ToString());
                 if (lunch == 1)
@@ -105,6 +106,32 @@ namespace CyberCity
                     chkLunch.Checked = false;
                 }
             }
+
+            if (gradeTaught.Contains("Elementary"))
+            {
+                chkElementary.Checked = true;
+            }
+            if (gradeTaught.Contains("Sixth"))
+            {
+                chkSixth.Checked = true;
+            }
+            if (gradeTaught.Contains("Seventh"))
+            {
+                chkSeventh.Checked = true; 
+            }
+            if (gradeTaught.Contains("Eighth"))
+            {
+                chkEight.Checked = true;
+            }
+            if (gradeTaught.Contains("High School"))
+            {
+                chkHighSchool.Checked = true;
+            }
+            if (gradeTaught.Contains("None"))
+            {
+                chkNone.Checked = true;
+            }
+
             sqlRead.Close();
             sqlConnection3.Close();
         }

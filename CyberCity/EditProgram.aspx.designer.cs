@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class EditProgram {
-        
+namespace CyberCity
+{
+
+
+    public partial class EditProgram
+    {
+
         /// <summary>
         /// pnlEditProgram control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlEditProgram;
-        
+
         /// <summary>
         /// tblEditProgram control.
         /// </summary>
@@ -29,7 +31,25 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblEditProgram;
-        
+
+        /// <summary>
+        /// ddlProgamNames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProgamNames;
+
+        /// <summary>
+        /// btnSearchProgram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchProgram;
+
         /// <summary>
         /// txtProgramName control.
         /// </summary>
@@ -38,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProgramName;
-        
+
         /// <summary>
         /// txtProgramDateTime control.
         /// </summary>
@@ -47,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProgramDateTime;
-        
+
         /// <summary>
         /// btnEditProgram control.
         /// </summary>

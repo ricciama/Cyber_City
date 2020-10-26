@@ -20,16 +20,31 @@
                     <h4>Edit Program</h4>              
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Event Name and Date/Time--%>
+          <%-- Program ddl to select which program to edit--%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell CssClass="cellPadding">
+                    <div class ="form-group">
+                        <asp:DropDownList ID="ddlProgamNames" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="0" Text ="Select Program to Edit"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell CssClass="cellPadding">
+                    <div class ="form-group">
+                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnSearchProgram" runat="server" Text="Load Program Data" OnClick="btnSearchProgram_Click" Visible="true"/>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Program Name and Date/Time--%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtProgramName" runat="server" placeholder="Program Name"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtProgramName" runat="server" placeholder="Program Name" Visible="false"></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtProgramDateTime" runat="server" placeholder="Program Time" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtProgramDateTime" runat="server" placeholder="Program Time" Visible="false"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -38,7 +53,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditProgram" runat="server" Text="Create Program" OnClick="btnEditProgram_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditProgram" runat="server" Text="Edit Program" OnClick="btnEditProgram_Click" Visible="false"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
