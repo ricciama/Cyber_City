@@ -61,9 +61,22 @@ namespace CyberCity
                     Session["UserType"] = type;
                     Response.Redirect("HomePage.aspx");
                 }
+                else
+                {
+                    lblincorrectLogin.Visible = true;
+                    lblincorrectLogin.Text = "Incorrect Username/Password. Please try again";
+                    txtPassword.Text = "";
+                }
 
                 sc.Close();
                 sc2.Close();
+            }
+            else
+            {
+                lblincorrectLogin.Visible = true;
+                lblincorrectLogin.Text = "Username does not exist. Please create an account or try again";
+                txtPassword.Text = "";
+                txtUsername.Text = "";
             }
         }
     }
