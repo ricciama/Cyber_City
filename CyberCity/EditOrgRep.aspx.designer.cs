@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class EditOrgRep {
-        
+namespace CyberCity
+{
+
+
+    public partial class EditOrgRep
+    {
+
         /// <summary>
         /// pnlEditOrgRep control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlEditOrgRep;
-        
+
         /// <summary>
         /// tblEditOrgRep control.
         /// </summary>
@@ -29,7 +31,43 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblEditOrgRep;
-        
+
+        /// <summary>
+        /// ddlOrgReps control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrgReps;
+
+        /// <summary>
+        /// editOrgRep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button editOrgRep;
+
+        /// <summary>
+        /// EditInfoPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EditInfoPanel;
+
+        /// <summary>
+        /// EditInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table EditInfo;
+
         /// <summary>
         /// txtOrgRepFN control.
         /// </summary>
@@ -38,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepFN;
-        
+
         /// <summary>
         /// txtOrgRepLN control.
         /// </summary>
@@ -47,7 +85,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepLN;
-        
+
         /// <summary>
         /// txtOrgRepPhone control.
         /// </summary>
@@ -56,7 +94,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepPhone;
-        
+
         /// <summary>
         /// txtOrgRepEmail control.
         /// </summary>
@@ -65,7 +103,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepEmail;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -74,7 +112,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// chkLunch control.
         /// </summary>
@@ -83,7 +121,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkLunch;
-        
+
         /// <summary>
         /// txtCode control.
         /// </summary>
@@ -92,7 +130,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCode;
-        
+
         /// <summary>
         /// ddlOrgName control.
         /// </summary>
@@ -101,7 +139,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlOrgName;
-        
+
         /// <summary>
         /// lblGrade control.
         /// </summary>
@@ -110,7 +148,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGrade;
-        
+
         /// <summary>
         /// chkElementary control.
         /// </summary>
@@ -119,7 +157,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkElementary;
-        
+
         /// <summary>
         /// chkSixth control.
         /// </summary>
@@ -128,7 +166,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkSixth;
-        
+
         /// <summary>
         /// chkSeventh control.
         /// </summary>
@@ -137,7 +175,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkSeventh;
-        
+
         /// <summary>
         /// chkEight control.
         /// </summary>
@@ -146,7 +184,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEight;
-        
+
         /// <summary>
         /// chkHighSchool control.
         /// </summary>
@@ -155,7 +193,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkHighSchool;
-        
+
         /// <summary>
         /// chkNone control.
         /// </summary>
@@ -164,43 +202,25 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkNone;
-        
+
         /// <summary>
-        /// lblUserName control.
+        /// btnCommitEdits control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
-        
+        protected global::System.Web.UI.WebControls.Button btnCommitEdits;
+
         /// <summary>
-        /// txtUsernme control.
+        /// tblConfirmation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsernme;
-        
-        /// <summary>
-        /// lblPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
-        
-        /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
+        protected global::System.Web.UI.WebControls.Table tblConfirmation;
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -209,23 +229,5 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// txtPassword2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword2;
-        
-        /// <summary>
-        /// btnEditOrgRep control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditOrgRep;
     }
 }
