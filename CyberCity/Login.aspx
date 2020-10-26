@@ -37,6 +37,11 @@
                     <asp:Button ID="loginbtn" runat="server" Text="Login" CssClass="loginbtn" OnClick="loginbtn_Click"/>
                 </asp:TableCell>
             </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center">
+                    <asp:Label ID="lblincorrectLogin" runat="server" Text="" ForeColor="Red" Font-Size="Medium" Visible="false"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
 
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
