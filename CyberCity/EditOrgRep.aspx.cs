@@ -17,7 +17,7 @@ namespace CyberCity
            
             if (!IsPostBack)
             {
-                EditInfoPanel.Visible = false;
+                EditInfo.Visible = false;
                 String sqlQuery2 = "Select OrgRepID, FName + ' ' + LName as Name from OrgRep order by OrgRepID";
                 String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
 
@@ -49,7 +49,7 @@ namespace CyberCity
         protected void editOrgRep_Click(object sender, EventArgs e)
         {
 
-            EditInfoPanel.Visible = true;
+            EditInfo.Visible = true;
 
             String sqlQuery2 = "Select Name, OrganizationID from Organization order by OrganizationID";
             String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
