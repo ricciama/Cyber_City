@@ -16,7 +16,7 @@ namespace CyberCity
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["UserType"] = txtInput.Text;
         }
+            
     }
 }
