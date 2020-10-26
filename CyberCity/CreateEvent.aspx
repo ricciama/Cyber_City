@@ -68,6 +68,15 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+          <br />
+        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Event Successfully Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <br />
     </asp:Panel>
 
 

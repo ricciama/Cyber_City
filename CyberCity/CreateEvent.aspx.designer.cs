@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class CreateEvent {
-        
+namespace CyberCity
+{
+
+
+    public partial class CreateEvent
+    {
+
         /// <summary>
         /// Panel2 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel2;
-        
+
         /// <summary>
         /// tblEvent control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblEvent;
-        
+
         /// <summary>
         /// txtEventName control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventName;
-        
+
         /// <summary>
         /// txtEventDate control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventDate;
-        
+
         /// <summary>
         /// txtEventTime control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventTime;
-        
+
         /// <summary>
         /// txtEventLocation control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventLocation;
-        
+
         /// <summary>
         /// ddlProgram control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
-        
+
         /// <summary>
         /// btnCreateEvent control.
         /// </summary>
@@ -83,5 +85,23 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateEvent;
+
+        /// <summary>
+        /// tblConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblConfirmation;
+
+        /// <summary>
+        /// confirmationlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label confirmationlbl;
     }
 }

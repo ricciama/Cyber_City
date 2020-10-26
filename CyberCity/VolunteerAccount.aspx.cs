@@ -19,8 +19,7 @@ namespace CyberCity
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            int errorCheck = 0;
-
+     
 
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
 
@@ -37,7 +36,7 @@ namespace CyberCity
 
             sqlConnection1.Close();
 
-            if (errorCheck == 0)
+            if (userNameCount == 0)
             {
 
                 string connectionString;

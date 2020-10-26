@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class CreateOrganization {
-        
+namespace CyberCity
+{
+
+
+    public partial class CreateOrganization
+    {
+
         /// <summary>
         /// pnlCreateOrg control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCreateOrg;
-        
+
         /// <summary>
         /// tblCreateOrg control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblCreateOrg;
-        
+
         /// <summary>
         /// txtOrgName control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgName;
-        
+
         /// <summary>
         /// txtOrgAddress control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgAddress;
-        
+
         /// <summary>
         /// txtOrgContactName control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgContactName;
-        
+
         /// <summary>
         /// txtOrgPhone control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgPhone;
-        
+
         /// <summary>
         /// txtOrgEmail control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgEmail;
-        
+
         /// <summary>
         /// btnCreateOrg control.
         /// </summary>
@@ -83,5 +85,23 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateOrg;
+
+        /// <summary>
+        /// tblConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblConfirmation;
+
+        /// <summary>
+        /// confirmationlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label confirmationlbl;
     }
 }

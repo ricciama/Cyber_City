@@ -44,9 +44,45 @@ namespace CyberCity
             }
         }
 
-            protected void btnCreateEvent_Click(object sender, EventArgs e)
-            {
+        protected void btnCreateEvent_Click(object sender, EventArgs e)
+        {
+            
 
-            }
+        
+
+                string connectionString;
+                SqlConnection cnn;
+                SqlCommand sqlCommand;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                connectionString = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ToString();
+
+                cnn = new SqlConnection(connectionString);
+
+                String sql = "Insert into [Event] (Name, Date, Time, Location, ProgramID) " +
+                    "Values (@Name, @Date, @Time, @Location, @ProgramID)";
+
+                sqlCommand = new SqlCommand(sql, cnn);
+
+                cnn.Open();
+
+
+                //Inserts the data from the new student page into the database
+
+                sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtEventName.Text));
+                sqlCommand.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(txtEventDate.Text));
+                sqlCommand.Parameters.AddWithValue("@Time", HttpUtility.HtmlEncode(txtEventTime.Text));
+                sqlCommand.Parameters.AddWithValue("@Location", HttpUtility.HtmlEncode(txtEventLocation.Text));
+                sqlCommand.Parameters.AddWithValue("@ProgramID", HttpUtility.HtmlEncode(ddlProgram.SelectedItem.Value));
+
+
+                sqlCommand.ExecuteNonQuery();
+
+                sqlCommand.Dispose();
+                cnn.Close();
+            tblConfirmation.Visible = true;
+
+
         }
     }
+}

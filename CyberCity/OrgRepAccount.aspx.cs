@@ -166,7 +166,9 @@ namespace CyberCity
             setPass.ExecuteNonQuery();
 
             sc.Close();
-        }
+            tblConfirmation.Visible = true;
+            }
+           
     }
 
 
