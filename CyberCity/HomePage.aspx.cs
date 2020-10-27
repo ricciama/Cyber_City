@@ -17,6 +17,10 @@ namespace CyberCity
         protected void Button1_Click(object sender, EventArgs e)
         {
         }
-            
+
+        protected void learnMoreHomePage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://www.jmu.edu/cob/cis/about/cyberday.shtml");
+        }
     }
 }

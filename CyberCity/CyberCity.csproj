@@ -126,6 +126,8 @@
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\dukes.jpg" />
+    <Content Include="Images\quad.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -156,7 +158,6 @@
     <Content Include="Images\lady.jpg" />
     <Content Include="Images\loginguy.PNG" />
     <Content Include="Images\profile.jpg" />
-    <Content Include="Images\sitting.jpg" />
     <Content Include="Images\wilson.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="css\loginStyle.css" />

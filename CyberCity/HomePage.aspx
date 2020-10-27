@@ -4,10 +4,13 @@
 
     <div class="jumbotron">
         <div class="box">
-        <h1>JMU Presents: CyberCity- </h1>
-        <p>“The JMU mission has always been to educate leaders. Our students exemplify that mission by not only being leaders in their academic studies, but also by leading these visiting young people to promising technology careers.” </p>
+        <%--<h1>JMU Presents: CyberCity </h1>--%>
+        <%--<p>“The JMU mission has always been to educate leaders. Our students exemplify that mission by not only being leaders in their academic studies, but also by leading these visiting young people to promising technology careers.” </p>--%>
+            <h2>JMU Presents: CyberCity </h2>
+            <p> The JMU mission has always been to educate leaders. <asp:LinkButton ID="learnMoreHomePage" runat="server" OnClick="learnMoreHomePage_Click">Click to Learn More</asp:LinkButton></p>
+            
         
-        <p><a href="https://www.jmu.edu/cob/cis/about/cyberday.shtml" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <%--<p><a href="https://www.jmu.edu/cob/cis/about/cyberday.shtml" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>--%>
         </div>
    </div>
 
