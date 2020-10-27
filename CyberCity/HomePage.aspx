@@ -3,11 +3,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
+        <div class="box">
         <h1>JMU Presents: CyberCity- </h1>
         <p>“The JMU mission has always been to educate leaders. Our students exemplify that mission by not only being leaders in their academic studies, but also by leading these visiting young people to promising technology careers.” </p>
         
         <p><a href="https://www.jmu.edu/cob/cis/about/cyberday.shtml" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+        </div>
+   </div>
 
     <div class="row">
         <div class="col-md-4">

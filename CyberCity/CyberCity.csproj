@@ -140,6 +140,7 @@
     <Content Include="Images\loginguy.PNG" />
     <Content Include="Images\profile.jpg" />
     <Content Include="Images\sitting.jpg" />
+    <Content Include="Images\wilson.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="css\loginStyle.css" />
     <Content Include="css\NavBar.css" />
