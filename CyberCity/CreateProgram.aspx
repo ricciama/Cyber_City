@@ -47,7 +47,7 @@
         <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="confirmationlbl" runat="server" Text="Organization Successfully Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Program Successfully Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

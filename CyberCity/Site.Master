@@ -213,7 +213,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="ddlCreateEntity">
                                         <li><a class="dropdown-item" href="CreateEvent.aspx">Event</a></li>
                                         <li><a class="dropdown-item" href="CreateProgram.aspx">Program</a></li>
-                                        <li><a class="dropdown-item" href="CreateOrganization.aspx">School</a></li>
+                                        <li><a class="dropdown-item" href="CreateOrganization.aspx">Organization</a></li>
                                         <li><a class="dropdown-item" href="OrgRepAccount.aspx">Organizational Representative</a></li>
                                      </ul>
                             </li>
@@ -222,7 +222,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
                                     <li><a class="dropdown-item" href="EditEvent.aspx">Event</a></li>
                                     <li><a class="dropdown-item" href="EditProgram.aspx">Program</a></li>
-                                    <li><a class="dropdown-item" href="EditOrganization.aspx">School</a></li>
+                                    <li><a class="dropdown-item" href="EditOrganization.aspx">Organization</a></li>
                                     <li><a class="dropdown-item" href="EditOrgRep.aspx">Organizational Representative</a></li>
                                  </ul>
                             </li>
