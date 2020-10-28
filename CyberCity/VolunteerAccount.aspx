@@ -34,60 +34,15 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Date of Birth and Gender --%>
-            <asp:TableRow HorizontalAlign="Center">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div >
-                            <div class="form-group">
-                                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
-                                    <asp:ListItem Value ="0" Text="Select Gender"></asp:ListItem>
-                                    <asp:ListItem Value="Male" Text="Male"></asp:ListItem>
-                                    <asp:ListItem Value="Female" Text="Female"></asp:ListItem>
-                                    <asp:ListItem Value="Non-Binary" Text="Non-Binary"></asp:ListItem>
-                                </asp:DropDownList>
-                        </div>
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
             <%-- Phone and email --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
                         <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Shirt size and Lunch --%>
-            <asp:TableRow HorizontalAlign="Center">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:DropDownList ID="ddlShirtSize" runat="server" CssClass="form-control">
-                            <asp:ListItem Value ="0" Text="Select ShirtSize"></asp:ListItem>
-                            <asp:ListItem Value="X-Small" Text="X-Small"></asp:ListItem>
-                            <asp:ListItem Value="Small" Text="Small"></asp:ListItem>
-                            <asp:ListItem Value="Medium" Text="Medium"></asp:ListItem>
-                            <asp:ListItem Value="Large" Text="Large"></asp:ListItem>
-                            <asp:ListItem Value="X-Large" Text="X-Large"></asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group form-control">
-                        <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
-                        <asp:CheckBox ID="chkLunch" runat="server"/>
-                    </div>
-                </asp:TableCell>           
-            </asp:TableRow>
+ 
             <%-- Login credentials Logo --%>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
@@ -106,14 +61,6 @@
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
-                    <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

@@ -15,23 +15,28 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["UserType"].ToString().Equals("V"))
+            if (Session["UserType"] != null)
             {
-                SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITYDB"].ConnectionString.ToString());
-
-                sc.Open();
-
-                String sqlQuery = "Select TShirtSize from [Volunteer] where [Username] = @Username";
-
-                SqlCommand sqlCommand1 = new SqlCommand(sqlQuery, sc);
-
-                sqlCommand1.Parameters.AddWithValue("@Username", Session["Username"].ToString());
-
-                string TShirtSize = sqlCommand1.ExecuteScalar().ToString();
-
-                if(!TShirtSize.IsNullOrWhiteSpace())
+                if (Session["UserType"].ToString().Equals("V"))
                 {
-                    Response.Redirect("FirstTimeLoginVolunteer.aspx");
+                    SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
+
+                    sc.Open();
+
+                    String sqlQuery = "Select ISNULL(TShirtSize, 'flag') from [Volunteer] where [Username] = @Username";
+
+                    SqlCommand sqlCommand = new SqlCommand(sqlQuery, sc);
+
+                    sqlCommand.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+
+                    string TShirtSize = sqlCommand.ExecuteScalar().ToString();
+
+                    if (TShirtSize.Equals("flag"))
+                    {
+                        sc.Close();
+                        Response.Redirect("FirstTimeLoginVolunteer.aspx");
+                    }
+                    sc.Close();
                 }
             }
         }
