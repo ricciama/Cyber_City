@@ -123,6 +123,7 @@
     <Content Include="EditOrganization.aspx" />
     <Content Include="EditOrgRep.aspx" />
     <Content Include="EditProgram.aspx" />
+    <Content Include="FirstTimeLoginVolunteer.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -353,6 +354,13 @@
     </Compile>
     <Compile Include="EditProgram.aspx.designer.cs">
       <DependentUpon>EditProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FirstTimeLoginVolunteer.aspx.cs">
+      <DependentUpon>FirstTimeLoginVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FirstTimeLoginVolunteer.aspx.designer.cs">
+      <DependentUpon>FirstTimeLoginVolunteer.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrgRepAccount.aspx.cs">
       <DependentUpon>OrgRepAccount.aspx</DependentUpon>
