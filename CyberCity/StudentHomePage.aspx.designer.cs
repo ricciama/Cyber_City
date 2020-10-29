@@ -33,40 +33,94 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// txtAge control.
+        /// lblTeacherCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAge;
+        protected global::System.Web.UI.WebControls.Label lblTeacherCode;
 
         /// <summary>
-        /// ddlGrade control.
+        /// txtTeacherCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGrade;
+        protected global::System.Web.UI.WebControls.TextBox txtTeacherCode;
 
         /// <summary>
-        /// Label2 control.
+        /// lblEMName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblEMName;
 
         /// <summary>
-        /// chkLunch control.
+        /// txtEMName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkLunch;
+        protected global::System.Web.UI.WebControls.TextBox txtEMName;
+
+        /// <summary>
+        /// lblEMNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEMNumber;
+
+        /// <summary>
+        /// txtEMNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEMNumber;
+
+        /// <summary>
+        /// lblEMRelationship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEMRelationship;
+
+        /// <summary>
+        /// txtEMRelationship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEMRelationship;
+
+        /// <summary>
+        /// lblLunch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLunch;
+
+        /// <summary>
+        /// ddlLunchTicket control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLunchTicket;
 
         /// <summary>
         /// lblCPUAccess control.
@@ -78,22 +132,31 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Label lblCPUAccess;
 
         /// <summary>
-        /// rdYes control.
+        /// ddlCPUAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdYes;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCPUAccess;
 
         /// <summary>
-        /// rdNo control.
+        /// lblInternetAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdNo;
+        protected global::System.Web.UI.WebControls.Label lblInternetAccess;
+
+        /// <summary>
+        /// ddlInternetAccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlInternetAccess;
 
         /// <summary>
         /// lblCPUExp control.
@@ -105,13 +168,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Label lblCPUExp;
 
         /// <summary>
-        /// txtCPUExp control.
+        /// ddlCPUExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCPUExp;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCPUExp;
 
         /// <summary>
         /// lblAllergies control.
@@ -132,24 +195,6 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtAllergies;
 
         /// <summary>
-        /// lblDiet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiet;
-
-        /// <summary>
-        /// txtDiet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiet;
-
-        /// <summary>
         /// lblMisc control.
         /// </summary>
         /// <remarks>
@@ -166,6 +211,24 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMisc;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// ddlPhotoPermission control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPhotoPermission;
 
         /// <summary>
         /// btnSave control.

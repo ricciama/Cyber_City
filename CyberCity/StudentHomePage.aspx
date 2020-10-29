@@ -43,13 +43,13 @@
             <p>
                 Now that your account is created, a few steps are needed to complete your profile
                 <br />
-                1. Click the button below to complete student survey.
+                1. Click the button below to complete your Cyber Day registration.
                 <br />
                 2. Fill in information as complete as possible
             </p>           
 
              <%--Button to Open the Modal--%>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Student Survey</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Student Registration</button>
 
                   <%--The Modal--%>
                   <div class="modal" id="myModal">
@@ -62,107 +62,143 @@
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
         
-                        <%--Modal body--%>
-                          
+                        <%--Modal body--%>                  
                         <div class="modal-body">
                             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
-                                <%-- Age and Grade --%>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                                        <div class="form-group">
-                                            <asp:TextBox ID="txtAge" CssClass="form-control" runat="server" placeholder="Age" ></asp:TextBox>
-                                        </div>
+                                <%--Teacher Code--%>
+                                <asp:TableRow>
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
+                                        <asp:Label ID="lblTeacherCode" runat="server" Text="Teacher Code" Font-Bold="true"></asp:Label>
                                     </asp:TableCell>
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                                        <div class="form-group">
-                                            <asp:DropDownList ID="ddlGrade" CssClass="form-control" runat="server">
-                                                <asp:ListItem Value="0" Text="Select Grade"></asp:ListItem>
-                                            </asp:DropDownList>
-                                        </div>
+                                    <asp:TableCell CssClass="cellPadding">
+                                        <asp:TextBox ID="txtTeacherCode" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <%--Emergency Contact Name--%>
+                                <asp:TableRow>
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
+                                        <asp:Label ID="lblEMName" runat="server" Text="Emergency Contact Name" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell CssClass="cellPadding">
+                                        <asp:TextBox ID="txtEMName" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <%--Emergency Contact Phone Number--%>
+                                <asp:TableRow>
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
+                                        <asp:Label ID="lblEMNumber" runat="server" Text="Emergency Contact Phone Number" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell CssClass="cellPadding">
+                                        <asp:TextBox ID="txtEMNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <%--Emergency Contact Relationship--%>
+                                <asp:TableRow>
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
+                                        <asp:Label ID="lblEMRelationship" runat="server" Text="Relationship to Emergency Contact" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell CssClass="cellPadding">
+                                        <asp:TextBox ID="txtEMRelationship" runat="server" CssClass="form-control"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Lunch --%>
                                 <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
-                                        <div class="form-group form-control">
-                                            <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
-                                            <asp:CheckBox ID="chkLunch" runat="server"/>
-                                        </div>
-                                    </asp:TableCell>           
-                                    
+                                    <asp:TableCell Width="50%">
+                                        <asp:Label ID="lblLunch" runat="server" Text="Would you like a lunch Ticket?" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                                        <asp:DropDownList ID="ddlLunchTicket" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Value="No" Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </asp:TableCell> 
                                 </asp:TableRow>
                                 <%-- Computer Access --%>
                                 <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
                                         <div class="form-group">
-                                            <asp:Label ID="lblCPUAccess" runat="server" CssClass="form-control" Text="Do you have access to a computer?" Font-Bold="True"></asp:Label>
+                                            <asp:Label ID="lblCPUAccess" runat="server" Text="Do you have access to a computer?" Font-Bold="True"></asp:Label>
                                         </div>                                      
                                     </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                                        <div class="form-group">
-                                            <asp:RadioButton ID="rdYes" CssClass="form-control" runat="server" Text="Yes" />
-                                        </div>
+                                    <asp:TableCell>
+                                        <asp:DropDownList ID="ddlCPUAccess" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Value="No" Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
                                     </asp:TableCell>
-                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                                </asp:TableRow>
+                                <%-- Internet Access --%>
+                                <asp:TableRow HorizontalAlign="Center">
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
                                         <div class="form-group">
-                                            <asp:RadioButton ID="rdNo" CssClass="form-control" runat="server" Text="No" />
-                                        </div>
+                                            <asp:Label ID="lblInternetAccess" runat="server" Text="Do you have reliable internet access?" Font-Bold="True"></asp:Label>
+                                        </div>                                      
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:DropDownList ID="ddlInternetAccess" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Value="No" Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Please Describe your computer experience --%>
                                 <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
                                         <div class="form-group">
-                                            <asp:Label ID="lblCPUExp" runat="server" Text="Please Describe Your Computer Experience." Font-Bold="True"></asp:Label>
+                                            <asp:Label ID="lblCPUExp" runat="server" Text="What is your experience with a computer?" Font-Bold="True"></asp:Label>
+                                        </div>                                      
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:DropDownList ID="ddlCPUExp" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="None" Text="None"></asp:ListItem>
+                                            <asp:ListItem Value="Some" Text="Some"></asp:ListItem>
+                                            <asp:ListItem Value="Moderate" Text="Moderate"></asp:ListItem>
+                                            <asp:ListItem Value="Advanced" Text="Advanced"></asp:ListItem>
+                                           <asp:ListItem Value="Expert" Text="Expert"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </asp:TableCell>
+                                </asp:TableRow>      
+                                <%-- Allergies / Dietary Restrictions --%>
+                                <asp:TableRow HorizontalAlign="Center">
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblAllergies" runat="server" Text="Please list allergies and dietary restrictions to the right:" Font-Bold="True"></asp:Label>
                                         </div>
                                     </asp:TableCell>
-                                    </asp:TableRow>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
-                                        <asp:TextBox ID="txtCPUExp" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                                        <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server" Wrap="true" Height="100px"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
-                                <%-- Allergies --%>
+                                <%-- Notes --%>
                                 <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                                    <asp:TableCell HorizontalAlign="Center" Width="50%">
                                         <div class="form-group">
-                                            <asp:Label ID="lblAllergies" runat="server" Text="Please List Any Allergies You Have." Font-Bold="True"></asp:Label>
+                                            <asp:Label ID="lblMisc" runat="server" Text="Additional notes and comments to the right:" Font-Bold="True"></asp:Label>
                                         </div>
                                     </asp:TableCell>
-                                    </asp:TableRow>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
-                                        <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                                        <asp:TextBox ID="txtMisc" CssClass="form-control" runat="server" Wrap="true" Height="100px"></asp:TextBox>
                                     </asp:TableCell>
-                                </asp:TableRow>
-                                <%-- Dietary Restrictions --%>
+                                </asp:TableRow>  
+                                <%-- Photo Permission --%>
                                 <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
                                         <div class="form-group">
-                                            <asp:Label ID="lblDiet" runat="server" Text="Please List Any Dietary Restrictions You May Have" Font-Bold="True"></asp:Label>
-                                        </div>
+                                            <asp:Label ID="Label1" runat="server" Text="Does JMU have permission to take and use photos of your child?" Font-Bold="True"></asp:Label>
+                                        </div>                                      
                                     </asp:TableCell>
-                                    </asp:TableRow>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
-                                        <asp:TextBox ID="txtDiet" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TableCell>
+                                        <asp:DropDownList ID="ddlPhotoPermission" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Value="No" Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
                                     </asp:TableCell>
-                                </asp:TableRow>
-                                <%-- ANYTHING else --%>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblMisc" runat="server" Text="Is There Anything Else You Would Like Us to Know?" Font-Bold="True"></asp:Label>
-                                        </div>
-                                    </asp:TableCell>
-                                    </asp:TableRow>
-                                <asp:TableRow HorizontalAlign="Center">
-                                    <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
-                                        <asp:TextBox ID="txtMisc" CssClass="form-control" runat="server"></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>                             
+                                </asp:TableRow>                                
                             </asp:Table>
                         </div>
         
