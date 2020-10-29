@@ -46,10 +46,15 @@
                 1. Click the button below to complete your Cyber Day registration.
                 <br />
                 2. Fill in information as complete as possible
+
             </p>           
 
              <%--Button to Open the Modal--%>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Student Registration</button>
+
+            <br />
+            <br />
+            <asp:Label ID="lblConfirmation" runat="server" Text="Student Registered Successfully!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
 
                   <%--The Modal--%>
                   <div class="modal" id="myModal">
@@ -108,6 +113,19 @@
                                     </asp:TableCell>
                                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                                         <asp:DropDownList ID="ddlLunchTicket" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
+                                            <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Value="No" Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </asp:TableCell> 
+                                </asp:TableRow>
+                                <%-- First Time Attending the Event --%>
+                                <asp:TableRow HorizontalAlign="Center">
+                                    <asp:TableCell Width="50%">
+                                        <asp:Label ID="Label2" runat="server" Text="Is it your first time attending Cyber Day?" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                                        <asp:DropDownList ID="ddlFirstTime" runat="server" CssClass="form-control">
                                             <asp:ListItem Value ="N/A" Text = "Select"></asp:ListItem>
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
@@ -204,14 +222,12 @@
         
                         <%--Modal footer--%>
                         <div class="modal-footer">
-                            <asp:Button ID="btnSave" CssClass="btn btn-success" data-dismiss="modal" runat="server" Text="Save" OnClick="btnSave_Click" />
-                          
+                            <asp:Button ID="btnSave" CssClass="btn btn-success" data-dismiss="modal" runat="server" Text="Save" OnClick="btnSave_Click" />           
                         </div>
         
                       </div>
                     </div>
                   </div>
-
 
         </div>
         <div class="col-md-4">
