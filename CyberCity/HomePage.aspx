@@ -33,7 +33,7 @@
         <div class="col-md-4">
             <h2>Upcoming Events</h2>
             <p>
-                Connection to DB for furture evetns...
+                Connection to DB for furture events...
             </p>
          
         </div>

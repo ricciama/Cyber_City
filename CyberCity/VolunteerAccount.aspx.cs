@@ -48,8 +48,8 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Volunteer] (FName, LName, TShirtSize, DOB, Email, Phone, LunchTicket, Gender, Username) " +
-                    "Values (@FirstName, @LastName, @ShirtSize, @DOB, @Email, @Phone, @LunchTicket, @Gender, @Username)";
+                String sql = "Insert into [Volunteer] (FName, LName, Email, Username) " +
+                    "Values (@FirstName, @LastName, @Email, @Username)";
 
                 sqlCommand = new SqlCommand(sql, cnn);
 
@@ -60,19 +60,7 @@ namespace CyberCity
 
                 sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtVolunteerFN.Text));
                 sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtVolunteerLN.Text));
-                sqlCommand.Parameters.AddWithValue("@DOB", HttpUtility.HtmlEncode(txtVolunteerDOB.Text));
                 sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
-
-                //Converts the lunchTicket checkbox to an integer in order to be stored in the database
-                int lunchTicket = 0;
-                if (chkLunch.Checked == true)
-                {
-                    lunchTicket = 1;
-                }
-                sqlCommand.Parameters.AddWithValue("@LunchTicket", lunchTicket);
-                sqlCommand.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtVolunteerPhone.Text));
-                sqlCommand.Parameters.AddWithValue("@Gender", HttpUtility.HtmlEncode(ddlGender.SelectedValue));
-                sqlCommand.Parameters.AddWithValue("@ShirtSize", HttpUtility.HtmlEncode(ddlShirtSize.SelectedValue));
                 sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtVolunteerEmail.Text));
 
                 sqlCommand.ExecuteNonQuery();
@@ -108,13 +96,8 @@ namespace CyberCity
             txtVolunteerFN.Text = null;
             txtVolunteerLN.Text = null;
             txtVolunteerEmail.Text = null;
-            txtVolunteerDOB.Text = null;
-            txtVolunteerPhone.Text = null;
             txtUsernme.Text = null;
             txtPassword.Text = null;
-            txtPassword2.Text = null;
-            this.ddlGender.ClearSelection();
-            this.ddlShirtSize.ClearSelection();
         }
     }
 }
