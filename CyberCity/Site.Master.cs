@@ -29,6 +29,7 @@ namespace CyberCity
                 SPMenu.Visible = true;
 
                 lblSPUser.Text = "Hello, " + Session["Username"].ToString();
+                
 
 
             }

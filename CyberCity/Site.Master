@@ -113,7 +113,7 @@
                     <div id="spNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
                             <li><a class="navbar-brand" runat="server" href="~/HomePage">CyberCity</a></li>
-                            <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
+                            <li><a runat="server" style="color:white" href="~/StudentHomePage">Home</a></li>
                             <li><a runat="server" style="color:white" href="~/StudentSchedule">Schedule</a></li>
                             <li><a runat="server" style="color:white" href="~/StudentProfile">Profile</a></li>
                             <li><a runat="server" style="color:white" href="~/About">About</a></li>
