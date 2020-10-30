@@ -222,7 +222,8 @@
         
                         <%--Modal footer--%>
                         <div class="modal-footer">
-                            <asp:Button ID="btnSave" CssClass="btn btn-success" data-dismiss="modal" runat="server" Text="Save" OnClick="btnSave_Click" />           
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <asp:Button ID="btnSave" CssClass="btn btn-success" runat="server" Text="Save" OnClick="btnSave_Click" />           
                         </div>
         
                       </div>
