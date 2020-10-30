@@ -47,5 +47,11 @@ namespace CyberCity
             cnn.Close();
             tblConfirmation.Visible = true;
         }
+
+        protected void btnAddEvents_Click(object sender, EventArgs e)
+        {
+            Session["Program"] = txtProgramName.Text;
+            Response.Redirect("CreateEvent.aspx");
+        }
     }
 }
