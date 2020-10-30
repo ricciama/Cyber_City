@@ -25,6 +25,7 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventName" runat="server" placeholder="Event Name"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVEventName" runat="server" Text = "Required Field" ControlToValidate="txtEventName" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -32,11 +33,13 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventDate" runat="server" placeholder="Event Date" TextMode="Date"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVtxtEventDate" runat="server" Text = "Required Field" ControlToValidate="txtEventDate" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" placeholder="Event Time" TextMode="Time"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVtxtEventTime" runat="server" Text = "Required Field" ControlToValidate="txtEventTime" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -45,6 +48,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventLocation" runat="server" placeholder="Location Ex: Hartman Hall 1207" Width="250"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVtxtEventLocation" runat="server" Text = "Required Field" ControlToValidate="txtEventLocation" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -52,8 +56,8 @@
                         <div class="form-group">
                             <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control">
                                 <asp:ListItem Text="Select Program" Value="0"></asp:ListItem>
-
                             </asp:DropDownList>
+                       <asp:RequiredFieldValidator ID="RFVddlProgram" runat="server" Text = "Required Field" ControlToValidate="ddlProgram" InitialValue="0" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </asp:TableCell>
