@@ -15,6 +15,34 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            // Fills the string program with the session variable if it exists
+            string organization = null;
+            int organizationID = -1;
+
+            if (Session["Organization"] != null)
+            {
+                organization = Session["Organization"].ToString();
+
+                String student = "Select OrganizationID from Organization where Name = '" + organization + "'";
+                SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                SqlCommand sqlCommand2 = new SqlCommand(student, sqlConnection2);
+
+                sqlConnection2.Open();
+
+                SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
+
+                while (sqlRead.Read())
+                {
+
+                    organizationID = Int32.Parse(sqlRead["OrganizationID"].ToString());
+                }
+                sqlRead.Close();
+                sqlConnection2.Close();
+            }
+
+
+
             //fill Drop down list
             if (!Page.IsPostBack)
             {
@@ -41,7 +69,11 @@ namespace CyberCity
                         con.Close();
                     }
                 }
-                //ddlOrgName.Items.Insert(0, new ListItem("Select Organization or School", "0"));
+            }
+
+            if (Session["Organization"] != null)
+            {
+                ddlOrgName.SelectedIndex = organizationID + 1;
             }
         }
     protected void btnRegister_Click(object sender, EventArgs e)

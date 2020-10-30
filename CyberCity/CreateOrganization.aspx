@@ -75,6 +75,15 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+        <asp:Table ID ="tblAddOrgRep" runat="server" HorizontalAlign="Right" CellPadding="50">
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="1">
+                    <div class="form-group">
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddOrgRep" runat="server" Text="Add Organizational Representative " OnClick="btnAddOrgRep_Click"/>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
         <br />
     </asp:Panel>
 

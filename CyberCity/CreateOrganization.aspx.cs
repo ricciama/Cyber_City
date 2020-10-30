@@ -18,8 +18,6 @@ namespace CyberCity
 
         protected void btnCreateOrg_Click(object sender, EventArgs e)
         {
-     
-
 
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
 
@@ -72,6 +70,12 @@ namespace CyberCity
                 cnn.Close();
                 tblConfirmation.Visible = true;
             }
+        }
+
+        protected void btnAddOrgRep_Click(object sender, EventArgs e)
+        {
+            Session["Organization"] = txtOrgName.Text;
+            Response.Redirect("OrgRepAccount.aspx");
         }
     }
 }
