@@ -25,6 +25,7 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgName" runat="server" placeholder="Organization Name"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVtxtOrgName" runat="server" Text = "Required Field" ControlToValidate="txtOrgName" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -32,6 +33,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgAddress" runat="server" placeholder="800 S Main Street Harrisonburg VA 22801"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVtxtOrgAddress" runat="server" Text = "Required Field" ControlToValidate="txtOrgAddress" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -41,11 +43,13 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgContactName" runat="server" placeholder="Primary Contact Name"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVOrgContactName" runat="server" Text = "Required Field" ControlToValidate="txtOrgContactName" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVEOrgPhone" runat="server" Text = "Required Field" ControlToValidate="txtOrgPhone" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -54,6 +58,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVOrgEmail" runat="server" Text = "Required Field" ControlToValidate="txtOrgEmail" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

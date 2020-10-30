@@ -24,11 +24,13 @@
                 <asp:TableCell CssClass="cellPadding" HorizontalAlign="Center">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtProgramName" runat="server" placeholder="Program Name"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVProgramName" runat="server" Text = "Required Field" ControlToValidate="txtProgramName" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell CssClass="cellPadding" HorizontalAlign="Center">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtProgramDateTime" runat="server" placeholder="Program Time" TextMode="Date"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVProgramDateTime" runat="server" Text = "Required Field" ControlToValidate="txtProgramDateTime" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
