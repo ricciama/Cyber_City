@@ -11,116 +11,134 @@ namespace CyberCity
 {
 
 
-    public partial class OrgRepAccount
+    public partial class ORFirstTimeLogin
     {
 
         /// <summary>
-        /// OrgRepAcct control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel OrgRepAcct;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Table1 control.
+        /// OrgRepFirstTimeLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Panel OrgRepFirstTimeLogin;
 
         /// <summary>
-        /// txtOrgRepFN control.
+        /// tblOrgRepFirstTimeLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepFN;
+        protected global::System.Web.UI.WebControls.Table tblOrgRepFirstTimeLogin;
 
         /// <summary>
-        /// txtOrgRepLN control.
+        /// txtOrgRepPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepLN;
+        protected global::System.Web.UI.WebControls.TextBox txtOrgRepPhone;
 
         /// <summary>
-        /// txtOrgRepEmail control.
+        /// lblLunch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepEmail;
+        protected global::System.Web.UI.WebControls.Label lblLunch;
 
         /// <summary>
-        /// txtCode control.
+        /// chbxLunch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCode;
+        protected global::System.Web.UI.WebControls.CheckBox chbxLunch;
 
         /// <summary>
-        /// ddlOrgName control.
+        /// lblGrade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrgName;
+        protected global::System.Web.UI.WebControls.Label lblGrade;
 
         /// <summary>
-        /// lblUserName control.
+        /// chkElementary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.WebControls.CheckBox chkElementary;
 
         /// <summary>
-        /// txtUsernme control.
+        /// chkSixth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsernme;
+        protected global::System.Web.UI.WebControls.CheckBox chkSixth;
 
         /// <summary>
-        /// lblPassword control.
+        /// chkSeventh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
+        protected global::System.Web.UI.WebControls.CheckBox chkSeventh;
 
         /// <summary>
-        /// txtPassword control.
+        /// chkEight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.CheckBox chkEight;
 
         /// <summary>
-        /// btnRegister control.
+        /// chkHighSchool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.CheckBox chkHighSchool;
+
+        /// <summary>
+        /// chkNone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkNone;
+
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
 
         /// <summary>
         /// tblConfirmation control.

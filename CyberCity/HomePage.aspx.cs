@@ -38,6 +38,27 @@ namespace CyberCity
                     }
                     sc.Close();
                 }
+                if (Session["UserType"].ToString().Equals("OR"))
+                {
+                    SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
+
+                    sc.Open();
+
+                    String sqlQuery = "Select ISNULL(PhoneNumber, 'flag') from [OrgRep] where [Username] = @Username";
+
+                    SqlCommand sqlCommand = new SqlCommand(sqlQuery, sc);
+
+                    sqlCommand.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+
+                    string TShirtSize = sqlCommand.ExecuteScalar().ToString();
+
+                    if (TShirtSize.Equals("flag"))
+                    {
+                        sc.Close();
+                        Response.Redirect("ORFirstTimeLogin.aspx");
+                    }
+                    sc.Close();
+                }
             }
         }
 

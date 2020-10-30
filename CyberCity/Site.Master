@@ -80,7 +80,6 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="navMain">Create Account<span class="caret"></span></a>
                                     <ul class="dropdown-menu" aria-labelledby="navMain">
-                                        <li><a class="dropdown-item" href="OrgRepAccount.aspx">Organizational Representative</a></li>
                                         <li><a class="dropdown-item" href="ParentAccount.aspx">Parent</a></li>
                                     </ul>
                                 </li>

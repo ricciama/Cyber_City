@@ -135,6 +135,7 @@
     <Content Include="Images\jmuback.jpg" />
     <Content Include="Images\jmuquad.jpg" />
     <Content Include="Images\quad.jpg" />
+    <Content Include="ORFirstTimeLogin.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -365,6 +366,13 @@
     </Compile>
     <Compile Include="FirstTimeLoginVolunteer.aspx.designer.cs">
       <DependentUpon>FirstTimeLoginVolunteer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ORFirstTimeLogin.aspx.cs">
+      <DependentUpon>ORFirstTimeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ORFirstTimeLogin.aspx.designer.cs">
+      <DependentUpon>ORFirstTimeLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrgRepAccount.aspx.cs">
       <DependentUpon>OrgRepAccount.aspx</DependentUpon>

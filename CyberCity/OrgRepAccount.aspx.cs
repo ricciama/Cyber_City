@@ -77,8 +77,8 @@ namespace CyberCity
 
             cnn = new SqlConnection(connectionString);
 
-            String sql = "Insert into [OrgRep] (FName, LName, Email, PhoneNumber, OrganizationID, Code, GradesTaught,Lunchticket, Username) " +
-                "Values (@FName, @LName, @Email, @PhoneNumber, @OrganizationID, @Code, @GradesTaught, @Lunchticket, @Username)";
+            String sql = "Insert into [OrgRep] (FName, LName, Email, OrganizationID, Code, Username) " +
+                "Values (@FName, @LName, @Email, @OrganizationID, @Code, @Username)";
 
             sqlCommand = new SqlCommand(sql, cnn);
 
@@ -90,54 +90,9 @@ namespace CyberCity
             sqlCommand.Parameters.AddWithValue("@FName", HttpUtility.HtmlEncode(txtOrgRepFN.Text));
             sqlCommand.Parameters.AddWithValue("@LName", HttpUtility.HtmlEncode(txtOrgRepLN.Text));
             sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgRepEmail.Text));
-            sqlCommand.Parameters.AddWithValue("@PhoneNumber", HttpUtility.HtmlEncode(txtOrgRepPhone.Text));
             sqlCommand.Parameters.AddWithValue("@OrganizationID", HttpUtility.HtmlEncode(ddlOrgName.SelectedItem.Value));
             sqlCommand.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtCode.Text));
-                sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
-
-            //checks grades taught and stores in databas
-            String gradesTaught = "";
-            if (chkElementary.Checked) {
-                gradesTaught += "Elementary ";
-
-            }
-            if (chkSixth.Checked)
-            {
-                gradesTaught += "Sixth ";
-
-            }
-            if (chkSeventh.Checked)
-            {
-                gradesTaught += "Seventh ";
-
-            }
-            if (chkEight.Checked)
-            {
-                gradesTaught += "Eighth ";
-
-            }
-            if (chkHighSchool.Checked)
-            {
-                gradesTaught += "High School ";
-
-            }
-            if (chkNone.Checked)
-            {
-                gradesTaught += "None ";
-
-            }
-
-
-            sqlCommand.Parameters.AddWithValue("@GradesTaught", HttpUtility.HtmlEncode(gradesTaught));
-
-            //Converts the lunchTicket checkbox to an integer in order to be stored in the database
-            int lunchTicket = 0;
-            if (chkLunch.Checked == true)
-            {
-                lunchTicket = 1;
-            }
-            sqlCommand.Parameters.AddWithValue("@LunchTicket", lunchTicket);
-
+            sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsernme.Text));
 
             sqlCommand.ExecuteNonQuery();
 
@@ -151,7 +106,7 @@ namespace CyberCity
             SqlCommand createUser = new SqlCommand();
             createUser.Connection = sc;
             // INSERT USER RECORD
-            createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'V')";
+            createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'OR')";
             createUser.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtOrgRepFN.Text)));
             createUser.Parameters.Add(new SqlParameter("@LName", HttpUtility.HtmlEncode(txtOrgRepLN.Text)));
             createUser.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
