@@ -40,7 +40,7 @@ namespace CyberCity
             while (sqlRead.Read())
             {
                 studentID = Int32.Parse(sqlRead["StudentID"].ToString());
-    
+
             }
             sqlRead.Close();
             sqlConnection2.Close();
@@ -56,10 +56,10 @@ namespace CyberCity
 
             cnn = new SqlConnection(connectionString);      
 
-            String sql = "Insert into [StudentRegistration] (StudentID, Code, ComputerExperience, InternetAccess, ComputerAccess, " +
-                "FirstTime, LunchTicket, EmergencyContactName, EmergencyContactNumber, EmergencyContactRelToStudent, Notes, " +
-                "Allergies, PhotoConsent Values (@StudentID, @Code, @ComputerExperience, @InternetAccess, @ComputerAccess," +
-                "@FirstTime, @LunchTicket, @EmergencyContactName, @EmergencyContactNumber, @EmergencyContactRelToStudent, @Notes, " +
+            String sql = "INSERT INTO [StudentRegistration] (StudentID, Code, ComputerExperience, InternetAccess, ComputerAccess, " +
+                "FirstTime, LunchTicket, EmergencyContactName, EmergencyContactNumber, EmergContactRelToStudent, Notes, " +
+                "Allergies, PhotoConsent) VALUES (@StudentID, @Code, @ComputerExperience, @InternetAccess, @ComputerAccess, " +
+                "@FirstTime, @LunchTicket, @EmergencyContactName, @EmergencyContactNumber, @EmergContactRelToStudent, @Notes, " +
                 "@Allergies, @PhotoConsent)";
 
             sqlCommand = new SqlCommand(sql, cnn);
@@ -67,6 +67,7 @@ namespace CyberCity
             cnn.Open();
 
             int lunchTicket = 0;
+            int photoConsent = 0;
 
             sqlCommand.Parameters.AddWithValue("@StudentID", HttpUtility.HtmlEncode(studentID));
             sqlCommand.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtTeacherCode.Text));
@@ -81,10 +82,14 @@ namespace CyberCity
             sqlCommand.Parameters.AddWithValue("@LunchTicket", HttpUtility.HtmlEncode(lunchTicket));
             sqlCommand.Parameters.AddWithValue("@EmergencyContactName", HttpUtility.HtmlEncode(txtEMName.Text));
             sqlCommand.Parameters.AddWithValue("@EmergencyContactNumber", HttpUtility.HtmlEncode(txtEMNumber.Text));
-            sqlCommand.Parameters.AddWithValue("@EmergencyContactRelToStudent", HttpUtility.HtmlEncode(txtEMRelationship.Text));
+            sqlCommand.Parameters.AddWithValue("@EmergContactRelToStudent", HttpUtility.HtmlEncode(txtEMRelationship.Text));
             sqlCommand.Parameters.AddWithValue("@Notes", HttpUtility.HtmlEncode(txtMisc.Text));
             sqlCommand.Parameters.AddWithValue("@Allergies", HttpUtility.HtmlEncode(txtAllergies.Text));
-            sqlCommand.Parameters.AddWithValue("@PhotoConsent", HttpUtility.HtmlEncode(ddlPhotoPermission.SelectedItem.Value));
+            if (ddlPhotoPermission.SelectedItem.Value.Equals("Yes"))
+            {
+                photoConsent = 1;
+            }
+            sqlCommand.Parameters.AddWithValue("@PhotoConsent", HttpUtility.HtmlEncode(photoConsent));
 
             sqlCommand.ExecuteNonQuery();
 
