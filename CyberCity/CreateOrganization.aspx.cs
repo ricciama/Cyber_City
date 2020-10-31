@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -63,19 +64,58 @@ namespace CyberCity
                 sqlCommand.Parameters.AddWithValue("@PhoneNumber", HttpUtility.HtmlEncode(txtOrgPhone.Text));
                 sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgEmail.Text));
 
-
                 sqlCommand.ExecuteNonQuery();
 
                 sqlCommand.Dispose();
                 cnn.Close();
+
+                txtOrgAddress.Text = "";
+                txtOrgContactName.Text = "";
+                txtOrgEmail.Text = "";
+                txtOrgPhone.Text = "";
+
+                confirmationlbl.Text = "Organization Successfully Created!";
+                confirmationlbl.ForeColor = Color.Green;
+                tblConfirmation.Visible = true;
+
+
+            } else if (orgCount != 0)
+            {
+                confirmationlbl.Text = "Organization already exits!";
+                confirmationlbl.ForeColor = Color.Red;
                 tblConfirmation.Visible = true;
             }
         }
 
         protected void btnAddOrgRep_Click(object sender, EventArgs e)
         {
-            Session["Organization"] = txtOrgName.Text;
-            Response.Redirect("OrgRepAccount.aspx");
+
+            SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
+
+
+            // Tests if the username is available
+            String sqlQuery3 = "Select Count(1) from [Organization] where [Name] = @Name";
+
+            SqlCommand sqlCommand1 = new SqlCommand(sqlQuery3, sqlConnection1);
+
+            sqlCommand1.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtOrgName.Text));
+
+            sqlConnection1.Open();
+
+            int orgCount = Convert.ToInt32(sqlCommand1.ExecuteScalar());
+
+            sqlConnection1.Close();
+
+            if (orgCount > 0)
+            {
+                Session["Organization"] = txtOrgName.Text;
+                Response.Redirect("OrgRepAccount.aspx");
+            } else
+            {
+                confirmationlbl.Text = "Please create an organization before adding representatives!";
+                confirmationlbl.ForeColor = Color.Red;
+                tblConfirmation.Visible = true;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -75,6 +76,8 @@ namespace CyberCity
             {
                 ddlOrgName.SelectedIndex = organizationID + 1;
             }
+
+            Session["Organization"] = null;
         }
     protected void btnRegister_Click(object sender, EventArgs e)
     {
@@ -152,12 +155,25 @@ namespace CyberCity
             setPass.Parameters.Add(new SqlParameter("@Password", HttpUtility.HtmlEncode(PasswordHash.HashPassword(txtPassword.Text)))); // hash entered password
             setPass.ExecuteNonQuery();
 
+                txtCode.Text = "";
+                txtOrgRepEmail.Text = "";
+                txtOrgRepFN.Text = "";
+                txtOrgRepLN.Text = "";
+                txtUsernme.Text = "";
+
             sc.Close();
-            tblConfirmation.Visible = true;
+
+                confirmationlbl.Text = "Organizatational Representative Created Sucessfully!";
+                confirmationlbl.ForeColor = Color.Green;
+                confirmationlbl.Visible = true;
+
+            } else if (errorCheck != 0)
+            {
+                confirmationlbl.Text = "Username already exists please select a new one!";
+                confirmationlbl.ForeColor = Color.Red;
+                confirmationlbl.Visible = true;
             }
            
+        }
     }
-
-
-    }
-    }
+}

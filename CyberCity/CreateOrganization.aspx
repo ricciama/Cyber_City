@@ -67,7 +67,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCreateOrg" runat="server" Text="Create Program" OnClick="btnCreateOrg_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCreateOrg" runat="server" Text="Create Organization" OnClick="btnCreateOrg_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
