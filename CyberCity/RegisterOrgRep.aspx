@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterOrgRep.aspx.cs" Inherits="CyberCity.RegisterOrgRep" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/CreatingEntity.css" rel="stylesheet" />
+     <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
    
         <br />
@@ -93,7 +93,7 @@
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -116,8 +116,6 @@
         </div>      
 
     </asp:Panel>
-
-
 
 
 </asp:Content>

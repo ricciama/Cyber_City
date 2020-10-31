@@ -52,9 +52,9 @@ namespace CyberCity
 
                 GetProgram();
                 GetOrganization();
-                
-                
-            
+
+
+
             }
 
             //// populate organization drop down
