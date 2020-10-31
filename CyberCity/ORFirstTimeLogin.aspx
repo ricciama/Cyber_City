@@ -34,6 +34,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgRepPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVPhone" runat="server" Text="Required Field" ForeColor="Red" ControlToValidate="txtOrgRepPhone" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
