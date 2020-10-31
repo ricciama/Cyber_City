@@ -12,3 +12,14 @@ table{
 .cellPadding{
     padding: 10px;
 }
+
+.floatLeft {
+    width:50%;
+    float: left;
+}
+
+.floatRight {
+    width: 50%;
+    float: right;
+}
+
