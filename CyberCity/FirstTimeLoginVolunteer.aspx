@@ -39,12 +39,14 @@
                                         <asp:ListItem Value="Female" Text="Female"></asp:ListItem>
                                         <asp:ListItem Value="Non-Binary" Text="Non-Binary"></asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RFVGender" runat="server" ControlToValidate="ddlGender" InitialValue="0" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                         <div class="form-group">
-                            <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVPhone" runat="server" Text="Required Field" Font-Bold="true" ForeColor="Red" ControlToValidate="txtVolunteerPhone" SetFocusOnError="true" ></asp:RequiredFieldValidator>
                         </div>
                     </asp:TableCell>
                 </asp:TableRow>
@@ -60,13 +62,14 @@
                                 <asp:ListItem Value="Large" Text="Large"></asp:ListItem>
                                 <asp:ListItem Value="X-Large" Text="X-Large"></asp:ListItem>
                             </asp:DropDownList>
+                                  <asp:RequiredFieldValidator ID="RFVShirtSize" runat="server" ControlToValidate="ddlShirtSize" InitialValue="0" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                         </div>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                         <div class="form-group form-control">
-                            <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
+                            <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                          
                             <asp:CheckBox ID="chkLunch" runat="server"/>
-                        </div>
+                      </div>
                     </asp:TableCell>           
                 </asp:TableRow>
                 <%-- Update Button --%>

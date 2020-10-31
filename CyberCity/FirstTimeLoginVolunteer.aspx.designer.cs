@@ -51,6 +51,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlGender;
 
         /// <summary>
+        /// RFVGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVGender;
+
+        /// <summary>
         /// txtVolunteerPhone control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtVolunteerPhone;
 
         /// <summary>
+        /// RFVPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhone;
+
+        /// <summary>
         /// ddlShirtSize control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlShirtSize;
+
+        /// <summary>
+        /// RFVShirtSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVShirtSize;
 
         /// <summary>
         /// Label2 control.
