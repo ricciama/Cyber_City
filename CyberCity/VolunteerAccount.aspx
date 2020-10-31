@@ -26,19 +26,22 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtVolunteerFN" runat="server" placeholder="First Name"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVFirstName" runat="server" ControlToValidate="txtVolunteerFN" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtVolunteerLN" runat="server" placeholder="Last Name"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVLastName" runat="server" ControlToValidate="txtVolunteerLN" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Phone and email --%>
+            <%-- Email --%>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
                         <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ControlToValidate="txtVolunteerEmail" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -55,12 +58,14 @@
                     <asp:Label ID="lblUserName" runat="server" Text="Username" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtUsernme" runat="server" placeholder="Username"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVUsernme" runat="server" ControlToValidate="txtUsernme" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVPassword" runat="server" ControlToValidate="txtPassword" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -70,6 +75,13 @@
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                     </div>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Volunteer Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

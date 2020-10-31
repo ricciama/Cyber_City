@@ -224,6 +224,7 @@
                                     <li><a class="dropdown-item" href="EditOrgRep.aspx">Organizational Representative</a></li>
                                  </ul>
                             </li>
+                            <li><a runat="server" style="color:white" href="Queries.aspx">Queries</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlRegister">Register Entity<span class="caret"></span></a>
                                 <ul class="dropdown-menu" aria-labelledby="ddlRegister">

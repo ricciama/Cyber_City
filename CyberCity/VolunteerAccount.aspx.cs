@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Drawing;
 
 namespace CyberCity
 {
@@ -24,7 +25,7 @@ namespace CyberCity
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
 
             // Tests if the username is available
-            String sqlQuery3 = "Select Count(1) from [Person] where [Username] = @Username";
+            String sqlQuery3 = "Select Count(*) from [Person] where [Username] = @Username";
 
             SqlCommand sqlCommand1 = new SqlCommand(sqlQuery3, sqlConnection1);
 
@@ -90,14 +91,26 @@ namespace CyberCity
                 setPass.ExecuteNonQuery();
 
                 sc.Close();
+
+                // Clears Textboxes
+                txtVolunteerFN.Text = null;
+                txtVolunteerLN.Text = null;
+                txtVolunteerEmail.Text = null;
+                txtUsernme.Text = null;
+                txtPassword.Text = null;
+
+                confirmationlbl.Text = "Volunteer Created Successfully!";
+                confirmationlbl.ForeColor = Color.Green;
+                tblConfirmation.Visible = true;
+
+            } else if (userNameCount != 0)
+            {
+                confirmationlbl.Text = "Username already exists please select a new one!";
+                confirmationlbl.ForeColor = Color.Red;
+                tblConfirmation.Visible = true;
             }
 
-            // Clears Textboxes
-            txtVolunteerFN.Text = null;
-            txtVolunteerLN.Text = null;
-            txtVolunteerEmail.Text = null;
-            txtUsernme.Text = null;
-            txtPassword.Text = null;
         }
+
     }
 }

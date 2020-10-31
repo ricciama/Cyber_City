@@ -110,6 +110,13 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+        <asp:Table ID="tblFeedback" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblFeedback" runat="server" Text="Profile Created Successfully!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </asp:Panel>
 
 
