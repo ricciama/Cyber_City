@@ -224,6 +224,7 @@
                                     <li><a class="dropdown-item" href="EditOrgRep.aspx">Organizational Representative</a></li>
                                  </ul>
                             </li>
+                            <li><a runat="server" style="color:white" href="Queries.aspx">Queries</a></li>
                             <li><a runat="server" style="color:white" href="CoordinatorAccount.aspx">Create Coordinator Account</a></li>
                             <li><a runat="server" style="color:white" href="CoordinatorProfile.aspx">Profile</a></li>
                             
