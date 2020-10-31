@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -20,14 +21,11 @@ namespace CyberCity
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            int errorCheck = 0;
-
 
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
-
-            
+      
             // Tests if the username is available
-            String sqlQuery3 = "Select Count(1) from [Person] where [Username] = @Username";
+            String sqlQuery3 = "Select Count (*) from [Person] where [Username] = @Username";
 
             SqlCommand sqlCommand1 = new SqlCommand(sqlQuery3, sqlConnection1);
 
@@ -39,7 +37,7 @@ namespace CyberCity
 
             sqlConnection1.Close();
 
-            if (errorCheck == 0)
+            if (userNameCount == 0)
             {
 
                 string connectionString;
@@ -100,6 +98,27 @@ namespace CyberCity
                 setPass.ExecuteNonQuery();
 
                 sc.Close();
+
+                txtParentFN.Text = "";
+                txtParentLN.Text = "";
+                txtStudentFN.Text = "";
+                txtStudentLN.Text = "";
+                txtPassword.Text = "";
+                txtStudentDOB.Text = "";
+                txtUsernme.Text = "";
+                ddlEthnicity.SelectedIndex = -1;
+                ddlGender.SelectedIndex = -1;
+
+                lblFeedback.Text = "Profile Created Successfully. Please login above!";
+                lblFeedback.ForeColor = Color.Green;
+                lblFeedback.Visible = true;
+
+            } else if (userNameCount != 0)
+            {
+                lblFeedback.Text = "Username is already taken please enter a different one.";
+                lblFeedback.ForeColor = Color.Red;
+                lblFeedback.Visible = true;
+
             }
         }
     }

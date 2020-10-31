@@ -72,6 +72,8 @@ namespace CyberCity
             {
                 ddlProgram.SelectedIndex = programID + 1;
             }
+
+            Session["Program"] = null;
         }
 
         protected void btnCreateEvent_Click(object sender, EventArgs e)
@@ -107,8 +109,13 @@ namespace CyberCity
 
                 sqlCommand.Dispose();
                 cnn.Close();
-            tblConfirmation.Visible = true;
 
+                txtEventName.Text = "";
+                txtEventLocation.Text = "";
+                txtEventDate.Text = "";
+                txtEventTime.Text = "";
+
+                tblConfirmation.Visible = true;
 
         }
     }
