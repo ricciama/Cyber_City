@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrgRep.aspx.cs" Inherits="CyberCity.EditOrgRep" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
      <link href="css/CreatingEntity.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     
     <br />
     <br />
