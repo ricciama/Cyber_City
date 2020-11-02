@@ -31,7 +31,7 @@ namespace CyberCity
                 ddlOrgRep.Items.Insert(0, "No Organizational Reps Available");
                 
             }
-            ProgramSchedule();
+            //ProgramSchedule();
 
         }
 
@@ -50,10 +50,8 @@ namespace CyberCity
                 ddlSelectProgram.DataBind();
                 ddlSelectProgram.Items.Insert(0, new ListItem("Select Program", "-1"));
                 ddlSelectProgram.SelectedIndex = 0;
-
                 
             }
-
             
         }
 
@@ -81,48 +79,63 @@ namespace CyberCity
                     ddlEvent.DataBind();
                     ddlEvent.Items.Insert(0, new ListItem("Select Event", "-1"));
                     ddlEvent.SelectedIndex = 0;
-
-                    //string schedule = "SELECT Name, Time, ProgramID FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
-                    //DataSet ds = new DataSet();
-                    //DataTable dt = new DataTable();
-                    //lblSchedule.Visible = true;
-                    //SqlCommand cmd = new SqlCommand(schedule, con);
-                    //SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                    //sched.Fill(ds);
-                    //programSchedule.DataSource = ds;
-                    //programSchedule.DataBind();
-
+                    ProgramSchedule();
                 }
-
             }
             else
             {
+                programSchedule.Visible = false;
                 ddlEvent.Items.Insert(0, "No Events Available");
                 ddlEvent.DataBind();
             }
+
+            string schedule = "SELECT Name, Date, Time FROM Event WHERE ProgramID = " + ddlSelectProgram.SelectedValue;
+            var adapter = new SqlDataAdapter(schedule, con);
+            var dataSet2 = new DataSet();
+            adapter.Fill(dataSet2);
+            
+            programSchedule.DataSource = dataSet2;
+            programSchedule.DataBind();
+            
+
+
 
         }
 
         // populate gridview
         public void ProgramSchedule()
         {
+            //SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            //string ProgramID = ddlSelectProgram.SelectedValue.ToString();
+            //string schedule = "SELECT Name, Date, Time FROM Event";
+            //DataSet ds = new DataSet();
+            //DataTable dt = new DataTable();
+            //using (con)
+            //{
+            //    //lblSchedule.Visible = true;
+            //    SqlCommand cmd = new SqlCommand(schedule, con);
+            //    SqlDataAdapter sched = new SqlDataAdapter(cmd);
+            //    sched.Fill(ds);
+            //    programSchedule.DataSource = ds;
+            //    programSchedule.DataBind();
+
+            //}
+
+            programSchedule.DataSource = LoadData();
+            programSchedule.DataBind();
+
+
+        }
+
+        private DataSet LoadData()
+        {
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string ProgramID = ddlSelectProgram.SelectedValue.ToString();
-            string schedule = "SELECT Name, Time, ProgramID FROM Event";
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            using (con)
-            {              
-                //lblSchedule.Visible = true;
-                SqlCommand cmd = new SqlCommand(schedule, con);
-                SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                sched.Fill(ds);
-                programSchedule.DataSource = ds;
-                programSchedule.DataBind();
-               
-            }
+            string schedule = "SELECT Name, Date, Time FROM Event";
+            var adapter = new SqlDataAdapter(schedule, con);
+            var dataSet = new DataSet();
+            adapter.Fill(dataSet);
 
-
+            return dataSet;
         }
 
         // retrieves the organization that was picked from dropdown
