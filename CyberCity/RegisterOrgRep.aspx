@@ -102,18 +102,30 @@
             <br />
             <hr />
             <br />
+        
 
         <%-- Table to Display Program Schedule --%>
-        <div class="container">
-            <div class="floatLeft">
-                <asp:GridView 
-                    runat="server" 
-                    ID="programSchedule" 
-                    AlternatingRowStyle-BackColor="MediumPurple" 
-                    BorderColor="Black">         
-                </asp:GridView>
+        <%--<div class="vertical">--%>
+            <div class="container">
+                <div class="floatLeft">
+
+                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" ></asp:Label>
+                    <asp:GridView 
+                        runat="server" 
+                        ID="programSchedule" 
+                        AlternatingRowStyle-BackColor="#450084" 
+                        BorderColor="Black" 
+                        AllowPaging="true" 
+                        AutoGenerateColumns="true" 
+                        AlternatingRowStyle-ForeColor="White" Font-Size="Large">  
+                               
+                    </asp:GridView>
+
+                </div>
             </div>
-        </div>      
+        <%--</div>--%>
+
+      
 
     </asp:Panel>
 

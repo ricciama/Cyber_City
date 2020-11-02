@@ -16,10 +16,21 @@ table{
 .floatLeft {
     width:50%;
     float: left;
+    padding-bottom:30px;
 }
 
 .floatRight {
     width: 50%;
     float: right;
+}
+
+.vertical{
+    border-left: 6px solid grey;
+    height: auto;
+    position:absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+
 }
 

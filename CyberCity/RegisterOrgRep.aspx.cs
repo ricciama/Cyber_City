@@ -22,104 +22,20 @@ namespace CyberCity
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //populate pogram drop down
+            
             if (!Page.IsPostBack)
             {
-                //String sqlQuery2 = "Select ProgramID, Name from Program";
-                //String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
-
-                //using (SqlConnection con = new SqlConnection(sqlConnection2))
-                //{
-                //    using (SqlCommand cmd = new SqlCommand(sqlQuery2))
-                //    {
-                //        cmd.CommandType = CommandType.Text;
-                //        cmd.Connection = con;
-                //        con.Open();
-                //        using (SqlDataReader sdr = cmd.ExecuteReader())
-                //        {
-                //            while (sdr.Read())
-                //            {
-                //                ListItem item = new ListItem();
-                //                item.Text = sdr["Name"].ToString();
-                //                item.Value = sdr["ProgramID"].ToString();
-                //                ddlSelectProgram.Items.Add(item);
-                //            }
-                //        }
-                //        con.Close();
-                //    }
-                //}
-                //ddlSelectProgram.Items.Insert(0, new ListItem("Select Program", "0"));
-
                 GetProgram();
                 GetOrganization();
-
-
-
+                ddlEvent.Items.Insert(0, "No Events Available");
+                ddlOrgRep.Items.Insert(0, "No Organizational Reps Available");
+                
             }
-
-            //// populate organization drop down
-            //if (!Page.IsPostBack)
-            //{
-            //    String orgQuery = "Select OrganizationID, Name from Organization";
-            //    String orgSql = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
-
-            //    using (SqlConnection con = new SqlConnection(orgSql))
-            //    {
-            //        using (SqlCommand cmd = new SqlCommand(orgQuery))
-            //        {
-            //            cmd.CommandType = CommandType.Text;
-            //            cmd.Connection = con;
-            //            con.Open();
-            //            using (SqlDataReader sdr = cmd.ExecuteReader())
-            //            {
-            //                while (sdr.Read())
-            //                {
-            //                    ListItem item = new ListItem();
-            //                    item.Text = sdr["Name"].ToString();
-            //                    item.Value = sdr["OrganizationID"].ToString();
-            //                    ddlSelectOrg.Items.Add(item);
-            //                }
-            //            }
-            //            con.Close();
-            //        }
-            //    }
-            //    ddlSelectOrg.Items.Insert(0, new ListItem("Select Organization", "0"));
-            //}
-
-            //// populate org rep drop down
-            //int organization = Int32.Parse(ddlSelectOrg.SelectedValue);
-
-            //if (!Page.IsPostBack)
-            //{
-            //    String orgQuery = "SELECT OrgRep.OrgRepID, OrgRep.FName + ' ' + OrgRep.LName as OrganizationlRep FROM Organization INNER JOIN OrgRep ON Organization.OrganizationID = OrgRep.OrganizationID WHERE OrgRep.OrganizationID = " + organization;
-            //    String orgSql = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
-
-            //    using (SqlConnection con = new SqlConnection(orgSql))
-            //    {
-            //        using (SqlCommand cmd = new SqlCommand(orgQuery))
-            //        {
-            //            cmd.CommandType = CommandType.Text;
-            //            cmd.Connection = con;
-            //            con.Open();
-            //            using (SqlDataReader sdr = cmd.ExecuteReader())
-            //            {
-            //                while (sdr.Read())
-            //                {
-            //                    ListItem item = new ListItem();
-            //                    item.Text = sdr["Name"].ToString();
-            //                    item.Value = sdr["OrgRepID"].ToString();
-            //                    ddlSelectOrg.Items.Add(item);
-            //                }
-            //            }
-            //            con.Close();
-            //        }
-            //    }
-            //    ddlSelectOrg.Items.Insert(0, new ListItem("Select Organization", "0"));
-            //}
-
-
+            ProgramSchedule();
 
         }
+
+        // retrieves the program that was selected from the dropdown 
         private void GetProgram()
         {
             String programQuery = "Select ProgramID, Name from Program";
@@ -134,15 +50,18 @@ namespace CyberCity
                 ddlSelectProgram.DataBind();
                 ddlSelectProgram.Items.Insert(0, new ListItem("Select Program", "-1"));
                 ddlSelectProgram.SelectedIndex = 0;
+
+                
             }
 
-
-
-
+            
         }
 
+
+        // selected index change for the program that was picked
         protected void ddl_Event_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             ds2.Clear();
             string ProgramID;
             string ProgramName;
@@ -162,19 +81,55 @@ namespace CyberCity
                     ddlEvent.DataBind();
                     ddlEvent.Items.Insert(0, new ListItem("Select Event", "-1"));
                     ddlEvent.SelectedIndex = 0;
+
+                    //string schedule = "SELECT Name, Time, ProgramID FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+                    //DataSet ds = new DataSet();
+                    //DataTable dt = new DataTable();
+                    //lblSchedule.Visible = true;
+                    //SqlCommand cmd = new SqlCommand(schedule, con);
+                    //SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                    //sched.Fill(ds);
+                    //programSchedule.DataSource = ds;
+                    //programSchedule.DataBind();
+
                 }
+
             }
             else
             {
                 ddlEvent.Items.Insert(0, "No Events Available");
                 ddlEvent.DataBind();
             }
+
         }
 
+        // populate gridview
+        public void ProgramSchedule()
+        {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            string ProgramID = ddlSelectProgram.SelectedValue.ToString();
+            string schedule = "SELECT Name, Time, ProgramID FROM Event";
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            using (con)
+            {              
+                //lblSchedule.Visible = true;
+                SqlCommand cmd = new SqlCommand(schedule, con);
+                SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                sched.Fill(ds);
+                programSchedule.DataSource = ds;
+                programSchedule.DataBind();
+               
+            }
+
+
+        }
+
+        // retrieves the organization that was picked from dropdown
         private void GetOrganization()
         {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             String orgQuery = "Select OrganizationID, Name from Organization";
-
             da = new SqlDataAdapter(orgQuery, con);
             da.Fill(ds);
 
@@ -191,6 +146,7 @@ namespace CyberCity
 
         }
 
+        // selected index change for which organization that was picked
         protected void ddl_OrgRep_SelectedIndexChanged(object sender, EventArgs e)
         {
             ds.Clear();
@@ -223,6 +179,8 @@ namespace CyberCity
             }
 
         }
+
+
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
