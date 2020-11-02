@@ -108,6 +108,8 @@ namespace CyberCity
                 txtUsernme.Text = "";
                 ddlEthnicity.SelectedIndex = -1;
                 ddlGender.SelectedIndex = -1;
+                txtParentEmail.Text = "";
+                txtParentPhone.Text = "";
 
                 lblFeedback.Text = "Profile Created Successfully. Please login above!";
                 lblFeedback.ForeColor = Color.Green;

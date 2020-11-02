@@ -30,7 +30,7 @@
         </asp:Table>
         <br />
         <br />
-        <asp:Table ID="tbleCancle" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="center">
+        <asp:Table ID="tblCancel" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
                     <div class="form-group">
@@ -40,7 +40,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ID="cellConfirmation" HorizontalAlign="center" Visible="false">
-                    <asp:Label ID="lblConfirmation" runat="server" Text="Registration Canceled Successfully!" Font-Bold="true" ForeColor="Green" autopostback ="true"></asp:Label>
+                    <asp:Label ID="lblConfirmation" runat="server" Text="Registration Cancelled Successfully!" Font-Bold="true" ForeColor="Green" autopostback ="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
