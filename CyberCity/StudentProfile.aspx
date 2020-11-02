@@ -136,12 +136,12 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID="tblFeedback" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
+        <asp:Table ID="tblFeedback" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50" Visible="true">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblFeedback" runat="server" Text="Profile Created Successfully. Please login above!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
