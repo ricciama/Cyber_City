@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterOrgRep.aspx.cs" Inherits="CyberCity.RegisterOrgRep" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterVolunteer.aspx.cs" Inherits="CyberCity.RegisterVolunteer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <link href="css/CreatingEntity.css" rel="stylesheet" />
+    <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
    
         <br />
@@ -33,44 +33,29 @@
                         
                         <asp:UpdatePanel runat="server" ID="beans">
                             <ContentTemplate>
-                                    <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged = "ddl_Event_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectProgram_SelectedIndexChanged"></asp:DropDownList>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Select Organization --%>
+            <%-- Select Volunteer --%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Right" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:Label ID="lblSelectOrg" runat="server" Text="Select Organization"></asp:Label>
+                        <asp:Label ID="lblSelectVolunteer" runat="server" Text="Select Volunteer"></asp:Label>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:DropDownList ID="ddlSelectOrg" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddl_OrgRep_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlSelectVolunteer" runat="server" CssClass="form-control">
+                                    
+                                </asp:DropDownList>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                </asp:TableCell>
-            </asp:TableRow>
-            <%-- Select Org Rep --%>
-            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Right" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:Label ID="lblOrgRep" runat="server" Text="Select Organizational Representative"></asp:Label>
-                    </div>                   
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <ContentTemplate>
-                                <asp:DropDownList ID="ddlOrgRep" runat="server" CssClass="form-control"></asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                    </div>                    
                 </asp:TableCell>
             </asp:TableRow>
             <%-- Select Event --%>
@@ -102,11 +87,8 @@
             <br />
             <hr />
             <br />
-        
 
-        <%-- Table to Display Program Schedule --%>
-        <%--<div class="vertical">--%>
-            <div class="container">
+        <div class="container">
                 <div class="floatLeft">
                     <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" Visible="false" ></asp:Label>
                     <asp:GridView 
@@ -122,11 +104,5 @@
 
                 </div>
             </div>
-        <%--</div>--%>
-
-      
-
-    </asp:Panel>
-
-
+       </asp:Panel>
 </asp:Content>
