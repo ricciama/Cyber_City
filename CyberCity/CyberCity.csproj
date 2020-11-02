@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AboutStyle.css" />
     <Content Include="Contact.aspx" />
     <Content Include="ContactStyle.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -131,9 +132,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\background.png" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\cob.jpg" />
+    <Content Include="Images\comp.jpg" />
     <Content Include="Images\dukes.jpg" />
+    <Content Include="Images\glasses.jpg" />
+    <Content Include="Images\hand.JPG" />
+    <Content Include="Images\jmu15.JPG" />
     <Content Include="Images\jmuback.jpg" />
     <Content Include="Images\jmuquad.jpg" />
+    <Content Include="Images\man.JPG" />
+    <Content Include="Images\phone.jpg" />
+    <Content Include="Images\pic.jpg" />
     <Content Include="Images\quad.jpg" />
     <Content Include="ORFirstTimeLogin.aspx" />
     <Content Include="Queries.aspx" />

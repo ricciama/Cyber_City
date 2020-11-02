@@ -13,5 +13,20 @@ namespace CyberCity
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Contact.aspx");
+        }
+
+        protected void Unnamed_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("ParentAccount.aspx");
+        }
+
+        protected void Unnamed_Click2(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }
