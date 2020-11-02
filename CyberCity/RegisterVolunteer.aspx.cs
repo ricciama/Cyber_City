@@ -41,14 +41,32 @@ namespace CyberCity
                                 item.Text = sdr["VolunteerName"].ToString();
                                 item.Value = sdr["VolunteerID"].ToString();
                                 ddlSelectVolunteer.Items.Add(item);
+
                             }
                         }
-                        ddlSelectVolunteer.Items.Insert(0, new ListItem("Select Volunteer", "0"));
+                        ddlSelectVolunteer.Items.Insert(0, new ListItem("Select Volunteer", "-1"));
                         con2.Close();
                     }
 
                 }
+
+                //String sqlQuery2 = "Select VolunteerID, FName + ' '+ Lname as VolunteerName FROM Volunteer";
+                //SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
+                //sqlConnection2.Open();
+
+                //DataTable dt = new DataTable();
+                //SqlDataAdapter da = new SqlDataAdapter(sqlQuery2, sqlConnection2);
+                //da.Fill(dt);
+
+                //ddlSelectVolunteer.DataSource = dt;
+                //ddlSelectVolunteer.DataTextField = "VolunteerName";
+                //ddlSelectVolunteer.DataValueField = "VolunteerID";
+                //ddlSelectVolunteer.DataBind();
+                //sqlConnection2.Close();
+
                 GetProgram();
+                ProgramSchedule();
+                //VolunteerSchedule();
                 ddlEvent.Items.Insert(0, "No Events Available");
             }
             
@@ -106,8 +124,77 @@ namespace CyberCity
             }
         }
 
+        public void ProgramSchedule()
+        {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            string ProgramID = ddlSelectProgram.SelectedValue.ToString();
+            string schedule = "SELECT Name, Date, Time FROM Event";
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            using (con)
+            {
+                //lblSchedule.Visible = true;
+                SqlCommand cmd = new SqlCommand(schedule, con);
+                SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                sched.Fill(ds);
+                programSchedule.DataSource = ds;
+                programSchedule.DataBind();
+
+            }
+            
+        }
+
+        //public void VolunteerSchedule()
+        //{
+        //    SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+        //    string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
+        //    string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+        //    query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+        //    query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
+        //    query += "WHERE(VolunteerRegistration.VolunteerID = 1)";
+
+        //    DataSet volDS = new DataSet();
+        //    DataTable volDT = new DataTable();
+        //    using (volCon)
+        //    {
+        //        SqlCommand volCMD = new SqlCommand(query, volCon);
+        //        SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+        //        volDA.Fill(volDS);
+        //        volunteerSchedule.DataSource = volDS;
+        //        volunteerSchedule.DataBind();
+        //    }
+
+
+        //}
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void ddlSelectVolunteer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            volCon.Open();
+            string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
+
+            //string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            //query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+            //query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
+            //query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
+
+            string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
+
+
+
+            SqlCommand volCMD = new SqlCommand(query, volCon);
+            SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+            DataSet volDS = new DataSet();
+            volDA.Fill(volDS, "Volunteer");
+            volunteerSchedule.DataMember = "Volunteer";
+            volunteerSchedule.DataSource = volDS;
+            volunteerSchedule.DataBind();
+            volCon.Close();
 
         }
     }

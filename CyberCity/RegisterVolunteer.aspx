@@ -50,8 +50,7 @@
                     <div class="form-group">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:DropDownList ID="ddlSelectVolunteer" runat="server" CssClass="form-control">
-                                    
+                                <asp:DropDownList ID="ddlSelectVolunteer" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectVolunteer_SelectedIndexChanged">                                  
                                 </asp:DropDownList>
                             </ContentTemplate>
                         </asp:UpdatePanel>
@@ -88,9 +87,10 @@
             <hr />
             <br />
 
+        <%-- Gridview for Program Schedule --%>
         <div class="container">
                 <div class="floatLeft">
-                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" Visible="false" ></asp:Label>
+                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" ></asp:Label>
                     <asp:GridView 
                         runat="server" 
                         ID="programSchedule" 
@@ -98,11 +98,33 @@
                         BorderColor="Black" 
                         AllowPaging="true" 
                         AutoGenerateColumns="true" 
-                        AlternatingRowStyle-ForeColor="White" Font-Size="Large" HeaderStyle-HorizontalAlign="Center" >  
-                               
+                        AlternatingRowStyle-ForeColor="White" 
+                        Font-Size="Large">                           
                     </asp:GridView>
 
                 </div>
             </div>
+
+        <%-- Gridview for Volunteer Schedule --%>
+        <div class="container">
+            <div class="floatRight">
+                <asp:Label ID="lblVolSchedule" runat="server" Text="Volunteer Schedule" Font-Size="Large" Font-Bold="True"></asp:Label>
+                <asp:GridView 
+                    ID="volunteerSchedule"
+                    runat="server" 
+                    AlternatingRowStyle-BackColor="#450084" 
+                    BorderColor="Black" AllowPaging="true" 
+                    AutoGenerateColumns="true" 
+                    AutoGenerateEditButton="true" 
+                    AlternatingRowStyle-ForeColor="White" 
+                    Font-Size="Large">
+                </asp:GridView>
+
+            </div>
+
+        </div>
+
+<%--        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<% $ConnectionStrings:CyberCity %>" SelectCommand="Select * From Volunteer" ></asp:SqlDataSource>--%>
+
        </asp:Panel>
 </asp:Content>
