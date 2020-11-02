@@ -60,6 +60,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtTeacherCode;
 
         /// <summary>
+        /// RFVTeacherCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVTeacherCode;
+
+        /// <summary>
         /// lblEMName control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEMName;
+
+        /// <summary>
+        /// RFVEMName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEMName;
 
         /// <summary>
         /// lblEMNumber control.
@@ -96,6 +114,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtEMNumber;
 
         /// <summary>
+        /// RFVEMNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEMNumber;
+
+        /// <summary>
         /// lblEMRelationship control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEMRelationship;
+
+        /// <summary>
+        /// RFVEMRelationship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEMRelationship;
 
         /// <summary>
         /// lblLunch control.
@@ -132,6 +168,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlLunchTicket;
 
         /// <summary>
+        /// RFVLunch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVLunch;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -148,6 +193,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFirstTime;
+
+        /// <summary>
+        /// RFVFirstTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVFirstTime;
 
         /// <summary>
         /// lblCPUAccess control.
@@ -168,6 +222,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlCPUAccess;
 
         /// <summary>
+        /// RFVCPUAccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCPUAccess;
+
+        /// <summary>
         /// lblInternetAccess control.
         /// </summary>
         /// <remarks>
@@ -186,6 +249,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlInternetAccess;
 
         /// <summary>
+        /// RFVInternetAccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVInternetAccess;
+
+        /// <summary>
         /// lblCPUExp control.
         /// </summary>
         /// <remarks>
@@ -202,6 +274,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCPUExp;
+
+        /// <summary>
+        /// RFVCPUExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCPUExp;
 
         /// <summary>
         /// lblAllergies control.
@@ -256,6 +337,42 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPhotoPermission;
+
+        /// <summary>
+        /// RFVPhotoPermission control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhotoPermission;
+
+        /// <summary>
+        /// tblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblError;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// CVError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CVError;
 
         /// <summary>
         /// btnSave control.
