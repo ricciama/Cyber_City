@@ -228,7 +228,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlRegister">Register Entity<span class="caret"></span></a>
                                 <ul class="dropdown-menu" aria-labelledby="ddlRegister">
-                                    <li><a class="dropdown-item" href="#">Register Volunteer</a></li>
+                                    <li><a class="dropdown-item" href="RegisterVolunteer.aspx">Register Volunteer</a></li>
                                     <li><a class="dropdown-item" href="RegisterOrgRep.aspx">Register Organizational Representative</a></li>
                                 </ul>
                             </li>

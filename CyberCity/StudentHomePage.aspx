@@ -77,6 +77,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell CssClass="cellPadding">
                                         <asp:TextBox ID="txtTeacherCode" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFVTeacherCode" runat="server" ControlToValidate="txtTeacherCode" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%--Emergency Contact Name--%>
@@ -86,6 +87,8 @@
                                     </asp:TableCell>
                                     <asp:TableCell CssClass="cellPadding">
                                         <asp:TextBox ID="txtEMName" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                        <asp:RequiredFieldValidator ID="RFVEMName" runat="server" ControlToValidate="txtEMName" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%--Emergency Contact Phone Number--%>
@@ -95,6 +98,8 @@
                                     </asp:TableCell>
                                     <asp:TableCell CssClass="cellPadding">
                                         <asp:TextBox ID="txtEMNumber" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                        <asp:RequiredFieldValidator ID="RFVEMNumber" runat="server" ControlToValidate="txtEMNumber" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%--Emergency Contact Relationship--%>
@@ -104,6 +109,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell CssClass="cellPadding">
                                         <asp:TextBox ID="txtEMRelationship" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFVEMRelationship" runat="server" ControlToValidate="txtEMRelationship" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Lunch --%>
@@ -117,6 +123,7 @@
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RFVLunch" runat="server" ControlToValidate="ddlLunchTicket" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell> 
                                 </asp:TableRow>
                                 <%-- First Time Attending the Event --%>
@@ -130,6 +137,8 @@
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
                                         </asp:DropDownList>
+
+                                        <asp:RequiredFieldValidator ID="RFVFirstTime" runat="server" ControlToValidate="ddlFirstTime" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell> 
                                 </asp:TableRow>
                                 <%-- Computer Access --%>
@@ -145,6 +154,7 @@
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RFVCPUAccess" runat="server" ControlToValidate="ddlCPUAccess" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Internet Access --%>
@@ -160,6 +170,7 @@
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RFVInternetAccess" runat="server" ControlToValidate="ddlInternetAccess" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Please Describe your computer experience --%>
@@ -178,6 +189,7 @@
                                             <asp:ListItem Value="Advanced" Text="Advanced"></asp:ListItem>
                                            <asp:ListItem Value="Expert" Text="Expert"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RFVCPUExp" runat="server" ControlToValidate="ddlCPUExp" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>      
                                 <%-- Allergies / Dietary Restrictions --%>
@@ -188,7 +200,7 @@
                                         </div>
                                     </asp:TableCell>
                                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                                        <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server" Wrap="true" Height="100px"></asp:TextBox>
+                                        <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server" Wrap="true" Height="100px" TextMode="MultiLine"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <%-- Notes --%>
@@ -199,7 +211,7 @@
                                         </div>
                                     </asp:TableCell>
                                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                                        <asp:TextBox ID="txtMisc" CssClass="form-control" runat="server" Wrap="true" Height="100px"></asp:TextBox>
+                                        <asp:TextBox ID="txtMisc" CssClass="form-control" runat="server" Wrap="true" Height="100px" TextMode="MultiLine"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>  
                                 <%-- Photo Permission --%>
@@ -215,8 +227,19 @@
                                             <asp:ListItem Value ="Yes" Text="Yes"></asp:ListItem>
                                             <asp:ListItem Value="No" Text="No"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RFVPhotoPermission" runat="server" ControlToValidate="ddlPhotoPermission" InitialValue="N/A" Text="Required Field" Font-Bold="true" SetFocusOnError="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>                                
+                            </asp:Table>
+                            <asp:Table ID ="tblError" runat="server" HorizontalAlign="center" Visible="false">
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label ID="lblError" runat="server" Text="Teacher code does not exist. Please try again!" ForeColor="Red" Font-Bold="true"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:CustomValidator ID="CVError" runat="server" Text="Teacher code does not exist" ForeColor="Red" Font-Bold="true" OnServerValidate="CVError_ServerValidate" SetFocusOnError="true"></asp:CustomValidator>
+                                    </asp:TableCell>
+                                </asp:TableRow>
                             </asp:Table>
                         </div>
         
