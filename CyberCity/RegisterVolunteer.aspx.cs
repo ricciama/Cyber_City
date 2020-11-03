@@ -105,6 +105,9 @@ namespace CyberCity
             {
                 programSchedule.Visible = false;
                 ddlEvent.Items.Insert(0, new ListItem("No Events Available", "-1"));
+                var firstItem = ddlEvent.Items[0];
+                ddlEvent.Items.Clear();
+                ddlEvent.Items.Add(firstItem);
                 ddlEvent.DataBind();
             }
           
@@ -114,13 +117,22 @@ namespace CyberCity
             DataTable dt = new DataTable();
             using (con)
             {
-                lblSchedule.Text = "Event Schedule For " + ddlSelectProgram.SelectedItem.Text;
-                lblSchedule.Visible = true;
-                SqlCommand cmd = new SqlCommand(schedule, con);
-                SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                sched.Fill(ds);
-                programSchedule.DataSource = ds;
-                programSchedule.DataBind();
+                if (ProgramID != "-1")
+                {
+                    lblSchedule.Text = "Event Schedule For " + ddlSelectProgram.SelectedItem.Text;
+                    lblSchedule.Visible = true;
+                    SqlCommand cmd = new SqlCommand(schedule, con);
+                    SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                    sched.Fill(ds);
+                    programSchedule.DataSource = ds;
+                    programSchedule.DataBind();
+                    programSchedule.Visible = true;
+                    lblSchedule.Visible = true;
+                }
+                else
+                {
+                    lblSchedule.Visible = false;
+                }
 
             }
         }
@@ -140,13 +152,24 @@ namespace CyberCity
             DataSet volDS = new DataSet();
             using (volCon)
             {
-                lblVolSchedule.Text = "Volunteer Schedule For " + ddlSelectVolunteer.SelectedItem.Text;
-                lblVolSchedule.Visible = true;
-                SqlCommand volCMD = new SqlCommand(query, volCon);
-                SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
-                volDA.Fill(volDS);
-                volunteerSchedule.DataSource = volDS;
-                volunteerSchedule.DataBind();
+                if (volunteerID != "-1")
+                {
+                    lblVolSchedule.Text = "Volunteer Schedule For " + ddlSelectVolunteer.SelectedItem.Text;
+                    SqlCommand volCMD = new SqlCommand(query, volCon);
+                    SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+                    volDA.Fill(volDS);
+                    volunteerSchedule.DataSource = volDS;
+                    volunteerSchedule.DataBind();
+                    lblVolSchedule.Visible = true;
+                    volunteerSchedule.Visible = true;
+                }
+                else
+                {
+                    volunteerSchedule.Visible = false;
+                    lblVolSchedule.Visible = false;
+                }
+                
+
             }
 
 

@@ -81,23 +81,39 @@ namespace CyberCity
             else
             {
                 programSchedule.Visible = false;
-                ddlEvent.Items.Insert(0, "No Events Available");
+                ddlEvent.Items.Insert(0, new ListItem("No Events Available", "-1"));
+
+                var firstItem = ddlEvent.Items[0];
+                ddlEvent.Items.Clear();
+                ddlEvent.Items.Add(firstItem);
                 ddlEvent.DataBind();
+                lblSchedule.Visible = false;
+
             }
 
             // Displays Gridview For Program 
-            string schedule = "SELECT Name, Date, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+            string schedule = "SELECT Name, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
             {
-                lblSchedule.Text = "Event Schedule For " + ddlSelectProgram.SelectedItem.Text;
-                lblSchedule.Visible = true;
-                SqlCommand cmd = new SqlCommand(schedule, con);
-                SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                sched.Fill(ds);
-                programSchedule.DataSource = ds;
-                programSchedule.DataBind();
+                if (ProgramID != "-1")
+                {
+                    lblSchedule.Text = "Event Schedule For " + ddlSelectProgram.SelectedItem.Text;
+                    lblSchedule.Visible = true;
+                    SqlCommand cmd = new SqlCommand(schedule, con);
+                    SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                    sched.Fill(ds);
+                    programSchedule.DataSource = ds;
+                    programSchedule.DataBind();
+                    programSchedule.Visible = true;
+                    lblSchedule.Visible = true;
+                }
+                else
+                {
+                    lblSchedule.Visible = false;
+                }
+
 
             }
         }
@@ -148,8 +164,14 @@ namespace CyberCity
             }
             else
             {
+                orgRepSchedule.Visible = false;
                 ddlOrgRep.Items.Insert(0, new ListItem("No Organizational Reps Available", "-1"));
+
+                var firstItem = ddlOrgRep.Items[0];
+                ddlOrgRep.Items.Clear();
+                ddlOrgRep.Items.Add(firstItem);
                 ddlOrgRep.DataBind();
+                lblOrgRepSchedule.Visible = false;
             }
 
         }
@@ -158,7 +180,7 @@ namespace CyberCity
         protected void ddl_OrgRep_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string orgepID = ddlOrgRep.SelectedValue.ToString();
+            string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
             string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
             query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
@@ -168,13 +190,24 @@ namespace CyberCity
             DataSet orgRepDS = new DataSet();
             using (orgRepCon)
             {
-                lblOrgRepSchedule.Text = "Organization Rep Schedule For " + ddlOrgRep.SelectedItem.Text;
-                lblOrgRepSchedule.Visible = true;
-                SqlCommand repCMD = new SqlCommand(query, orgRepCon);
-                SqlDataAdapter repDA = new SqlDataAdapter(repCMD);
-                repDA.Fill(orgRepDS);
-                orgRepSchedule.DataSource = orgRepDS;
-                orgRepSchedule.DataBind();
+                if (orgRepID != "-1")
+                {
+                    lblOrgRepSchedule.Text = "Organization Rep Schedule For " + ddlOrgRep.SelectedItem.Text;
+                    SqlCommand repCMD = new SqlCommand(query, orgRepCon);
+                    SqlDataAdapter repDA = new SqlDataAdapter(repCMD);
+                    repDA.Fill(orgRepDS);
+                    orgRepSchedule.DataSource = orgRepDS;
+                    orgRepSchedule.DataBind();
+                    lblOrgRepSchedule.Visible = true;
+                    orgRepSchedule.Visible = true;
+                    
+                }
+                else
+                {
+                    lblOrgRepSchedule.Visible = false;
+                }
+
+
             }
 
         }

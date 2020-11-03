@@ -145,7 +145,6 @@
                         AlternatingRowStyle-BackColor="#450084" 
                         BorderColor="Black" AllowPaging="true" 
                         AutoGenerateColumns="true" 
-                        AutoGenerateEditButton="true" 
                         AlternatingRowStyle-ForeColor="White" 
                         Font-Size="Large">
                     </asp:GridView>
