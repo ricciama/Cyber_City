@@ -17,11 +17,14 @@ table{
     width:50%;
     float: left;
     padding-bottom:30px;
+    padding-left:10px;
 }
 
 .floatRight {
     width: 50%;
     float: right;
+    padding-bottom:30px;
+    padding-right: 10px;
 }
 
 

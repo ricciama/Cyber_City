@@ -21,6 +21,7 @@ namespace CyberCity
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // populates volunteer dropdown list
             if (!Page.IsPostBack)
             {
                 String sqlQuery2 = "Select VolunteerID, FName + ' '+ Lname as VolunteerName FROM Volunteer";
@@ -50,24 +51,8 @@ namespace CyberCity
 
                 }
 
-                //String sqlQuery2 = "Select VolunteerID, FName + ' '+ Lname as VolunteerName FROM Volunteer";
-                //SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
-                //sqlConnection2.Open();
-
-                //DataTable dt = new DataTable();
-                //SqlDataAdapter da = new SqlDataAdapter(sqlQuery2, sqlConnection2);
-                //da.Fill(dt);
-
-                //ddlSelectVolunteer.DataSource = dt;
-                //ddlSelectVolunteer.DataTextField = "VolunteerName";
-                //ddlSelectVolunteer.DataValueField = "VolunteerID";
-                //ddlSelectVolunteer.DataBind();
-                //sqlConnection2.Close();
-
                 GetProgram();
-                ProgramSchedule();
-                //VolunteerSchedule();
-                ddlEvent.Items.Insert(0, "No Events Available");
+                ddlEvent.Items.Insert(0, new ListItem("No Events Available", "-1"));
             }
             
         }
@@ -94,11 +79,10 @@ namespace CyberCity
 
         protected void ddlSelectProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             ds2.Clear();
-            string ProgramID;
-            string ProgramName;
-            ProgramName = ddlSelectProgram.SelectedItem.Text;
-            ProgramID = ddlSelectProgram.SelectedValue.ToString();
+            string ProgramName = ddlSelectProgram.SelectedItem.Text;
+            string ProgramID = ddlSelectProgram.SelectedValue.ToString();
 
             if (ProgramID != "-1")
             {
@@ -115,25 +99,23 @@ namespace CyberCity
                     ddlEvent.SelectedIndex = 0;
                     
                 }
+
             }
             else
             {
                 programSchedule.Visible = false;
-                ddlEvent.Items.Insert(0, "No Events Available");
+                ddlEvent.Items.Insert(0, new ListItem("No Events Available", "-1"));
                 ddlEvent.DataBind();
             }
-        }
-
-        public void ProgramSchedule()
-        {
-            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string ProgramID = ddlSelectProgram.SelectedValue.ToString();
-            string schedule = "SELECT Name, Date, Time FROM Event";
+          
+            // Displays Gridview For Program 
+            string schedule = "SELECT Name, Date, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
             {
-                //lblSchedule.Visible = true;
+                lblSchedule.Text = "Event Schedule For " + ddlSelectProgram.SelectedItem.Text;
+                lblSchedule.Visible = true;
                 SqlCommand cmd = new SqlCommand(schedule, con);
                 SqlDataAdapter sched = new SqlDataAdapter(cmd);
                 sched.Fill(ds);
@@ -141,60 +123,128 @@ namespace CyberCity
                 programSchedule.DataBind();
 
             }
-            
         }
 
-        //public void VolunteerSchedule()
-        //{
-        //    SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-        //    string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
-        //    string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
-        //    query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
-        //    query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
-        //    query += "WHERE(VolunteerRegistration.VolunteerID = 1)";
-
-        //    DataSet volDS = new DataSet();
-        //    DataTable volDT = new DataTable();
-        //    using (volCon)
-        //    {
-        //        SqlCommand volCMD = new SqlCommand(query, volCon);
-        //        SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
-        //        volDA.Fill(volDS);
-        //        volunteerSchedule.DataSource = volDS;
-        //        volunteerSchedule.DataBind();
-        //    }
-
-
-        //}
-
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void ddlSelectVolunteer_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            volCon.Open();
             string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
 
-            //string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
-            //query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
-            //query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
-            //query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
+            string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+            query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
+            query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
 
-            string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
-
-
-
-            SqlCommand volCMD = new SqlCommand(query, volCon);
-            SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+            //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
             DataSet volDS = new DataSet();
-            volDA.Fill(volDS, "Volunteer");
-            volunteerSchedule.DataMember = "Volunteer";
-            volunteerSchedule.DataSource = volDS;
-            volunteerSchedule.DataBind();
-            volCon.Close();
+            using (volCon)
+            {
+                lblVolSchedule.Text = "Volunteer Schedule For " + ddlSelectVolunteer.SelectedItem.Text;
+                lblVolSchedule.Visible = true;
+                SqlCommand volCMD = new SqlCommand(query, volCon);
+                SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+                volDA.Fill(volDS);
+                volunteerSchedule.DataSource = volDS;
+                volunteerSchedule.DataBind();
+            }
+
+
+        }
+
+        // Inserts records into VolunteerRegistrtion table
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+
+            int counter = 0;
+
+            if (ddlSelectProgram.SelectedValue == "-1")
+            {
+                lblProgramError.Text = "Please Choose Valid Program";
+                lblProgramError.ForeColor = System.Drawing.Color.Red;
+                lblProgramError.Font.Bold = true;
+                counter++;
+            }
+            else
+            {
+                lblProgramError.Visible = false;
+            }
+
+            if (ddlEvent.SelectedValue == "-1")
+            {
+                lblEventError.Text = "Please Choose a Valid Event";
+                lblEventError.ForeColor = System.Drawing.Color.Red;
+                lblEventError.Font.Bold = true;
+                counter++;
+            }
+            else
+            {
+                lblEventError.Visible = false;
+            }
+
+            if (ddlSelectVolunteer.SelectedValue == "-1")
+            {
+                lblVolunteerError.Text = "Please Choose a Valid Volunteer";
+                lblVolunteerError.ForeColor = System.Drawing.Color.Red;
+                lblVolunteerError.Font.Bold = true;
+                counter++;
+            }
+            else
+            {
+                lblVolunteerError.Visible = false;
+            }
+
+            if(counter == 0)
+            {
+                // checks to see if volunteer is already registered for event
+                SqlConnection check = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                string bean = "SELECT Count (*) FROM [VolunteerRegistration] WHERE [VolunteerID] = @VolunteerID AND [EventID] = @EventID";
+                SqlCommand command = new SqlCommand(bean, check);
+
+                command.Parameters.AddWithValue("@VolunteerID", ddlSelectVolunteer.SelectedValue);
+                command.Parameters.AddWithValue("EventID", ddlEvent.SelectedValue);
+
+                check.Open();
+
+                int registerCount = Convert.ToInt32(command.ExecuteScalar());
+
+                check.Close();
+
+                if (registerCount == 0)
+                {
+                    lblProgramError.Visible = false;
+                    lblVolunteerError.Visible = false;
+                    lblEventError.Visible = false;
+                    SqlConnection register = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                    string query = "INSERT INTO [VolunteerRegistration] (VolunteerID, EventID) VALUES (@VolunteerID, @EventID)";
+
+                    SqlCommand sqlCommand = new SqlCommand(query, register);
+
+                    register.Open();
+
+                    sqlCommand.Parameters.AddWithValue("@VolunteerID", ddlSelectVolunteer.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@EventID", ddlEvent.SelectedValue);
+
+
+                    sqlCommand.ExecuteNonQuery();
+
+                    sqlCommand.Dispose();
+                    register.Close();
+
+                    lblSuccess.Text = "Succssfully Registered for an Event";
+                    lblSuccess.ForeColor = System.Drawing.Color.Green;
+                    lblSuccess.Font.Bold = true;
+                }
+                else
+                {
+                    lblSuccess.Text = "Volunteer Already Registered For Event!";
+                    lblSuccess.ForeColor = System.Drawing.Color.Red;
+                    lblSuccess.Font.Bold = true;
+                }
+
+
+                
+            }
 
         }
     }

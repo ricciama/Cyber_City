@@ -30,12 +30,8 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
-                        
-                        <asp:UpdatePanel runat="server" ID="beans">
-                            <ContentTemplate>
-                                    <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectProgram_SelectedIndexChanged"></asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectProgram_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ControlToValidate="ddlSelectProgram" Display="Dynamic" SetFocusOnError="true" Text="*Please Choose a Program"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -48,12 +44,8 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <asp:DropDownList ID="ddlSelectVolunteer" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectVolunteer_SelectedIndexChanged">                                  
-                                </asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:DropDownList ID="ddlSelectVolunteer" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectVolunteer_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" Text="*Please Select a Volunteer" Display="Dynamic" ControlToValidate="ddlSelectVolunteer" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -69,11 +61,13 @@
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
                                 <asp:DropDownList ID="ddlEvent" runat="server" CssClass="form-control"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ForeColor="Red" Text="*Please Select an Event" Display="Dynamic" ControlToValidate="ddlEvent" SetFocusOnError="true"></asp:RequiredFieldValidator>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+           
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
                     <div class="form-group">
@@ -81,6 +75,29 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+             <%--Error Checking labels --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblProgramError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblEventError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblVolunteerError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <%-- Success Label --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+
         </asp:Table>
 
             <br />
@@ -90,7 +107,7 @@
         <%-- Gridview for Program Schedule --%>
         <div class="container">
                 <div class="floatLeft">
-                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" ></asp:Label>
+                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Bold="True" Visible="false" ></asp:Label>
                     <asp:GridView 
                         runat="server" 
                         ID="programSchedule" 
@@ -99,32 +116,25 @@
                         AllowPaging="true" 
                         AutoGenerateColumns="true" 
                         AlternatingRowStyle-ForeColor="White" 
-                        Font-Size="Large">                           
+                        Font-Size="Medium">                           
                     </asp:GridView>
 
                 </div>
-            </div>
-
+         
         <%-- Gridview for Volunteer Schedule --%>
-        <div class="container">
             <div class="floatRight">
-                <asp:Label ID="lblVolSchedule" runat="server" Text="Volunteer Schedule" Font-Size="Large" Font-Bold="True"></asp:Label>
+                <asp:Label ID="lblVolSchedule" runat="server" Text="Volunteer Schedule" Font-Size="Large" Font-Bold="True" Visible="false"></asp:Label>
                 <asp:GridView 
                     ID="volunteerSchedule"
                     runat="server" 
                     AlternatingRowStyle-BackColor="#450084" 
-                    BorderColor="Black" AllowPaging="true" 
-                    AutoGenerateColumns="true" 
-                    AutoGenerateEditButton="true" 
+                    BorderColor="Black" 
+                    AutoGenerateColumns="true"  
                     AlternatingRowStyle-ForeColor="White" 
-                    Font-Size="Large">
+                    Font-Size="Medium">
                 </asp:GridView>
-
             </div>
-
         </div>
-
-<%--        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<% $ConnectionStrings:CyberCity %>" SelectCommand="Select * From Volunteer" ></asp:SqlDataSource>--%>
 
        </asp:Panel>
 </asp:Content>
