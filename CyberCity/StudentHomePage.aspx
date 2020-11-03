@@ -237,7 +237,6 @@
                                         <asp:Label ID="lblError" runat="server" Text="Teacher code does not exist. Please try again!" ForeColor="Red" Font-Bold="true"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:CustomValidator ID="CVError" runat="server" Text="Teacher code does not exist" ForeColor="Red" Font-Bold="true" OnServerValidate="CVError_ServerValidate" SetFocusOnError="true"></asp:CustomValidator>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
