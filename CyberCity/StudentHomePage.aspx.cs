@@ -46,8 +46,8 @@ namespace CyberCity
             sqlRead.Close();
             sqlConnection2.Close();
 
+            // Checks if the student has already registered
             int codeCheck = 0;
-
             string code = "SELECT Count(code) as code FROM StudentRegistration where StudentID = " + studentID;
             SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             SqlCommand sqlCommand3 = new SqlCommand(code, sqlConnection3);
@@ -70,11 +70,13 @@ namespace CyberCity
                 lblConfirmation.ForeColor = Color.Red;
             }
 
+            // Checks if the the code exists
             int codeExistsCheck = 1;
             string codeExists = "Select Count(code) as CodeCount from OrgRep where code = '" + txtTeacherCode.Text + "'";
+            SqlConnection sqlConnection4 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
 
-            SqlCommand sqlCommand4 = new SqlCommand(codeExists, sqlConnection3);
-            sqlConnection3.Open();
+            SqlCommand sqlCommand4 = new SqlCommand(codeExists, sqlConnection4);
+            sqlConnection4.Open();
             SqlDataReader sqlRead3 = sqlCommand4.ExecuteReader();
             while(sqlRead3.Read())
             {
@@ -82,7 +84,7 @@ namespace CyberCity
             }
 
             sqlRead3.Close();
-            sqlConnection3.Close();
+            sqlConnection4.Close();
 
 
             if(codeExistsCheck == 0)
@@ -93,7 +95,7 @@ namespace CyberCity
             }
 
             // Inserts the information from the survey into the student registration table if the error checks are approved
-            if (codeCheck != 0 && codeExistsCheck > 0 )
+            if (codeCheck == 0 && codeExistsCheck != 0 )
             {
                 string connectionString;
                 SqlConnection cnn;
@@ -143,6 +145,9 @@ namespace CyberCity
 
                 sqlCommand.Dispose();
                 cnn.Close();
+
+                lblConfirmation.Text = "Student Registered Successfully!";
+                lblConfirmation.ForeColor = Color.Green;
             }
 
             lblConfirmation.Visible = true;
