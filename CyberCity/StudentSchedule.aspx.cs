@@ -20,10 +20,11 @@ namespace CyberCity
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string studentUsername = Session["Username"].ToString();
-            string schedule = "SELECT Event.Name as 'Event Name', Event.Date, Event.Time, Event.Location FROM Student INNER JOIN StudentRegistration " +
-                "ON Student.StudentID = StudentRegistration.StudentID INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code " +
-                "INNER JOIN OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN Event " +
-                "ON OrgRepRegistration.EventID = Event.EventID WHERE(Student.UserName = '" + studentUsername + "')";
+            string schedule = "SELECT Event.Name, FORMAT( Program.Date, 'd') as Date, Event.Time, Event.Location " +
+                "FROM StudentRegistration INNER JOIN Student ON StudentRegistration.StudentID = Student.StudentID " +
+                "INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code INNER JOIN Event INNER JOIN Program " +
+                "ON Event.ProgramID = Program.ProgramID INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID " +
+                "ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID WHERE(Student.UserName = '" + studentUsername + "')";
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();

@@ -88,8 +88,8 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Event] (Name, Date, Time, Location, ProgramID) " +
-                    "Values (@Name, @Date, @Time, @Location, @ProgramID)";
+                String sql = "Insert into [Event] (Name,, Time, Location, ProgramID) " +
+                    "Values (@Name, @Time, @Location, @ProgramID)";
 
                 sqlCommand = new SqlCommand(sql, cnn);
 
@@ -99,7 +99,6 @@ namespace CyberCity
                 //Inserts the data from the new student page into the database
 
                 sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtEventName.Text));
-                sqlCommand.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(txtEventDate.Text));
                 sqlCommand.Parameters.AddWithValue("@Time", HttpUtility.HtmlEncode(txtEventTime.Text));
                 sqlCommand.Parameters.AddWithValue("@Location", HttpUtility.HtmlEncode(txtEventLocation.Text));
                 sqlCommand.Parameters.AddWithValue("@ProgramID", HttpUtility.HtmlEncode(ddlProgram.SelectedItem.Value));
@@ -112,7 +111,6 @@ namespace CyberCity
 
                 txtEventName.Text = "";
                 txtEventLocation.Text = "";
-                txtEventDate.Text = "";
                 txtEventTime.Text = "";
 
                 tblConfirmation.Visible = true;

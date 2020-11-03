@@ -24,6 +24,7 @@ namespace CyberCity
             DateTime dtSuppliedDate = DateTime.Parse(txtProgramDateTime.Text);
             bool dateTest = dtSuppliedDate > DateTime.Today;
 
+            // Makes sure the date is in the future 
             if (dateTest)
             {
 

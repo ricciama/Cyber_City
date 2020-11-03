@@ -30,13 +30,7 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtEventDate" runat="server" placeholder="Event Date" TextMode="Date"></asp:TextBox>
-                       <asp:RequiredFieldValidator ID="RFVtxtEventDate" runat="server" Text = "Required Field" ControlToValidate="txtEventDate" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" placeholder="Event Time" TextMode="Time"></asp:TextBox>
                        <asp:RequiredFieldValidator ID="RFVtxtEventTime" runat="server" Text = "Required Field" ControlToValidate="txtEventTime" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>

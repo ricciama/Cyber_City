@@ -51,7 +51,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
                 <%-- Shirt size and Lunch --%>
-                <asp:TableRow HorizontalAlign="Center">
+                <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                         <div class="form-group">
                             <asp:DropDownList ID="ddlShirtSize" runat="server" CssClass="form-control">
@@ -67,10 +67,10 @@
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                         <div class="form-group form-control">
-                            <asp:Label ID="Label2" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                          
+                            <asp:Label ID="Label1" runat="server" Text="Lunch?"></asp:Label>&nbsp;
                             <asp:CheckBox ID="chkLunch" runat="server"/>
-                      </div>
-                    </asp:TableCell>           
+                        </div>
+                    </asp:TableCell>
                 </asp:TableRow>
                 <%-- Update Button --%>
                 <asp:TableRow>
