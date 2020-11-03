@@ -34,7 +34,7 @@
             <asp:TableRow>
                 <asp:TableCell>
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Cancel Program Regisration" OnClick="btnUpdate_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Cancel Program Registration" OnClick="btnUpdate_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
