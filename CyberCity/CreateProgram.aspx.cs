@@ -15,70 +15,79 @@ namespace CyberCity
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
 
         protected void btnCreateProgram_Click(object sender, EventArgs e)
         {
 
-            SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
+            DateTime dtSuppliedDate = DateTime.Parse(txtProgramDateTime.Text);
+            bool dateTest = dtSuppliedDate > DateTime.Today;
 
-
-            // Tests if the username is available
-            String sqlQuery3 = "Select Count(1) from [Program] where [Name] = @Name";
-
-            SqlCommand sqlCommand1 = new SqlCommand(sqlQuery3, sqlConnection1);
-
-            sqlCommand1.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtProgramName.Text));
-
-            sqlConnection1.Open();
-
-            int programCount = Convert.ToInt32(sqlCommand1.ExecuteScalar());
-
-            sqlConnection1.Close();
-
-            if (programCount == 0)
+            if (dateTest)
             {
 
-                string connectionString;
-                SqlConnection cnn;
-                SqlCommand sqlCommand;
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
 
-                connectionString = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ToString();
+                // Tests if the username is available
+                String sqlQuery3 = "Select Count(1) from [Program] where [Name] = @Name";
 
-                cnn = new SqlConnection(connectionString);
+                SqlCommand sqlCommand1 = new SqlCommand(sqlQuery3, sqlConnection1);
 
-                String sql = "Insert into [Program] (Name, Date) " +
-                    "Values (@Name, @Date)";
+                sqlCommand1.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtProgramName.Text));
 
-                sqlCommand = new SqlCommand(sql, cnn);
+                sqlConnection1.Open();
 
-                cnn.Open();
+                int programCount = Convert.ToInt32(sqlCommand1.ExecuteScalar());
+
+                sqlConnection1.Close();
+
+                if (programCount == 0)
+                {
+
+                    string connectionString;
+                    SqlConnection cnn;
+                    SqlCommand sqlCommand;
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+
+                    connectionString = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ToString();
+
+                    cnn = new SqlConnection(connectionString);
+
+                    String sql = "Insert into [Program] (Name, Date) " +
+                        "Values (@Name, @Date)";
+
+                    sqlCommand = new SqlCommand(sql, cnn);
+
+                    cnn.Open();
 
 
-                //Inserts the data from the new student page into the database
+                    //Inserts the data from the new student page into the database
 
-                sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtProgramName.Text));
-                sqlCommand.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(txtProgramDateTime.Text));
+                    sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtProgramName.Text));
+                    sqlCommand.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(txtProgramDateTime.Text));
 
-                sqlCommand.ExecuteNonQuery();
+                    sqlCommand.ExecuteNonQuery();
 
-                sqlCommand.Dispose();
-                cnn.Close();
+                    sqlCommand.Dispose();
+                    cnn.Close();
 
-                confirmationlbl.Text = "Program Created Successfully!";
-                confirmationlbl.ForeColor = Color.Green;
-                tblConfirmation.Visible = true;
-            } else if (programCount != 0)
-            {
-                confirmationlbl.Text = "Program name already exits please choose a different name!";
-                confirmationlbl.ForeColor = Color.Red;
-                tblConfirmation.Visible = true;
+                    confirmationlbl.Text = "Program Created Successfully!";
+                    confirmationlbl.ForeColor = Color.Green;
+                    tblConfirmation.Visible = true;
+                }
+                else if (programCount != 0)
+                {
+                    confirmationlbl.Text = "Program name already exits please choose a different name!";
+                    confirmationlbl.ForeColor = Color.Red;
+                    tblConfirmation.Visible = true;
+                }
             }
         }
 
         protected void btnAddEvents_Click(object sender, EventArgs e)
         {
+
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
 
             // Tests if the username is available
@@ -105,6 +114,12 @@ namespace CyberCity
                 confirmationlbl.ForeColor = Color.Red;
                 tblConfirmation.Visible = true;
             }
+        }
+
+        protected void CVDate_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            DateTime dtSuppliedDate = DateTime.Parse(txtProgramDateTime.Text);
+            args.IsValid = dtSuppliedDate > DateTime.Today;
         }
     }
 }
