@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Drawing;
+using System.Net;
+using System.Net.Mail;
 
 namespace CyberCity
 {
@@ -76,10 +78,11 @@ namespace CyberCity
                 SqlCommand createUser = new SqlCommand();
                 createUser.Connection = sc;
                 // INSERT USER RECORD
-                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'V')";
+                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, @Email, 'V')";
                 createUser.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtVolunteerFN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@LName", HttpUtility.HtmlEncode(txtVolunteerLN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
+                createUser.Parameters.Add(new SqlParameter("@Email", HttpUtility.HtmlEncode(txtVolunteerEmail.Text)));
                 createUser.ExecuteNonQuery();
 
                 System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
@@ -92,6 +95,20 @@ namespace CyberCity
 
                 sc.Close();
 
+                //Sends email to user with login credentials
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("cybercityjmu1@gmail.com");
+                msg.To.Add(txtVolunteerEmail.Text);
+                msg.Subject = "Cyber Day Credentials For " + txtVolunteerFN.Text + ' ' + txtVolunteerLN.Text;
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as a Volunteer for the Cyber Day. <br /> <br /> Your Login Credentials can be found below<br/> Login Details <br /> Username: " + txtUsernme.Text + " <br /> Password: " + txtPassword.Text;
+                emailBody += "<br /> <br /> Please click this link to view/edit your profile and change your password if necessary";
+                msg.Body = emailBody;
+                msg.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Send(msg);
+                msg.Dispose();
+
+
                 // Clears Textboxes
                 txtVolunteerFN.Text = null;
                 txtVolunteerLN.Text = null;
@@ -101,7 +118,8 @@ namespace CyberCity
 
                 confirmationlbl.Text = "Volunteer Created Successfully!";
                 confirmationlbl.ForeColor = Color.Green;
-                tblConfirmation.Visible = true;
+                confirmationlbl.Visible = true;
+                lblEmailSuccess.Visible = true;
 
             } else if (userNameCount != 0)
             {

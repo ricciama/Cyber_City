@@ -78,10 +78,15 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+        <asp:Table ID="tblConfirmation" runat="server" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="confirmationlbl" runat="server" Text="Volunteer Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Volunteer Created!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblEmailSuccess" runat="server" Text="Email sent to user" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

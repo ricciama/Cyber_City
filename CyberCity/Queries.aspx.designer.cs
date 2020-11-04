@@ -85,6 +85,15 @@ namespace CyberCity {
         protected global::System.Web.UI.WebControls.DropDownList ddlVolunteers;
         
         /// <summary>
+        /// Table2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table2;
+        
+        /// <summary>
         /// lblAllEvents control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdVolunteerSchedule;
+        
+        /// <summary>
+        /// Table5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table5;
         
         /// <summary>
         /// lblOrgRepRoster control.

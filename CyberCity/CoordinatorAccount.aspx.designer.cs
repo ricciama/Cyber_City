@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity
-{
-
-
-    public partial class CoordinatorAccount
-    {
-
+namespace CyberCity {
+    
+    
+    public partial class CoordinatorAccount {
+        
         /// <summary>
         /// pnlCoordAcct control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCoordAcct;
-
+        
         /// <summary>
         /// tblCoordAcct control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblCoordAcct;
-
+        
         /// <summary>
         /// txtCoordinatorFN control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCoordinatorFN;
-
+        
         /// <summary>
         /// RFVCoordinatorFN control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCoordinatorFN;
-
+        
         /// <summary>
         /// txtCoordinatorLN control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCoordinatorLN;
-
+        
         /// <summary>
         /// RFVCoordinatorLN control.
         /// </summary>
@@ -67,16 +65,16 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCoordinatorLN;
-
+        
         /// <summary>
-        /// txtVolunteerEmail control.
+        /// txtCoordinatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVolunteerEmail;
-
+        protected global::System.Web.UI.WebControls.TextBox txtCoordinatorEmail;
+        
         /// <summary>
         /// RFVEmail control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEmail;
-
+        
         /// <summary>
         /// txtFacultyPosition control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFacultyPosition;
-
+        
         /// <summary>
         /// RFVPosition control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPosition;
-
+        
         /// <summary>
         /// txtCoordinatorPhone control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCoordinatorPhone;
-
+        
         /// <summary>
         /// RFVCoordinatorPhone control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCoordinatorPhone;
-
+        
         /// <summary>
         /// txtCoordinatorOffice control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCoordinatorOffice;
-
+        
         /// <summary>
         /// RFVCoordinatorOffice control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCoordinatorOffice;
-
+        
         /// <summary>
         /// lblUserName control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUserName;
-
+        
         /// <summary>
         /// txtUsernme control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsernme;
-
+        
         /// <summary>
         /// RFVUsername control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVUsername;
-
+        
         /// <summary>
         /// lblPassword control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPassword;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// RFVPassword control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPassword;
-
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// txtPassword2 control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword2;
-
+        
         /// <summary>
         /// CVpassword control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CVpassword;
-
+        
         /// <summary>
         /// RFVPassword2 control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPassword2;
-
+        
         /// <summary>
         /// btnRegister control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
-
+        
         /// <summary>
         /// tblFeedback control.
         /// </summary>
@@ -247,7 +245,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblFeedback;
-
+        
         /// <summary>
         /// lblFeedback control.
         /// </summary>
@@ -256,5 +254,14 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFeedback;
+        
+        /// <summary>
+        /// lblEmailSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmailSuccess;
     }
 }

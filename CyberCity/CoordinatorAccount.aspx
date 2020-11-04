@@ -39,8 +39,8 @@
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
-                       <asp:RequiredFieldValidator ID="RFVEmail" runat="server" Text = "Required Field" ControlToValidate="txtVolunteerEmail" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:TextBox CssClass="form-control" ID="txtCoordinatorEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RFVEmail" runat="server" Text = "Required Field" ControlToValidate="txtCoordinatorEmail" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -114,6 +114,12 @@
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblFeedback" runat="server" Text="Profile Created Successfully!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
+                </asp:TableCell>
+
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblEmailSuccess" runat="server" Text="Email Sent to User" ForeColor="Green" Visible="false" Font-Bold="True"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

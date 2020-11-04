@@ -95,14 +95,30 @@ namespace CyberCity
             }
             else
             {
+                // turns all tables not visible
                 grdAllEvents.Visible = false;
-                ddlOrgRep.Items.Insert(0, new ListItem("No Organizational Reps Available", "-1"));
+                grdOrgRepSchedule.Visible = false;
+                grdOrgRepRoster.Visible = false;
+                grdVolunteerSchedule.Visible = false;
 
+                // insert into first item for ddl
+                ddlOrgRep.Items.Insert(0, new ListItem("No Organizational Reps Available", "-1"));
+                ddlVolunteers.Items.Insert(0, new ListItem("No Volunteers Available", "-1"));
+
+                // set first item to variable
                 var firstItem = ddlOrgRep.Items[0];
+                var firstItemV = ddlVolunteers.Items[0];
+
+                // clear the dropdown and add first item
                 ddlOrgRep.Items.Clear();
                 ddlOrgRep.Items.Add(firstItem);
                 ddlOrgRep.DataBind();
 
+                ddlVolunteers.Items.Clear();
+                ddlVolunteers.Items.Add(firstItemV);
+                ddlVolunteers.DataBind();
+
+                //turn labels off
                 lblAllEvents.Visible = false;
                 lblOrgRepSched.Visible = false;
                 lblVolunteerSched.Visible = false;
@@ -141,7 +157,7 @@ namespace CyberCity
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
+            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
             query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
@@ -163,13 +179,26 @@ namespace CyberCity
                 }
                 else
                 {
+                    grdOrgRepSchedule.Visible = false;
+                    grdOrgRepRoster.Visible = false;
+
+                    lblOrgRepRoster.Visible = false;
                     lblOrgRepSched.Visible = false;
+
+                    ddlOrgRep.Items.Insert(0, new ListItem("Select Organizatinal Rep", "-1"));
+                    var firstItem = ddlOrgRep.Items[0];
+
+                    ddlOrgRep.Items.Clear();
+                    ddlOrgRep.Items.Add(firstItem);
+                    ddlOrgRep.DataBind();
+
+                    
                 }
 
             }
 
             SqlConnection omg = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string query2 = "SELECT Student.StudentFName + ' ' + Student.StudentLName, Student.ParentFName, Student.ParentLName, Student.ParentEmail, Student.Gender ";
+            string query2 = "SELECT Student.StudentFName + ' ' + Student.StudentLName AS Student_Name, Student.ParentFName + ' ' + Student.ParentLName AS Parent_Name, Student.ParentEmail, Student.Gender ";
             query2 += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
             query2 += "Student ON StudentRegistration.StudentID = Student.StudentID WHERE OrgRep.OrgRepID = " + orgRepID.ToString();
 
@@ -204,7 +233,7 @@ namespace CyberCity
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerID = ddlVolunteers.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            string query = "SELECT Event.Name, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
             query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
             query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlVolunteers.SelectedValue + ")";
@@ -222,6 +251,20 @@ namespace CyberCity
                     grdVolunteerSchedule.DataBind();
                     lblVolunteerSched.Visible = true;
                     grdVolunteerSchedule.Visible = true;
+                }
+                else
+                {
+                    grdVolunteerSchedule.Visible = false;
+                    lblVolunteerSched.Visible = false;
+
+                    ddlVolunteers.Items.Insert(0, new ListItem("Select Volunteer", "-1"));
+
+                    var firstItem = ddlVolunteers.Items[0];
+
+                    ddlVolunteers.Items.Clear();
+                    ddlVolunteers.Items.Add(firstItem);
+                    ddlVolunteers.DataBind();
+
                 }
             }
         }

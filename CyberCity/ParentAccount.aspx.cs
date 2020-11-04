@@ -83,10 +83,11 @@ namespace CyberCity
                 SqlCommand createUser = new SqlCommand();
                 createUser.Connection = sc;
                 // INSERT USER RECORD
-                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'S')";
+                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, @Email, 'S')";
                 createUser.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtStudentFN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@LName", HttpUtility.HtmlEncode(txtStudentLN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
+                createUser.Parameters.Add(new SqlParameter("@Email", HttpUtility.HtmlEncode(txtParentEmail.Text)));
                 createUser.ExecuteNonQuery();
 
                 System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();

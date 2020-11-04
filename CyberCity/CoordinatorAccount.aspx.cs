@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Net.Mail;
 
 namespace CyberCity
 {
@@ -53,11 +55,11 @@ namespace CyberCity
                 cnn.Open();
 
 
-                //Inserts the data from the new student page into the database
+                //Inserts the data from the new coordinator page into the database
 
                 sqlCommand.Parameters.AddWithValue("@FName", HttpUtility.HtmlEncode(txtCoordinatorFN.Text));
                 sqlCommand.Parameters.AddWithValue("@LName", HttpUtility.HtmlEncode(txtCoordinatorLN.Text));
-                sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtVolunteerEmail.Text));
+                sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtCoordinatorEmail.Text));
                 sqlCommand.Parameters.AddWithValue("@FacultyPosition", HttpUtility.HtmlEncode(txtFacultyPosition.Text));
                 sqlCommand.Parameters.AddWithValue("@PhoneNumber", HttpUtility.HtmlEncode(txtCoordinatorPhone.Text));
                 sqlCommand.Parameters.AddWithValue("@Office", HttpUtility.HtmlEncode(txtCoordinatorOffice.Text));
@@ -75,10 +77,11 @@ namespace CyberCity
                 SqlCommand createUser = new SqlCommand();
                 createUser.Connection = sc;
                 // INSERT USER RECORD
-                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'S')";
+                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, @Email, 'C')";
                 createUser.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtCoordinatorFN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@LName", HttpUtility.HtmlEncode(txtCoordinatorLN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
+                createUser.Parameters.Add(new SqlParameter("@Email", HttpUtility.HtmlEncode(txtCoordinatorEmail.Text)));
                 createUser.ExecuteNonQuery();
 
                 System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
@@ -91,20 +94,35 @@ namespace CyberCity
 
                 sc.Close();
 
+                lblFeedback.Text = "Coordinator Created Successfully!";
+                lblFeedback.ForeColor = Color.Green;
+                lblFeedback.Visible = true;
+
+                //Sends email to user with login credentials
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("cybercityjmu1@gmail.com");
+                msg.To.Add(txtCoordinatorEmail.Text);
+                msg.Subject = "Cyber Day Credentials For " + txtCoordinatorFN.Text + ' ' + txtCoordinatorLN.Text;
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as a coordinator for the Cyber Day Team. <br/> Your Login Credentials can be found below<br/> Login Details < br /> Username: " + txtUsernme.Text + " < br /> Password: " + txtPassword.Text;
+                emailBody += "<br/><br/> Please click this link to view/edit your profile and change your password if necessary"; 
+                msg.Body = emailBody;
+                msg.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Send(msg);
+                msg.Dispose();
+
+                lblEmailSuccess.Visible = true;
+
                 txtCoordinatorFN.Text = "";
                 txtCoordinatorLN.Text = "";
                 txtCoordinatorOffice.Text = "";
                 txtCoordinatorPhone.Text = "";
                 txtFacultyPosition.Text = "";
                 txtUsernme.Text = "";
-                txtVolunteerEmail.Text = "";
+                txtCoordinatorEmail.Text = "";
 
-                lblFeedback.Text = "Coordinator Created Successfully!";
-                lblFeedback.ForeColor = Color.Green;
-                lblFeedback.Visible = true;
-
-
-            } else if (userNameCount != 0)
+            }
+            else if (userNameCount != 0)
             {
                 lblFeedback.Text = "Username is already taken please enter a different one.";
                 lblFeedback.ForeColor = Color.Red;

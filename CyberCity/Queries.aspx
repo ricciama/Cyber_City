@@ -7,6 +7,14 @@
     <asp:Panel ID="Panel1" runat="server" BorderColor="#cccccc" BorderStyle="Solid" Width="100%">
         <br />
         <br />
+        <div style="text-align:center;">
+            <h1>Coordinators!</h1>
+            <div style="font-size:medium; font:bold">
+                <p>Here, you can select a program and view their respective organizational representatives and volunteers.</p>
+                <p>From there, you can view the schedule and roster for each organizational representative as well as the schedule for each volunteer.</p>
+            </div>
+        </div>
+
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
             <%-- Program, Org rep, and vounteer labels --%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
@@ -44,37 +52,37 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+        </asp:Table>
             <%-- Gridviews --%>
 
             <%-- Gridview for Showing All events --%>
-            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+        <asp:Table ID="Table2" runat="server">
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Left" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true"></asp:Label>
                         <asp:GridView ID="grdAllEvents" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium"></asp:GridView>
                     </div>
                 </asp:TableCell>
-            
             <%-- Gridview for showing org rep schedule --%>
-            
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true"></asp:Label>
                         <asp:GridView ID="grdOrgRepSchedule" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium"></asp:GridView>
                     </div>
                 </asp:TableCell>
-            
             <%-- Gridview for showing volunteer Schedule --%>
-            
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Right" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
                         <asp:GridView ID="grdVolunteerSchedule" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium" ></asp:GridView>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-           
+           </asp:Table>
+
                 <%-- Gridview for showing Org rep Roster --%>
+        <asp:Table ID="Table5" runat="server">
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="3">
                     <div class="form-group">
@@ -83,12 +91,7 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-
-            
-
-
-
-        </asp:Table>
+     </asp:Table>
 
     </asp:Panel>
 
