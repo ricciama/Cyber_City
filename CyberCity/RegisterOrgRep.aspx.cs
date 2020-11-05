@@ -182,7 +182,7 @@ namespace CyberCity
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
+            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
             query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";

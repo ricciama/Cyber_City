@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity
-{
-
-
-    public partial class StudentProfile
-    {
-
+namespace CyberCity {
+    
+    
+    public partial class StudentProfile {
+        
         /// <summary>
         /// Panel2 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel2;
-
+        
         /// <summary>
         /// Table1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-
+        
         /// <summary>
         /// txtParentFN control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentFN;
-
+        
         /// <summary>
         /// RFVParentFN control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVParentFN;
-
+        
         /// <summary>
         /// txtParentLN control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentLN;
-
+        
         /// <summary>
         /// RFVParentLN control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVParentLN;
-
+        
         /// <summary>
         /// txtStudentFN control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentFN;
-
+        
         /// <summary>
         /// RFVStudentFN control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVStudentFN;
-
+        
         /// <summary>
         /// txtStudentLN control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentLN;
-
+        
         /// <summary>
         /// RFVStudentLN control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVStudentLN;
-
+        
         /// <summary>
         /// txtStudentDOB control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentDOB;
-
+        
         /// <summary>
         /// RFVStudentDOB control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVStudentDOB;
-
+        
         /// <summary>
         /// ddlGender control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGender;
-
+        
         /// <summary>
         /// RFVGender control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVGender;
-
+        
         /// <summary>
         /// txtParentPhone control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentPhone;
-
+        
         /// <summary>
         /// RFVPhone control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhone;
-
+        
         /// <summary>
         /// txtParentEmail control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentEmail;
-
+        
         /// <summary>
         /// RFVParemtEmail control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVParemtEmail;
-
+        
         /// <summary>
         /// ddlEthnicity control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEthnicity;
-
+        
         /// <summary>
         /// RFVEthnicity control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEthnicity;
-
+        
         /// <summary>
         /// lblUserName control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUserName;
-
+        
         /// <summary>
         /// txtUsernme control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsernme;
-
+        
         /// <summary>
         /// lblPassword control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPassword;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// txtPassword2 control.
         /// </summary>
@@ -247,7 +245,16 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword2;
-
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
         /// <summary>
         /// btnUpdate control.
         /// </summary>
@@ -256,7 +263,16 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdate;
-
+        
+        /// <summary>
+        /// btnUpdatePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdatePassword;
+        
         /// <summary>
         /// tblFeedback control.
         /// </summary>
@@ -265,7 +281,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblFeedback;
-
+        
         /// <summary>
         /// lblFeedback control.
         /// </summary>
@@ -274,5 +290,14 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFeedback;
+        
+        /// <summary>
+        /// lblPasswordSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPasswordSuccess;
     }
 }

@@ -130,6 +130,7 @@
     <Content Include="EditProgram.aspx" />
     <Content Include="FirstTimeLoginVolunteer.aspx" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="css\GridView.css" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -140,6 +141,7 @@
     <Content Include="Images\dukes.jpg" />
     <Content Include="Images\glasses.jpg" />
     <Content Include="Images\hand.JPG" />
+    <Content Include="Images\header_back.gif" />
     <Content Include="Images\jmu15.JPG" />
     <Content Include="Images\jmuback.jpg" />
     <Content Include="Images\jmuquad.jpg" />

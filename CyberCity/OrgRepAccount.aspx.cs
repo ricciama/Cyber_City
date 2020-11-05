@@ -11,6 +11,8 @@ using System.Web.UI.WebControls;
 using System.Web.WebSockets;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.IO;
 
 
 namespace CyberCity
@@ -82,8 +84,36 @@ namespace CyberCity
 
             Session["Organization"] = null;
         }
+
+        // generates random number for password
+        private int RandomNumber(int min, int max)
+        {
+            Random rn = new Random();
+            return rn.Next(min, max);
+        }
+
+        // generate random string for password
+        private string RandomString(int length)
+        {
+            StringBuilder sb = new StringBuilder();
+            Random rd = new Random();
+            char value;
+            for (int i = 0; i < length; i++)
+            {
+                value = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * rd.NextDouble() + 65)));
+                sb.Append(value);
+            }
+
+            return sb.ToString();
+        }
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            // generates random password
+            StringBuilder sb = new StringBuilder();
+            sb.Append(RandomNumber(10, 199));
+            sb.Append(RandomString(7));
+
             int errorCheck = 0;
 
 
@@ -156,7 +186,7 @@ namespace CyberCity
                 // INSERT PASSWORD RECORD AND CONNECT TO USER
                 setPass.CommandText = "insert into[dbo].[Pass] values((select max(userid) from person), @Username, @Password)";
                 setPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
-                setPass.Parameters.Add(new SqlParameter("@Password", HttpUtility.HtmlEncode(PasswordHash.HashPassword(txtPassword.Text)))); // hash entered password
+                setPass.Parameters.Add(new SqlParameter("@Password", HttpUtility.HtmlEncode(PasswordHash.HashPassword(sb.ToString())))); // hash entered password
                 setPass.ExecuteNonQuery();
 
                 sc.Close();
@@ -166,7 +196,7 @@ namespace CyberCity
                 msg.From = new MailAddress("cybercityjmu1@gmail.com");
                 msg.To.Add(txtOrgRepEmail.Text);
                 msg.Subject = "Cyber Day Credentials For " + txtOrgRepFN.Text + ' ' + txtOrgRepLN.Text;
-                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as an Organizational Representative for the Cyber Day. <br/> Your Login Credentials can be found below<br/> Login Details <br /> Username: " + txtUsernme.Text + " <br /> Password: " + txtPassword.Text;
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as an Organizational Representative for the Cyber Day. <br/><br/> Your Login Credentials can be found below.<br/><br/> Login Details <br /> Username: " + txtUsernme.Text + " <br /> Password: " + sb.ToString();
                 emailBody += "<br /> <br /> Please click this link to view/edit your profile and change your password if necessary";
                 msg.Body = emailBody;
                 msg.IsBodyHtml = true;

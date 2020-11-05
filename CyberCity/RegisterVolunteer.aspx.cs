@@ -112,7 +112,7 @@ namespace CyberCity
             }
           
             // Displays Gridview For Program 
-            string schedule = "SELECT Name, Date, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+            string schedule = "SELECT Name, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
@@ -143,7 +143,7 @@ namespace CyberCity
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Date, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            string query = "SELECT Event.Name, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
             query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
             query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";

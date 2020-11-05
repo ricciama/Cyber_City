@@ -75,13 +75,13 @@
                         <asp:RequiredFieldValidator ID="RFVUsernme" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="txtUsernme" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+<%--                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RFVtxtPassword" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="txtPassword" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
-                </asp:TableCell>
+                </asp:TableCell>--%>
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>

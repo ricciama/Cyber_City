@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Queries.aspx.cs" Inherits="CyberCity.Queries" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <link href="css/GridView.css" rel="stylesheet" />
     <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
 
@@ -59,36 +60,38 @@
         <asp:Table ID="Table2" runat="server">
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Left" CssClass="cellPadding">
-                    <div class="form-group">
+                    <div>
                         <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true"></asp:Label>
-                        <asp:GridView ID="grdAllEvents" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium"></asp:GridView>
-                    </div>
+                        </div>
+                        <asp:GridView ID="grdAllEvents" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF" Width="250">
+                        </asp:GridView>
+                    
                 </asp:TableCell>
             <%-- Gridview for showing org rep schedule --%>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true"></asp:Label>
-                        <asp:GridView ID="grdOrgRepSchedule" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium"></asp:GridView>
                     </div>
+                        <asp:GridView ID="grdOrgRepSchedule" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
+                    
                 </asp:TableCell>
             <%-- Gridview for showing volunteer Schedule --%>
                 <asp:TableCell HorizontalAlign="Right" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
-                        <asp:GridView ID="grdVolunteerSchedule" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium" ></asp:GridView>
                     </div>
+                        <asp:GridView ID="grdVolunteerSchedule" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
                 </asp:TableCell>
             </asp:TableRow>
-           </asp:Table>
+          
 
                 <%-- Gridview for showing Org rep Roster --%>
-        <asp:Table ID="Table5" runat="server">
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="3">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Label ID="lblOrgRepRoster" runat="server" Text="Organizational Rep Roster" Visible="false" Font-Bold="true"></asp:Label>
-                        <asp:GridView ID="grdOrgRepRoster" runat="server" AlternatingRowStyle-BackColor="#450084" BorderColor="Black" AlternatingRowStyle-ForeColor="White" Font-Size="Medium"></asp:GridView>
                     </div>
+                        <asp:GridView ID="grdOrgRepRoster" runat="server"  Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" CellPadding="6" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
                 </asp:TableCell>
             </asp:TableRow>
      </asp:Table>

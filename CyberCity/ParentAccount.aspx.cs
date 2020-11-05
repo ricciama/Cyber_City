@@ -7,6 +7,10 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.IO;
 
 namespace CyberCity
 {
@@ -99,6 +103,19 @@ namespace CyberCity
                 setPass.ExecuteNonQuery();
 
                 sc.Close();
+
+                //Sends email to user with login credentials
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("cybercityjmu1@gmail.com");
+                msg.To.Add(txtParentEmail.Text);
+                msg.Subject = "Cyber Day Credentials For " + txtParentFN.Text + ' ' + txtParentLN.Text;
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you recently created an accouny with JMU Cyber Day ";
+                emailBody += "<br/><br/> Please click this link to view/edit your profile and change your password if necessary.";
+                msg.Body = emailBody;
+                msg.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Send(msg);
+                msg.Dispose();
 
                 txtParentFN.Text = "";
                 txtParentLN.Text = "";
