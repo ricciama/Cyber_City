@@ -185,13 +185,6 @@ namespace CyberCity
                     lblOrgRepRoster.Visible = false;
                     lblOrgRepSched.Visible = false;
 
-                    ddlOrgRep.Items.Insert(0, new ListItem("Select Organizatinal Rep", "-1"));
-                    var firstItem = ddlOrgRep.Items[0];
-
-                    ddlOrgRep.Items.Clear();
-                    ddlOrgRep.Items.Add(firstItem);
-                    ddlOrgRep.DataBind();
-
                     
                 }
 
@@ -257,13 +250,6 @@ namespace CyberCity
                     grdVolunteerSchedule.Visible = false;
                     lblVolunteerSched.Visible = false;
 
-                    ddlVolunteers.Items.Insert(0, new ListItem("Select Volunteer", "-1"));
-
-                    var firstItem = ddlVolunteers.Items[0];
-
-                    ddlVolunteers.Items.Clear();
-                    ddlVolunteers.Items.Add(firstItem);
-                    ddlVolunteers.DataBind();
 
                 }
             }

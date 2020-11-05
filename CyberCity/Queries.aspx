@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Queries.aspx.cs" Inherits="CyberCity.Queries" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/GridView.css" rel="stylesheet" />
+    
     <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="css/GridView.css" rel="stylesheet" />
 
     <asp:Panel ID="Panel1" runat="server" BorderColor="#cccccc" BorderStyle="Solid" Width="100%">
         <br />
@@ -56,45 +57,50 @@
         </asp:Table>
             <%-- Gridviews --%>
 
-            <%-- Gridview for Showing All events --%>
-        <asp:Table ID="Table2" runat="server">
+             <%-- Gridview for Showing All events --%>
+        <asp:Table ID="Table2" runat="server" BorderColor="Black" BorderStyle="Solid" CssClass="containerLeft">
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Left" CssClass="cellPadding">
-                    <div>
+                <asp:TableCell>
+                    <div class="form-group">
                         <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true"></asp:Label>
-                        </div>
-                        <asp:GridView ID="grdAllEvents" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF" Width="250">
-                        </asp:GridView>
                     
+                    <asp:GridView ID="grdAllEvents" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"  Width="250" CellPadding="6"></asp:GridView>
+                    </div>
                 </asp:TableCell>
+
+
             <%-- Gridview for showing org rep schedule --%>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+
+                <asp:TableCell>
                     <div class="form-group">
                         <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true"></asp:Label>
+                        <asp:GridView ID="grdOrgRepSchedule" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </div>
-                        <asp:GridView ID="grdOrgRepSchedule" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
-                    
-                </asp:TableCell>
-            <%-- Gridview for showing volunteer Schedule --%>
-                <asp:TableCell HorizontalAlign="Right" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
-                    </div>
-                        <asp:GridView ID="grdVolunteerSchedule" runat="server" Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
                 </asp:TableCell>
             </asp:TableRow>
-          
-
                 <%-- Gridview for showing Org rep Roster --%>
-            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center">
                     <div class="form-group">
                         <asp:Label ID="lblOrgRepRoster" runat="server" Text="Organizational Rep Roster" Visible="false" Font-Bold="true"></asp:Label>
                     </div>
-                        <asp:GridView ID="grdOrgRepRoster" runat="server"  Font-Size="Medium" AutoGenerateColumns="true" CssClass="DDGridView" RowStyle-CssClass="td" HeaderStyle-CssClass="th" CellPadding="6" HeaderStyle-BackColor="#E1C4FF"></asp:GridView>
+                        <asp:GridView ID="grdOrgRepRoster" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                 </asp:TableCell>
-            </asp:TableRow>
-     </asp:Table>
+
+
+        <%-- Gridview for showing volunteer Schedule --%>
+
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
+                        <asp:GridView ID="grdVolunteerSchedule" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
+                    </div>
+                </asp:TableCell>
+                </asp:TableRow>
+        </asp:Table>
+
+
+  
 
     </asp:Panel>
 
