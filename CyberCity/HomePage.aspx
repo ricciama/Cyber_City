@@ -33,8 +33,15 @@
         <div class="col-md-4">
             <h2>Upcoming Events</h2>
             <p>
-                Connection to DB for furture events...
+                <asp:GridView 
+                            runat="server" 
+                            ID="studentSchedule" 
+                            BorderColor="Black" Font-Size="Large" HeaderStyle-CssClass="text-center"
+                            Width="350px" RowStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true"
+                            >         
+                        </asp:GridView>
             </p>
+           
          
         </div>
         <div class="col-md-4">

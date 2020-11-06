@@ -60,6 +60,29 @@ namespace CyberCity
                     sc.Close();
                 }
             }
+
+            int check = 0;
+
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program";
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            using (con)
+            {
+                SqlCommand cmd = new SqlCommand(schedule, con);
+                SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                sched.Fill(ds);
+                studentSchedule.DataSource = ds;
+                studentSchedule.DataBind();
+            }
+
+
+
+
+
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
