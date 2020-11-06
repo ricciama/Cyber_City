@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="ContactStyle.css" rel="stylesheet" />
+    <a href="Contact.aspx">Contact.aspx</a>
 
     <div class ="Box">
         <h1>Get in Touch</h1> 
@@ -10,7 +11,7 @@
         <asp:Table runat="server" HorizontalAlign="Center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Image ID="Image1" runat="server" ImageUrl="/Images/loginguy.PNG" CssClass="photo1" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="/Images/profileman.PNG" CssClass="photo1" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -35,7 +36,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                     <asp:Image ID="profile2" runat="server" ImageUrl="/Images/loginguy.PNG" CssClass="photo1" />
+                     <asp:Image ID="profile2" runat="server" ImageUrl="/Images/profileman.PNG" CssClass="photo1" />
                 </asp:TableCell>
             </asp:TableRow>
 
