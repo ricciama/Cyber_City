@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <link href="css/GridView.css" rel="stylesheet" />
+
     <div class="jumbotron">
         <div class="box">
         <%--<h1>JMU Presents: CyberCity - comment </h1>--%>
@@ -34,12 +36,16 @@
             <h2>Upcoming Events</h2>
             <p>
                 <asp:GridView 
-                            runat="server" 
-                            ID="studentSchedule" 
-                            BorderColor="Black" Font-Size="Large" HeaderStyle-CssClass="text-center"
-                            Width="350px" RowStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true"
-                            >         
-                        </asp:GridView>
+                    runat="server" 
+                    ID="studentSchedule" 
+                    BorderColor="Black" Font-Size="Large"
+                    Width="350px" 
+                    AutoGenerateColumns="true" 
+                    AllowPaging="true" CssClass="Grid" 
+                    AlternatingRowStyle-CssClass="alt" 
+                    PagerStyle-CssClass="pgr" 
+                    CellPadding="6">         
+                </asp:GridView>
             </p>
            
          
