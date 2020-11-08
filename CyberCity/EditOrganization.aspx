@@ -29,8 +29,8 @@
                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                         <div class="form-group">
-                            <asp:DropDownList ID="ddlOrgs" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Select Organization" Value="0"></asp:ListItem>
+                            <asp:DropDownList ID="ddlOrgs" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlOrgs_SelectedIndexChanged">
+                                <asp:ListItem Text="Select Organization" Value="-1"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>

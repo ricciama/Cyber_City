@@ -75,41 +75,9 @@ namespace CyberCity
 
         }
             
+             
 
-     
-
-        protected void btnCommitEdits_Click(object sender, EventArgs e)
-        {
-            tblDeleteConfirmation.Visible = false;
-            string orgID = ddlOrgs.SelectedValue.ToString();
-            String sqlUpdate = "UPDATE Organization SET [Name] = @Name, [Address] = @Address, [Email] = @Email, " +
-              "[PhoneNumber] = @PhoneNumber, [PrimaryContactName] = @PrimaryContactName " +
-              "WHERE OrganizationID =  " + orgID + "";
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            SqlCommand sqlCommand = new SqlCommand(sqlUpdate, sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtOrgName.Text));
-            sqlCommand.Parameters.AddWithValue("@Address", HttpUtility.HtmlEncode(txtOrgAddress.Text));
-            sqlCommand.Parameters.AddWithValue("@PrimaryContactName", HttpUtility.HtmlEncode(txtOrgContact.Text));
-            sqlCommand.Parameters.AddWithValue("@PhoneNumber", HttpUtility.HtmlEncode(txtOrgPhone.Text));
-            sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgEmail.Text));
-            
-
-
-            sqlConnection.Open();
-
-            adapter.UpdateCommand = sqlCommand;
-            adapter.UpdateCommand.ExecuteNonQuery();
-
-            sqlCommand.Dispose();
-
-            sqlConnection.Close();
-
-            tblConfirmation.Visible = true;
-        }
-
+        
         protected void btnDeleteOrg_Click(object sender, EventArgs e)
         {
             //string orgID = ddlOrgs.SelectedValue.ToString();
@@ -156,6 +124,48 @@ namespace CyberCity
             //}
 
             //tblDeleteConfirmation.Visible = true;
+        }
+
+        protected void ddlOrgs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orgId = ddlOrgs.SelectedValue.ToString();
+            int orgIdInt = int.Parse(ddlOrgs.SelectedValue);
+
+            if (orgIdInt != -1)
+            {
+                EditInfo.Visible = true;
+                tblDeleteConfirmation.Visible = false;
+
+                string org = "select Address, Name, PrimaryContactName, Email, PhoneNumber, OrganizationID from Organization ";
+                org += "where OrganizationID = " + orgId + "";
+
+                SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                SqlCommand sqlCommand2 = new SqlCommand(org, sqlConnection3);
+
+                sqlConnection3.Open();
+
+                using (SqlDataReader sqlRead = sqlCommand2.ExecuteReader())
+                {
+                    while (sqlRead.Read())
+                    {
+                        txtOrgName.Text = (sqlRead["Name"].ToString());
+                        txtOrgAddress.Text = (sqlRead["Address"].ToString());
+                        txtOrgContact.Text = (sqlRead["PrimaryContactName"].ToString());
+                        txtOrgPhone.Text = (sqlRead["PhoneNumber"].ToString());
+                        txtOrgEmail.Text = (sqlRead["Email"].ToString());
+
+                    }
+                    sqlRead.Close();
+                    sqlConnection3.Close();
+                }
+            }
+            else
+            {
+                EditInfo.Visible = false;
+                tblDeleteConfirmation.Visible = false;
+                tblConfirmation.Visible = false;
+            }
+           
         }
     }
 }
