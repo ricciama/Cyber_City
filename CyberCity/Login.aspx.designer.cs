@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity
-{
-
-
-    public partial class Login
-    {
-
+namespace CyberCity {
+    
+    
+    public partial class Login {
+        
         /// <summary>
         /// userLogoin control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image userLogoin;
-
+        
         /// <summary>
         /// Table1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-
+        
         /// <summary>
         /// lblUsername control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUsername;
-
+        
         /// <summary>
         /// txtUsername control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
-
+        
         /// <summary>
         /// lblPassword control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPassword;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// loginbtn control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button loginbtn;
-
+        
         /// <summary>
         /// lblincorrectLogin control.
         /// </summary>
@@ -85,14 +83,14 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblincorrectLogin;
-
+        
         /// <summary>
-        /// forgotPassword control.
+        /// btnForgotPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton forgotPassword;
+        protected global::System.Web.UI.WebControls.Button btnForgotPassword;
     }
 }

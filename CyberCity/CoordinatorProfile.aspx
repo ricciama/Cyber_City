@@ -39,8 +39,8 @@
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFVEmail" runat="server" Text="Required Field" ControlToValidate="txtVolunteerEmail" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                        <asp:TextBox CssClass="form-control" ID="txtCoordinatorEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVEmail" runat="server" Text="Required Field" ControlToValidate="txtCoordinatorEmail" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -85,7 +85,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -93,15 +93,21 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" Text="Passwords do not match!" ForeColor="Red" Font-Bold="true"></asp:CompareValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditCoordinator" runat="server" Text="Save Changes" OnClick="btnEditCoordinator_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditCoordinator" runat="server" Text="Update Profile" OnClick="btnEditCoordinator_Click"/>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Button ID="btnUpdatePassword" runat="server" CssClass="btn btn-primary btn-block btn-lg" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -110,6 +116,11 @@
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblFeedback" runat="server" Text="Profile Updated Successfully!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblPasswordSuccess" runat="server" Text="Password Updated Successfully!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

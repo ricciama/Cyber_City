@@ -75,13 +75,13 @@
                         <asp:RequiredFieldValidator ID="RFVUsernme" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="txtUsernme" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+<%--                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RFVtxtPassword" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="txtPassword" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
-                </asp:TableCell>
+                </asp:TableCell>--%>
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
@@ -93,10 +93,15 @@
             </asp:TableRow>
         </asp:Table>
           <br />
-        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+        <asp:Table ID="tblConfirmation" runat="server" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="confirmationlbl" runat="server" Text="Organizational Representative Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Organizational Representative Created!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblEmailSuccess" runat="server" Text="Email sent to user" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

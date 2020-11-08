@@ -100,32 +100,42 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Re-Enter Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Update Information" OnClick="btnUpdate_Click" />
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdatePassword" runat="server" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
           <br />
-        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+        <asp:Table ID="tblConfirmation" runat="server" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="confirmationlbl" runat="server" Text="Update Successful!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                    <asp:Label ID="confirmationlbl" runat="server" Text="Update Successful!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblPasswordSuccess" runat="server" Text="Password Updated Successfully!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

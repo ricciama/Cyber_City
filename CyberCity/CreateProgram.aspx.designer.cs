@@ -69,6 +69,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVProgramDateTime;
 
         /// <summary>
+        /// CVDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CVDate;
+
+        /// <summary>
         /// btnCreateProgram control.
         /// </summary>
         /// <remarks>

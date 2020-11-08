@@ -30,12 +30,7 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
-                        
-                        <asp:UpdatePanel runat="server" ID="beans">
-                            <ContentTemplate>
-                                    <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged = "ddl_Event_SelectedIndexChanged"></asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectProgram_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -48,11 +43,7 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <asp:DropDownList ID="ddlSelectOrg" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddl_OrgRep_SelectedIndexChanged"></asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:DropDownList ID="ddlSelectOrg" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSelectOrg_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -65,11 +56,7 @@
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <ContentTemplate>
-                                <asp:DropDownList ID="ddlOrgRep" runat="server" CssClass="form-control"></asp:DropDownList>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:DropDownList ID="ddlOrgRep" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddl_OrgRep_SelectedIndexChanged"></asp:DropDownList>
                     </div>                    
                 </asp:TableCell>
             </asp:TableRow>
@@ -97,6 +84,33 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+            <%-- Error checking labels --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblProgramError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblEventError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblOrgError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblOrgRepError" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+             <%-- Success Label --%>
+            <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                    <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
         </asp:Table>
 
             <br />
@@ -105,11 +119,10 @@
         
 
         <%-- Table to Display Program Schedule --%>
-        <%--<div class="vertical">--%>
+       
             <div class="container">
                 <div class="floatLeft">
-
-                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" ></asp:Label>
+                    <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" Visible="false" ></asp:Label>
                     <asp:GridView 
                         runat="server" 
                         ID="programSchedule" 
@@ -117,15 +130,26 @@
                         BorderColor="Black" 
                         AllowPaging="true" 
                         AutoGenerateColumns="true" 
-                        AlternatingRowStyle-ForeColor="White" Font-Size="Large">  
-                               
+                        AlternatingRowStyle-ForeColor="White" Font-Size="Large" HeaderStyle-HorizontalAlign="Center" >  
                     </asp:GridView>
-
                 </div>
-            </div>
-        <%--</div>--%>
+            
 
-      
+        <%-- Gridview for Org Rep Schedule --%>
+            
+                <div class="floatRight">
+                    <asp:Label ID="lblOrgRepSchedule" runat="server" Text="Organization Rep Schedule" Font-Size="Large" Font-Bold="True" Visible="false"></asp:Label>
+                    <asp:GridView 
+                        ID="orgRepSchedule"
+                        runat="server" 
+                        AlternatingRowStyle-BackColor="#450084" 
+                        BorderColor="Black" AllowPaging="true" 
+                        AutoGenerateColumns="true" 
+                        AlternatingRowStyle-ForeColor="White" 
+                        Font-Size="Large">
+                    </asp:GridView>
+                </div>
+        </div>    
 
     </asp:Panel>
 

@@ -7,6 +7,10 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.IO;
 
 namespace CyberCity
 {
@@ -83,10 +87,11 @@ namespace CyberCity
                 SqlCommand createUser = new SqlCommand();
                 createUser.Connection = sc;
                 // INSERT USER RECORD
-                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, 'S')";
+                createUser.CommandText = "insert into[dbo].[Person] values(@FName, @LName, @Username, @Email, 'S')";
                 createUser.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtStudentFN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@LName", HttpUtility.HtmlEncode(txtStudentLN.Text)));
                 createUser.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsernme.Text)));
+                createUser.Parameters.Add(new SqlParameter("@Email", HttpUtility.HtmlEncode(txtParentEmail.Text)));
                 createUser.ExecuteNonQuery();
 
                 System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
@@ -99,6 +104,19 @@ namespace CyberCity
 
                 sc.Close();
 
+                //Sends email to user with login credentials
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("cybercityjmu1@gmail.com");
+                msg.To.Add(txtParentEmail.Text);
+                msg.Subject = "Cyber Day Credentials For " + txtParentFN.Text + ' ' + txtParentLN.Text;
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you recently created an accouny with JMU Cyber Day ";
+                emailBody += "<br/><br/> Please click this link to view/edit your profile and change your password if necessary.";
+                msg.Body = emailBody;
+                msg.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Send(msg);
+                msg.Dispose();
+
                 txtParentFN.Text = "";
                 txtParentLN.Text = "";
                 txtStudentFN.Text = "";
@@ -108,6 +126,8 @@ namespace CyberCity
                 txtUsernme.Text = "";
                 ddlEthnicity.SelectedIndex = -1;
                 ddlGender.SelectedIndex = -1;
+                txtParentEmail.Text = "";
+                txtParentPhone.Text = "";
 
                 lblFeedback.Text = "Profile Created Successfully. Please login above!";
                 lblFeedback.ForeColor = Color.Green;

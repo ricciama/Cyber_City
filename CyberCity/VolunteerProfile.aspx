@@ -32,13 +32,8 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Date of Birth and Gender --%>
+            <%-- Gender --%>
             <asp:TableRow HorizontalAlign="Center">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtVolunteerDOB" runat="server" placeholder="Date of Birth"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                             <div class="form-group">
@@ -103,24 +98,45 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <asp:Label ID="Label1" runat="server" Text="Password" Font-Bold="True"></asp:Label>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtPassword2" CssClass="form-control" runat="server" placeholder="Re-Enter Password" TextMode="Password"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" Text="Passwords do not match!" ForeColor="Red" Font-Bold="true"></asp:CompareValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"/>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdatePassword" runat="server" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <br />
-        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+        <asp:Table ID="tblConfirmation" runat="server" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label1" runat="server" Text="Profile Updated Successfully!" Font-Bold="true" ForeColor="Green"></asp:Label>
+                    <asp:Label ID="lblConfirmation" runat="server" Text="Profile Updated Successfully!" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Label ID="lblPasswordSuccess" runat="server" Text="Password Updated Successfully!" ForeColor="Green" Font-Bold="true" Visible="false"></asp:Label>
+                    </div>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

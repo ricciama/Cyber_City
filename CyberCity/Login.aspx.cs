@@ -86,5 +86,10 @@ namespace CyberCity
                 txtUsername.Text = "";
             }
         }
+
+        protected void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgotPassword.aspx");
+        }
     }
 }

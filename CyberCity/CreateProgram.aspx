@@ -31,6 +31,7 @@
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtProgramDateTime" runat="server" placeholder="Program Time" TextMode="Date"></asp:TextBox>
                        <asp:RequiredFieldValidator ID="RFVProgramDateTime" runat="server" Text = "Required Field" ControlToValidate="txtProgramDateTime" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="CVDate" runat="server" Text="Please select a future date" ForeColor="Red" Font-Bold="true" ControlToValidate="txtProgramDateTime" OnServerValidate="CVDate_ServerValidate"></asp:CustomValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -55,7 +56,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="1">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddEvents" runat="server" Text="Add Events -> " OnClick="btnAddEvents_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddEvents" runat="server" CausesValidation="true" Text="Add Events -> " OnClick="btnAddEvents_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

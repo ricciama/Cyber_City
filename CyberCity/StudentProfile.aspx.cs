@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 namespace CyberCity
 {
@@ -27,6 +29,7 @@ namespace CyberCity
 
                 while (sqlRead.Read())
                 {
+                    txtUsernme.Text = Username;
                     txtStudentFN.Text = (sqlRead["StudentFName"].ToString());
                     txtStudentLN.Text = (sqlRead["StudentLName"].ToString());
                     txtParentFN.Text = (sqlRead["ParentFName"].ToString());
@@ -74,6 +77,43 @@ namespace CyberCity
             sqlConnection.Close();
 
             lblFeedback.Visible = true;
+        }
+
+        protected void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            //updates password
+            String sqlUpdate2 = "UPDATE Pass SET [PasswordHash] = @Password WHERE Username = ('" + Session["Username"].ToString() + "')";
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+            SqlCommand cmd = new SqlCommand(sqlUpdate2, con);
+
+            cmd.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(PasswordHash.HashPassword(txtPassword.Text)));
+
+            con.Open();
+
+            da.UpdateCommand = cmd;
+            da.UpdateCommand.ExecuteNonQuery();
+
+            cmd.Dispose();
+
+            con.Close();
+
+            lblPasswordSuccess.Visible = true;
+
+            //Sends email to user that they changed their password
+            MailMessage msg = new MailMessage();
+            msg.From = new MailAddress("cybercityjmu1@gmail.com");
+            msg.To.Add(txtParentEmail.Text);
+            msg.Subject = "Password Change " + txtParentFN.Text + ' ' + txtParentLN.Text;
+            string emailBody = "Hello, " + txtParentFN.Text;
+            emailBody += "<br/><br/> You are receiving this email because you have changed your password. If this was not you, please contact Dr. Tom Dillon or Professor Shawn Lough immediately.";
+            emailBody += "<br/><br/><b/>Dr. Dillon's Email: dillontx@jmu.edu<br/><b/>Professor Lough's Email: loughsr@jmu.edu";
+            msg.Body = emailBody;
+            msg.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Send(msg);
+            msg.Dispose();
         }
     }
 }

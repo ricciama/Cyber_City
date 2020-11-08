@@ -45,10 +45,13 @@
 
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
-                    <asp:LinkButton ID="forgotPassword" runat="server">Forgot Password?</asp:LinkButton>
+                    <asp:Button ID="btnForgotPassword" runat="server" Text="Forgot Password?" Width="150px" CssClass="loginbtn" OnClick="btnForgotPassword_Click"/>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-     </div>>
+     </div>
+
+
+
 
 </asp:Content>

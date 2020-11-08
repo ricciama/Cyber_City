@@ -120,7 +120,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -128,7 +128,8 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:Label ID="Label1" runat="server" Text="Re-type Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
-                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" Text="Passwords do not match!" ForeColor="Red" Font-Bold="true"></asp:CompareValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -136,7 +137,12 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click" />
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click"/>
+                    </div>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <div class="form-group">
+                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdatePassword" runat="server" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -145,6 +151,11 @@
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblFeedback" runat="server" Text="Profile Created Successfully. Please login above!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblPasswordSuccess" runat="server" Text="Password Updated!" ForeColor="Green" Font-Bold="true" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

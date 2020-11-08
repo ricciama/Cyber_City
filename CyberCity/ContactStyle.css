@@ -36,8 +36,8 @@ p {
 .photo1{
     padding:7%;
     margin-top:30px;
-    width:120px;
-    height:90px;
+    width:90px;
+    /*height:150px;*/
     align-content: center;
     
 }

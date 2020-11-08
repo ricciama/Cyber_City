@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AboutStyle.css" />
     <Content Include="Contact.aspx" />
     <Content Include="ContactStyle.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -118,6 +119,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CoordinatorAccount.aspx" />
+    <Content Include="CoordinatorHomePage.aspx" />
     <Content Include="CoordinatorProfile.aspx" />
     <Content Include="CreateEvent.aspx" />
     <Content Include="CreateOrganization.aspx" />
@@ -127,17 +129,31 @@
     <Content Include="EditOrgRep.aspx" />
     <Content Include="EditProgram.aspx" />
     <Content Include="FirstTimeLoginVolunteer.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="css\GridView.css" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\background.png" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\cob.jpg" />
+    <Content Include="Images\comp.jpg" />
     <Content Include="Images\dukes.jpg" />
+    <Content Include="Images\glasses.jpg" />
+    <Content Include="Images\hand.JPG" />
+    <Content Include="Images\header_back.gif" />
+    <Content Include="Images\jmu15.JPG" />
     <Content Include="Images\jmuback.jpg" />
     <Content Include="Images\jmuquad.jpg" />
+    <Content Include="Images\man.JPG" />
+    <Content Include="Images\phone.jpg" />
+    <Content Include="Images\pic.jpg" />
+    <Content Include="Images\profileman.PNG" />
     <Content Include="Images\quad.jpg" />
     <Content Include="ORFirstTimeLogin.aspx" />
     <Content Include="Queries.aspx" />
     <Content Include="RegisterOrgRep.aspx" />
+    <Content Include="RegisterVolunteer.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -306,6 +322,13 @@
     <Compile Include="CoordinatorAccount.aspx.designer.cs">
       <DependentUpon>CoordinatorAccount.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CoordinatorHomePage.aspx.cs">
+      <DependentUpon>CoordinatorHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorHomePage.aspx.designer.cs">
+      <DependentUpon>CoordinatorHomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CoordinatorProfile.aspx.cs">
       <DependentUpon>CoordinatorProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,6 +391,13 @@
     </Compile>
     <Compile Include="FirstTimeLoginVolunteer.aspx.designer.cs">
       <DependentUpon>FirstTimeLoginVolunteer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="ORFirstTimeLogin.aspx.cs">
       <DependentUpon>ORFirstTimeLogin.aspx</DependentUpon>
@@ -450,6 +480,13 @@
     </Compile>
     <Compile Include="RegisterOrgRep.aspx.designer.cs">
       <DependentUpon>RegisterOrgRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterVolunteer.aspx.cs">
+      <DependentUpon>RegisterVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterVolunteer.aspx.designer.cs">
+      <DependentUpon>RegisterVolunteer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
