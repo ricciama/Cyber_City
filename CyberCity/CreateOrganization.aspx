@@ -55,7 +55,7 @@
             </asp:TableRow>
             <%-- Email --%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
                        <asp:RequiredFieldValidator ID="RFVOrgEmail" runat="server" Text = "Required Field" ControlToValidate="txtOrgEmail" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>

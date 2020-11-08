@@ -76,7 +76,7 @@
             </asp:TableRow>
             <%-- Username and Password --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                     <asp:Label ID="lblUserName" runat="server" Text="Username" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtUsernme" runat="server" placeholder="Username"></asp:TextBox>

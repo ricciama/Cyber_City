@@ -135,12 +135,12 @@
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click"/>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell>
+                <asp:TableCell CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdatePassword" runat="server" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>
