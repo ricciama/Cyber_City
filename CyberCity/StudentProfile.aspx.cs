@@ -19,7 +19,7 @@ namespace CyberCity
             if (!IsPostBack)
             {
                 string Username = Session["Username"].ToString();
-                String coordinator = "Select StudentFName, StudentLName, ParentFName, ParentLName, ParentEmail, ParentPhone, DOB, Gender, Ethnicity from Student where Username = '" + Username + "'";
+                String coordinator = "Select StudentFName, StudentLName, ParentFName, ParentLName, ParentEmail, ParentPhone, FORMAT(DOB, 'd') as DOB, Gender, Ethnicity from Student where Username = '" + Username + "'";
                 SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
                 SqlCommand sqlCommand2 = new SqlCommand(coordinator, sqlConnection2);
 

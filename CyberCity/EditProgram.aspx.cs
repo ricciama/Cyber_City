@@ -71,33 +71,51 @@ namespace CyberCity
 
             sqlCommand.Dispose();
             cnn.Close();
+            tblConfirmation.Visible = true;
         }
 
-        protected void btnSearchProgram_Click(object sender, EventArgs e)
+       
+
+        protected void ddlProgamNames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnEditProgram.Visible = true;
-            txtProgramName.Visible = true;
-            txtProgramDateTime.Visible = true;
 
-            string progID = ddlProgamNames.SelectedValue.ToString();
-
-
-            String sqlQuery2 = "Select ProgramID, Name, Date from Program ";
-            sqlQuery2 += "where ProgramID = " + progID + "";
-
-            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            SqlCommand sqlCommand2 = new SqlCommand(sqlQuery2, sqlConnection3);
-
-            sqlConnection3.Open();
-            SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
-
-            while (sqlRead.Read())
+            int progIDint = int.Parse(ddlProgamNames.SelectedValue);
+            if(progIDint!=-1)
             {
-                txtProgramName.Text = (sqlRead["Name"].ToString());
-                txtProgramDateTime.Text = (sqlRead["Date"].ToString());
+                btnEditProgram.Visible = true;
+                txtProgramName.Visible = true;
+                txtProgramDateTime.Visible = true;
+                tblConfirmation.Visible = false;
+
+                string progID = ddlProgamNames.SelectedValue.ToString();
+
+
+                String sqlQuery2 = "Select ProgramID, Name, Date from Program ";
+                sqlQuery2 += "where ProgramID = " + progID + "";
+
+                SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                SqlCommand sqlCommand2 = new SqlCommand(sqlQuery2, sqlConnection3);
+
+                sqlConnection3.Open();
+                SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
+
+                while (sqlRead.Read())
+                {
+                    txtProgramName.Text = (sqlRead["Name"].ToString());
+                    txtProgramDateTime.Text = (sqlRead["Date"].ToString());
+                }
+                sqlConnection3.Close();
+                sqlRead.Close();
+
             }
-            sqlConnection3.Close();
-            sqlRead.Close();
+            else
+            {
+                btnEditProgram.Visible = false;
+                txtProgramName.Visible = false;
+                txtProgramDateTime.Visible = false;
+                tblConfirmation.Visible = false;
+            }
+          
         }
     }
 }

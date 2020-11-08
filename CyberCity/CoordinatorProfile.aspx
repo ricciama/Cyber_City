@@ -100,12 +100,12 @@
             </asp:TableRow>
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditCoordinator" runat="server" Text="Update Profile" OnClick="btnEditCoordinator_Click"/>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell>
+                <asp:TableCell CssClass="cellPadding">
                     <div class="form-group">
                         <asp:Button ID="btnUpdatePassword" runat="server" CssClass="btn btn-primary btn-block btn-lg" Text="Update Password" OnClick="btnUpdatePassword_Click" />
                     </div>

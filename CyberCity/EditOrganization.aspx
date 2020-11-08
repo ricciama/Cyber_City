@@ -29,24 +29,14 @@
                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                         <div class="form-group">
-                            <asp:DropDownList ID="ddlOrgs" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Select Organization" Value="0"></asp:ListItem>
+                            <asp:DropDownList ID="ddlOrgs" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlOrgs_SelectedIndexChanged">
+                                <asp:ListItem Text="Select Organization" Value="-1"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
-                </asp:TableCell>
-              <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div >
-                        <div class="form-group">
-                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="editOrg" runat="server" Text="Load Organization to Edit" OnClick="editOrg_Click"/>  
-                        </div>
-                    </div>
-                </asp:TableCell>
-                         
+                </asp:TableCell>                       
               </asp:TableRow>
             </asp:Table>
-
- 
             
             <%-- Name and Adress --%>
    
@@ -91,7 +81,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCommitEdits" runat="server" Text="Commit Edits" onclick="btnCommitEdits_Click"/>  
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCommitEdits" runat="server" Text="Commit Edits" OnClick="editOrg_Click"/>  
                     </div>
                 </asp:TableCell>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">

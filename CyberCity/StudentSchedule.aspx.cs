@@ -22,7 +22,7 @@ namespace CyberCity
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string studentUsername = Session["Username"].ToString();
-            string schedule = "SELECT Event.Name, FORMAT( Program.Date, 'd') as Date, Event.Time, Event.Location " +
+            string schedule = "SELECT Event.Name, FORMAT( Program.Date, 'd') as Date, CONVERT(varchar, Event.Time, 100) as Time, Event.Location " +
                 "FROM StudentRegistration INNER JOIN Student ON StudentRegistration.StudentID = Student.StudentID " +
                 "INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code INNER JOIN Event INNER JOIN Program " +
                 "ON Event.ProgramID = Program.ProgramID INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID " +

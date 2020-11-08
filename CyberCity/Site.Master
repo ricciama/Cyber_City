@@ -77,12 +77,7 @@
                             <li><a runat="server" style="color:white" href="~/HomePage" >Home</a></li>
                             <li><a runat="server" style="color:white" href="~/About">About</a></li>
                             <li><a runat="server" style="color:white" href="~/Contact">Contact</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="navMain">Create Account<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" aria-labelledby="navMain">
-                                        <li><a class="dropdown-item" href="ParentAccount.aspx">Parent</a></li>
-                                    </ul>
-                                </li>
+                            <li><a runat="server" style="color:white" href="~/ParentAccount">Create Student Account</a></li>
                             <li><a runat="server" style="color:white" href="~/Login">Login</a></li>                          
                         </ul>
                     </div>
@@ -122,7 +117,7 @@
                                 <a><asp:Label ID="lblSPUser" runat="server" Text="" ForeColor="White"></asp:Label></a>
                             </li>
                             <li>
-                                <a><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click"/></a>
+                                <a><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" CausesValidation="false"/></a>
                             </li>
                         </ul>
                     </div>
@@ -152,7 +147,7 @@
                             <a><asp:Label ID="lblVUser" runat="server" Text="" ForeColor="White"></asp:Label></a>
                         </li>
                         <li>
-                            <a><asp:Button ID="btnLogoutV" runat="server" Text="Logout" OnClick="btnLogout_Click" /></a>
+                            <a><asp:Button ID="btnLogoutV" runat="server" Text="Logout" OnClick="btnLogout_Click" CausesValidation="false" /></a>
                         </li>
                     </ul>
                 </div>
@@ -183,7 +178,7 @@
                             <a><asp:Label ID="lblOrgUser" runat="server" Text="" ForeColor="White"></asp:Label></a>
                         </li>
                         <li>
-                            <a><asp:Button ID="btnLogoutOrg" runat="server" Text="Logout" OnClick="btnLogout_Click" /></a>
+                            <a><asp:Button ID="btnLogoutOrg" runat="server" Text="Logout" OnClick="btnLogout_Click" CausesValidation="false" /></a>
                         </li>
                     </ul>
                 </div>
@@ -241,7 +236,7 @@
                                 <a><asp:Label ID="lblCordUser" runat="server" Text="" ForeColor="White"></asp:Label></a>                               
                             </li>
                             <li>                                  
-                                <a><asp:Button ID="btnLogoutC" runat="server" Text="Logout" OnClick="btnLogout_Click" /></a>                                 
+                                <a><asp:Button ID="btnLogoutC" runat="server" Text="Logout" OnClick="btnLogout_Click" CausesValidation="false" /></a>                                 
                             </li>
                         </ul>
                     </div>
