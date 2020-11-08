@@ -80,11 +80,13 @@ namespace CyberCity
             orgRep += "where OrgRepID = " + orgRepId + "";
            
             SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+           
             SqlCommand sqlCommand2 = new SqlCommand(orgRep, sqlConnection3);
 
             sqlConnection3.Open();
 
             SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
+            
 
             while (sqlRead.Read())
             {
