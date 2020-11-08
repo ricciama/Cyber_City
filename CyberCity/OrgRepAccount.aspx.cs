@@ -114,10 +114,9 @@ namespace CyberCity
             sb.Append(RandomNumber(10, 199));
             sb.Append(RandomString(7));
 
-            int errorCheck = 0;
-
 
             SqlConnection sqlConnection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString.ToString());
 
 
             // Tests if the username is available
@@ -133,7 +132,14 @@ namespace CyberCity
 
             sqlConnection1.Close();
 
-            if (errorCheck == 0)
+            String sqlQuery4 = "Select Count(1) from [OrgRep] where [Code] = @Code";
+            SqlCommand sqlCommand2 = new SqlCommand(sqlQuery4, sqlConnection2);
+            sqlCommand2.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtCode.Text));
+            sqlConnection2.Open();
+            int codeCount = Convert.ToInt32(sqlCommand2.ExecuteScalar());
+            sqlConnection2.Close();
+
+            if (userNameCount == 0 && codeCount == 0)
             {
 
                 string connectionString;
@@ -217,9 +223,14 @@ namespace CyberCity
                 lblEmailSuccess.Visible = true;
 
             }
-            else if (errorCheck != 0)
+            else if (userNameCount != 0)
             {
                 confirmationlbl.Text = "Username already exists please select a new one!";
+                confirmationlbl.ForeColor = Color.Red;
+                confirmationlbl.Visible = true;
+            } else if (codeCount != 0)
+            {
+                confirmationlbl.Text = "Org Rep Code already exists please select a new one!";
                 confirmationlbl.ForeColor = Color.Red;
                 confirmationlbl.Visible = true;
             }

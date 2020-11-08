@@ -54,9 +54,9 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:DropDownList ID="ddlOrgName" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="0" Text="Select Organization"></asp:ListItem>
+                            <asp:ListItem Value="-1" Text="Select Organization"></asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="RFVOrgName" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="ddlOrgName" SetFocusOnError="true" InitialValue="0"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RFVOrgName" runat="server" text ="Required Field" ForeColor="Red" Font-Bold="true" ControlToValidate="ddlOrgName" SetFocusOnError="true" InitialValue="-1"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -68,7 +68,7 @@
             </asp:TableRow>
             <%-- Username and Password --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                     <asp:Label ID="lblUserName" runat="server" Text="Username" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtUsernme" runat="server" placeholder="Username"></asp:TextBox>

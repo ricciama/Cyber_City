@@ -154,6 +154,7 @@ namespace CyberCity
                 confirmationlbl.Text = "Username already exists please select a new one!";
                 confirmationlbl.ForeColor = Color.Red;
                 tblConfirmation.Visible = true;
+                confirmationlbl.Visible = true;
             }
 
         }
