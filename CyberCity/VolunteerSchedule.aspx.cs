@@ -20,7 +20,7 @@ namespace CyberCity
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerUsername = Session["Username"].ToString();
 
-            string schedule = "SELECT Event.Name as 'Event Name', Event.Date, Event.Time, Event.Location FROM Volunteer " +
+            string schedule = "SELECT Event.Name as 'Event Name', Event.Time, Event.Location FROM Volunteer " +
                 "INNER JOIN VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN Event ON VolunteerRegistration.EventID = Event.EventID " +
                 "WHERE(Volunteer.UserName = '" + volunteerUsername + "')";
 
