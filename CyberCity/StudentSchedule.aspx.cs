@@ -18,6 +18,8 @@ namespace CyberCity
         {
             int check = 0;
 
+
+
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string studentUsername = Session["Username"].ToString();
             string schedule = "SELECT Event.Name, FORMAT( Program.Date, 'd') as Date, Event.Time, Event.Location " +

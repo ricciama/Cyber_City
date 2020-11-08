@@ -18,56 +18,55 @@ namespace CyberCity
             int check = 0;
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string studentUsername = Session["Username"].ToString();
-            string schedule = "SELECT Event.Name, FORMAT( Program.Date, 'd') as Date, Event.Time, Event.Location " +
-                "FROM StudentRegistration INNER JOIN Student ON StudentRegistration.StudentID = Student.StudentID " +
-                "INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code INNER JOIN Event INNER JOIN Program " +
-                "ON Event.ProgramID = Program.ProgramID INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID " +
-                "ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID WHERE(Student.UserName = '" + studentUsername + "')";
+            string orgRepUsername = Session["Username"].ToString();
+            string group = "SELECT Student.StudentID, Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
+            group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
+            group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
+            group += "WHERE(OrgRep.UserName = '" + orgRepUsername +"')";
+
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
             {
-                SqlCommand cmd = new SqlCommand(schedule, con);
+                SqlCommand cmd = new SqlCommand(group, con);
                 SqlDataAdapter sched = new SqlDataAdapter(cmd);
                 sched.Fill(ds);
                 grdOrgStudent.DataSource = ds;
                 grdOrgStudent.DataBind();
+
+                Table1.Visible = true;
+                tblCancel.Visible = false;
+                tblNotRegistered.Visible = false;
             }
 
 
-            // checks if a student is registerd for a program
-            SqlConnection connect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-
-            string sqlCheck = "Select count(*) as count FROM Student INNER JOIN StudentRegistration " +
-                "ON Student.StudentID = StudentRegistration.StudentID INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code " +
-                "INNER JOIN OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN Event " +
-                "ON OrgRepRegistration.EventID = Event.EventID WHERE(Student.UserName = '" + studentUsername + "')";
-
-            SqlCommand sqlCommand2 = new SqlCommand(sqlCheck, connect);
-            connect.Open();
-            SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
-            while (sqlRead.Read())
-            {
-                check = Int32.Parse(sqlRead["count"].ToString());
-
-            }
-
-            if (check == 0)
-            {
-                //Table1.Visible = false;
-                //tblCancel.Visible = false;
-                //tblNotRegistered.Visible = true;
-
-            }
-
-            connect.Close();
+          
 
         }
 
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        protected void grdOrgStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Label studentID = grdOrgStudent.Rows[e.RowIndex].FindControl("StudentID") as Label;
+            int user = Convert.ToInt32(studentID.Text);
+
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            string remove = "DELETE FROM StudentRegistration WHERE StudentID = " + user;
+
+            con.Open();
+            using (con)
+            {
+                SqlCommand cmd2 = new SqlCommand(remove, con);
+                cmd2.ExecuteNonQuery();
+
+            }
+            con.Close();
+        }
     }
     
 }
