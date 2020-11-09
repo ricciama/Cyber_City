@@ -24,16 +24,12 @@
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell CssClass="cellPadding">
                     <div class ="form-group">
-                        <asp:DropDownList ID="ddlProgamNames" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="0" Text ="Select Program to Edit"></asp:ListItem>
+                        <asp:DropDownList ID="ddlProgamNames" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlProgamNames_SelectedIndexChanged">
+                            <asp:ListItem Value="-1" Text ="Select Program to Edit"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell CssClass="cellPadding">
-                    <div class ="form-group">
-                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnSearchProgram" runat="server" Text="Load Program Data" OnClick="btnSearchProgram_Click" Visible="true"/>
-                    </div>
-                </asp:TableCell>
+               
             </asp:TableRow>
             <%-- Program Name and Date/Time--%>
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
@@ -55,6 +51,14 @@
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditProgram" runat="server" Text="Edit Program" OnClick="btnEditProgram_Click" Visible="false"/>
                     </div>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <br />
+         <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="Label2" runat="server" Text="Program Updated!" Font-Bold="true" ForeColor="Green"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

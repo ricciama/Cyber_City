@@ -130,24 +130,6 @@ namespace CyberCity {
         protected global::System.Web.UI.WebControls.GridView grdOrgRepSchedule;
         
         /// <summary>
-        /// lblOrgRepRoster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrgRepRoster;
-        
-        /// <summary>
-        /// grdOrgRepRoster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdOrgRepRoster;
-        
-        /// <summary>
         /// lblVolunteerSched control.
         /// </summary>
         /// <remarks>
@@ -164,5 +146,23 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdVolunteerSchedule;
+        
+        /// <summary>
+        /// lblOrgRepRoster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrgRepRoster;
+        
+        /// <summary>
+        /// grdOrgRepRoster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdOrgRepRoster;
     }
 }
