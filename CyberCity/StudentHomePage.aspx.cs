@@ -170,5 +170,21 @@ namespace CyberCity
             lblConfirmation.Visible = true;
         }
 
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            txtTeacherCode.Text = "SStevens";
+            txtAllergies.Text = "Peanuts";
+            txtEMName.Text = "David Lang";
+            txtEMNumber.Text = "703-986-4523";
+            txtEMRelationship.Text = "Father";
+            txtMisc.Text = "N/A";
+            ddlCPUAccess.SelectedIndex = 1;
+            ddlCPUExp.SelectedIndex = 4;
+            ddlFirstTime.SelectedIndex = 1;
+            ddlInternetAccess.SelectedIndex = 1;
+            ddlPhotoPermission.SelectedIndex = 1;
+            ddlLunchTicket.SelectedIndex = 1;
+ 
+        }
     }
 }

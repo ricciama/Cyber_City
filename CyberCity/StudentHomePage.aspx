@@ -236,7 +236,7 @@
                                     <asp:TableCell>
                                         <asp:Label ID="lblError" runat="server" Text="Teacher code does not exist. Please try again!" ForeColor="Red" Font-Bold="true"></asp:Label>
                                     </asp:TableCell>
-                                    <asp:TableCell>
+                                    <asp:TableCell>  
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
@@ -245,7 +245,8 @@
                         <%--Modal footer--%>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <asp:Button ID="btnSave" CssClass="btn btn-success" runat="server" Text="Save" OnClick="btnSave_Click" />           
+                            <asp:Button ID="btnSave" CssClass="btn btn-success" runat="server" Text="Save" OnClick="btnSave_Click" /> 
+                            <asp:Button ID="btnPopulate" CssClass="btn btn-success" runat="server" Text="Populate" OnClick="btnPopulate_Click" CausesValidation="false"/>                            
                         </div>
         
                       </div>
