@@ -26,7 +26,7 @@ namespace CyberCity
                 "FROM StudentRegistration INNER JOIN Student ON StudentRegistration.StudentID = Student.StudentID " +
                 "INNER JOIN OrgRep ON StudentRegistration.Code = OrgRep.Code INNER JOIN Event INNER JOIN Program " +
                 "ON Event.ProgramID = Program.ProgramID INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID " +
-                "ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID WHERE(Student.UserName = '" + studentUsername + "')";
+                "ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID WHERE(Student.UserName = '" + studentUsername + "') ORDER BY Event.Time";
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
