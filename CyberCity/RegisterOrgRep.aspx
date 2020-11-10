@@ -18,7 +18,7 @@
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell ColumnSpan="2">                    
-                    <h4>Register an Orgsnizational Representative for an Event</h4>              
+                    <h4>Register an Organizational Representative for an Event</h4>              
                 </asp:TableCell>
             </asp:TableRow>
             <%-- Select Program --%>
@@ -124,7 +124,7 @@
                 <div class="floatLeft">
                     <asp:Label ID="lblSchedule" runat="server" Text="Program Schedule" Font-Size="Large" Font-Underline="True" Font-Bold="True" Visible="false" ></asp:Label>
                     <asp:GridView 
-                        runat="server" 
+                        runat="server" Width="75%" 
                         ID="programSchedule" 
                         AlternatingRowStyle-BackColor="#450084" 
                         BorderColor="Black" 
@@ -141,7 +141,7 @@
                     <asp:Label ID="lblOrgRepSchedule" runat="server" Text="Organization Rep Schedule" Font-Size="Large" Font-Bold="True" Visible="false"></asp:Label>
                     <asp:GridView 
                         ID="orgRepSchedule"
-                        runat="server" 
+                        runat="server" Width="75%"
                         AlternatingRowStyle-BackColor="#450084" 
                         BorderColor="Black" AllowPaging="true" 
                         AutoGenerateColumns="true" 
