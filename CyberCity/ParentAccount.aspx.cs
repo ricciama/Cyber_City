@@ -141,5 +141,18 @@ namespace CyberCity
 
             }
         }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            txtParentEmail.Text = "DavidLang@gmail.com";
+            txtParentFN.Text = "David";
+            txtParentLN.Text = "Lang";
+            txtParentPhone.Text = "7042633423";
+            txtStudentFN.Text = "Zach";
+            txtStudentLN.Text = "Lang";
+            txtStudentDOB.Text = "11/02/1998";
+            ddlGender.SelectedValue = "Male";
+            ddlEthnicity.SelectedIndex = 1;
+        }
     }
 }
