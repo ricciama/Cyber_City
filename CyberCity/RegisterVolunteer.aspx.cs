@@ -112,7 +112,7 @@ namespace CyberCity
             }
           
             // Displays Gridview For Program 
-            string schedule = "SELECT Name, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+            string schedule = "SELECT Name, CONVERT(varchar, Time, 100) as Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
@@ -143,7 +143,7 @@ namespace CyberCity
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
             query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
             query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
@@ -257,6 +257,39 @@ namespace CyberCity
                     lblSuccess.Text = "Succssfully Registered for an Event";
                     lblSuccess.ForeColor = System.Drawing.Color.Green;
                     lblSuccess.Font.Bold = true;
+
+                    // Rebinds the gridview
+                    SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                    string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
+
+                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+                    queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID ";
+                    queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
+
+                    //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
+                    DataSet volDS = new DataSet();
+                    using (volCon)
+                    {
+                        if (volunteerID != "-1")
+                        {
+                            lblVolSchedule.Text = "Volunteer Schedule For " + ddlSelectVolunteer.SelectedItem.Text;
+                            SqlCommand volCMD = new SqlCommand(queryNew, volCon);
+                            SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+                            volDA.Fill(volDS);
+                            volunteerSchedule.DataSource = volDS;
+                            volunteerSchedule.DataBind();
+                            lblVolSchedule.Visible = true;
+                            volunteerSchedule.Visible = true;
+                        }
+                        else
+                        {
+                            volunteerSchedule.Visible = false;
+                            lblVolSchedule.Visible = false;
+                        }
+                    }
+
+
                 }
                 else
                 {

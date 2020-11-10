@@ -92,7 +92,7 @@ namespace CyberCity
             }
 
             // Displays Gridview For Program 
-            string schedule = "SELECT Name, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+            string schedule = "SELECT Name,  CONVERT(varchar, Time, 100) as Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
@@ -182,7 +182,7 @@ namespace CyberCity
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
+            string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
             query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
@@ -307,6 +307,38 @@ namespace CyberCity
                     lblSuccess.Text = "Successfully Registered For Event";
                     lblSuccess.ForeColor = System.Drawing.Color.Green;
                     lblSuccess.Font.Bold = true;
+
+                    //Rebinds the gridview
+                    SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                    string orgRepID = ddlOrgRep.SelectedValue.ToString();
+
+                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
+                    queryNew += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
+                    queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID ";
+                    queryNew += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
+
+                    DataSet orgRepDS = new DataSet();
+                    using (orgRepCon)
+                    {
+                        if (orgRepID != "-1")
+                        {
+                            lblOrgRepSchedule.Text = "Organization Rep Schedule For " + ddlOrgRep.SelectedItem.Text;
+                            SqlCommand repCMD = new SqlCommand(queryNew, orgRepCon);
+                            SqlDataAdapter repDA = new SqlDataAdapter(repCMD);
+                            repDA.Fill(orgRepDS);
+                            orgRepSchedule.DataSource = orgRepDS;
+                            orgRepSchedule.DataBind();
+                            lblOrgRepSchedule.Visible = true;
+                            orgRepSchedule.Visible = true;
+
+                        }
+                        else
+                        {
+                            lblOrgRepSchedule.Visible = false;
+                        }
+
+
+                    }
                 }
                 else
                 {
