@@ -10,7 +10,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     
     <link href="css/CreatingEntity.css" rel="stylesheet" />
-
+    <link href="css/GridView.css" rel="stylesheet" />
 
 <%--    <script src="Scripts/jquery-3.5.1.js"></script>
     <script src="Scripts/bootstrap.bundle.min.js"></script>

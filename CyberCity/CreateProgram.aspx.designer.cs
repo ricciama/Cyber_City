@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity
-{
-
-
-    public partial class CreateProgram
-    {
-
+namespace CyberCity {
+    
+    
+    public partial class CreateProgram {
+        
         /// <summary>
         /// pnlCreateProgram control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCreateProgram;
-
+        
         /// <summary>
         /// tblCreateProgram control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblCreateProgram;
-
+        
         /// <summary>
         /// txtProgramName control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProgramName;
-
+        
         /// <summary>
         /// RFVProgramName control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVProgramName;
-
+        
         /// <summary>
         /// txtProgramDateTime control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProgramDateTime;
-
+        
         /// <summary>
         /// RFVProgramDateTime control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVProgramDateTime;
-
+        
         /// <summary>
         /// CVDate control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator CVDate;
-
+        
         /// <summary>
         /// btnCreateProgram control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateProgram;
-
+        
         /// <summary>
         /// tblConfirmation control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblConfirmation;
-
+        
         /// <summary>
         /// confirmationlbl control.
         /// </summary>
@@ -103,16 +101,16 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label confirmationlbl;
-
+        
         /// <summary>
-        /// tblAddEvents control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblAddEvents;
-
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
         /// <summary>
         /// btnAddEvents control.
         /// </summary>

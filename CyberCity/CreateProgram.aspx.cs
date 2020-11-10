@@ -76,6 +76,8 @@ namespace CyberCity
                     confirmationlbl.Text = "Program Created Successfully!";
                     confirmationlbl.ForeColor = Color.Green;
                     tblConfirmation.Visible = true;
+                    Table1.Visible = true;
+
                 }
                 else if (programCount != 0)
                 {
