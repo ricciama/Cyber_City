@@ -16,32 +16,31 @@ namespace CyberCity
         protected void Page_Load(object sender, EventArgs e)
         {
             int check = 0;
-
-            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string orgRepUsername = Session["Username"].ToString();
-            string group = "SELECT Student.StudentID, Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
-            group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
-            group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
-            group += "WHERE(OrgRep.UserName = '" + orgRepUsername +"')";
-
-
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            using (con)
+            if (!Page.IsPostBack)
             {
-                SqlCommand cmd = new SqlCommand(group, con);
-                SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                sched.Fill(ds);
-                grdOrgStudent.DataSource = ds;
-                grdOrgStudent.DataBind();
+                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                string orgRepUsername = Session["Username"].ToString();
+                string group = "SELECT Student.StudentID, Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
+                group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
+                group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
+                group += "WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
 
-                Table1.Visible = true;
-                tblCancel.Visible = false;
-                tblNotRegistered.Visible = false;
+
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                using (con)
+                {
+                    SqlCommand cmd = new SqlCommand(group, con);
+                    SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                    sched.Fill(ds);
+                    grdOrgStudent.DataSource = ds;
+                    grdOrgStudent.DataBind();
+
+                    Table1.Visible = true;
+                    tblCancel.Visible = false;
+                    tblNotRegistered.Visible = false;
+                }
             }
-
-
-          
 
         }
 
@@ -52,21 +51,42 @@ namespace CyberCity
 
         protected void grdOrgStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Label studentID = grdOrgStudent.Rows[e.RowIndex].FindControl("StudentID") as Label;
-            int user = Convert.ToInt32(studentID.Text);
+            int studentID = (int)e.Keys["StudentID"];
+
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string remove = "DELETE FROM StudentRegistration WHERE StudentID = " + user;
+            string remove = "DELETE FROM StudentRegistration WHERE StudentID = " + studentID;
 
-            con.Open();
             using (con)
             {
                 SqlCommand cmd2 = new SqlCommand(remove, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 cmd2.ExecuteNonQuery();
+                BindData();
 
             }
-            con.Close();
+         
         }
+
+        private void BindData()
+        {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+
+            string orgRepUsername = Session["Username"].ToString();
+            string group = "SELECT Student.StudentID, Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
+            group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
+            group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
+            group += "WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
+
+            SqlCommand cmd = new SqlCommand(group, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            grdOrgStudent.DataSource = dt;
+            grdOrgStudent.DataBind();
+        }
+
     }
     
 }

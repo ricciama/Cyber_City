@@ -5,7 +5,7 @@
     
     <br />
     <br />
-    <asp:Panel ID="pnlCreateProgram" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+    <asp:Panel ID="pnlCreateProgram" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="420px">
         <br />
         <br />
         <asp:Table ID="tblCreateProgram" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="Center">
@@ -45,22 +45,23 @@
             </asp:TableRow>
         </asp:Table>
          <br />
-        <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
+        <asp:Table ID="tblConfirmation" runat="server" HorizontalAlign="center" Visible="false">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="confirmationlbl" runat="server" Text="Program Successfully Created!" Font-Bold="true" ForeColor="Green"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID ="tblAddEvents" runat="server" HorizontalAlign="Right" CellPadding="50">
-            <asp:TableRow>
-                <asp:TableCell ColumnSpan="1">
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Right" Visible="false">
+             <asp:TableRow>
+                <asp:TableCell CssClass="cellPadding">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddEvents" runat="server" CausesValidation="true" Text="Add Events -> " OnClick="btnAddEvents_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddEvents" runat="server" CausesValidation="true" Text="Add Events &#x2192; " OnClick="btnAddEvents_Click"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+
         &nbsp;
         <br />
     </asp:Panel>
