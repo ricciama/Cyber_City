@@ -71,6 +71,13 @@
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <div class="form-group">
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnPopulate" runat="server" Text="Populate Fields" OnClick="btnPopulate_Click" CausesValidation="false"/>
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
         </asp:Table>
         <br />
         <asp:Table ID="tblConfirmation" runat="server" Visible="false" HorizontalAlign="center">
