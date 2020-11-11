@@ -152,6 +152,7 @@
     <Content Include="Images\quad.jpg" />
     <Content Include="ORFirstTimeLogin.aspx" />
     <Content Include="Queries.aspx" />
+    <Content Include="Queries.css" />
     <Content Include="RegisterOrgRep.aspx" />
     <Content Include="RegisterVolunteer.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

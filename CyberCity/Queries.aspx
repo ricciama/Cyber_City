@@ -58,32 +58,40 @@
             <%-- Gridviews --%>
 
             <%-- Gridview for Showing All events --%>
-            <asp:Table ID="Table2" runat="server">
+            <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" >
                 <asp:TableRow>
-                    <asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center" VerticalAlign="Top">
                         <div class="form-group">
                             <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true"></asp:Label>
                         </div>
                         <asp:GridView ID="grdAllEvents" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"  Width="250" CellPadding="6"></asp:GridView>
                     </asp:TableCell>
             <%-- Gridview for showing org rep schedule --%>
-                    <asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center" VerticalAlign="Top">
                         <div class="form-group">
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
                             <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true"></asp:Label>
                         </div>
                             <asp:GridView ID="grdOrgRepSchedule" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </asp:TableCell>
             <%-- Gridview for showing volunteer Schedule --%>
-                    <asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center" VerticalAlign="Top">
                         <div class="form-group">
+                            &nbsp;
+                            &nbsp;
                             <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
                         </div>
                         <asp:GridView ID="grdVolunteerSchedule" runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </asp:TableCell>
                 </asp:TableRow>
+            </asp:Table>
             <%-- Gridview for showing Org rep Roster --%>
+
+            <asp:Table ID="Table3" runat="server" HorizontalAlign="Center" >
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">
+                    <asp:TableCell HorizontalAlign="Center" VerticalAlign="Top">
                         <div class="form-group">
                             <asp:Label ID="lblOrgRepRoster" runat="server" Text="Organizational Rep Roster" Visible="false" Font-Bold="true"></asp:Label>
                         </div>
