@@ -10,7 +10,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     
     <link href="css/CreatingEntity.css" rel="stylesheet" />
-
+    <link href="css/GridView.css" rel="stylesheet" />
 
 <%--    <script src="Scripts/jquery-3.5.1.js"></script>
     <script src="Scripts/bootstrap.bundle.min.js"></script>
@@ -258,12 +258,16 @@
             <h2>Upcoming Events</h2>
             <p>
                 <asp:GridView 
-                            runat="server" 
-                            ID="studentSchedule" 
-                            BorderColor="Black" Font-Size="Large" HeaderStyle-CssClass="text-center"
-                            Width="350px" RowStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true"
-                            >         
-                        </asp:GridView>
+                    runat="server" 
+                    ID="studentSchedule" 
+                    BorderColor="Black" Font-Size="Large"
+                    Width="350px" 
+                    AutoGenerateColumns="true" 
+                    AllowPaging="true" CssClass="Grid" 
+                    AlternatingRowStyle-CssClass="alt" 
+                    PagerStyle-CssClass="pgr" 
+                    CellPadding="6">         
+                </asp:GridView>
             </p>
          
         </div>

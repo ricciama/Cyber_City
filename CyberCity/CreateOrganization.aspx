@@ -5,7 +5,7 @@
     
     <br />
     <br />
-    <asp:Panel ID="pnlCreateOrg" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+    <asp:Panel ID="pnlCreateOrg" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="700px">
         <br />
         <br />
         <asp:Table ID="tblCreateOrg" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
@@ -80,11 +80,11 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID ="tblAddOrgRep" runat="server" HorizontalAlign="Right" CellPadding="50">
+        <asp:Table ID ="tblAddOrgRep" runat="server" HorizontalAlign="Right" CellPadding="50" Visible="false">
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="1">
+                <asp:TableCell CssClass="cellPadding">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddOrgRep" runat="server" Text="Add Organizational Representative " OnClick="btnAddOrgRep_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnAddOrgRep" runat="server" Text="Add Organizational Reps &#x2192; " OnClick="btnAddOrgRep_Click" CausesValidation="false"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

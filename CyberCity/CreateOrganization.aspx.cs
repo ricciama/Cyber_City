@@ -77,6 +77,7 @@ namespace CyberCity
                 confirmationlbl.Text = "Organization Successfully Created!";
                 confirmationlbl.ForeColor = Color.Green;
                 tblConfirmation.Visible = true;
+                tblAddOrgRep.Visible = true;
 
 
             } else if (orgCount != 0)
