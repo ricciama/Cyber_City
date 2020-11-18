@@ -61,8 +61,6 @@ namespace CyberCity
                 }
             }
 
-            int check = 0;
-
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program ORDER BY date";
 
