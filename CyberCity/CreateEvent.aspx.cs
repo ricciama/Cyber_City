@@ -88,7 +88,7 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Event] (Name,, Time, Location, ProgramID) " +
+                String sql = "Insert into [Event] (Name, Time, Location, ProgramID) " +
                     "Values (@Name, @Time, @Location, @ProgramID)";
 
                 sqlCommand = new SqlCommand(sql, cnn);

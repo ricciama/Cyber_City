@@ -49,9 +49,9 @@
                     <div >
                         <div class="form-group">
                             <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Select Program" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Select Program" Value="-1"></asp:ListItem>
                             </asp:DropDownList>
-                       <asp:RequiredFieldValidator ID="RFVddlProgram" runat="server" Text = "Required Field" ControlToValidate="ddlProgram" InitialValue="0" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                       <asp:RequiredFieldValidator ID="RFVddlProgram" runat="server" Text = "Required Field" ControlToValidate="ddlProgram" InitialValue="-1" SetFocusOnError="true" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </asp:TableCell>
