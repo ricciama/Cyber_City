@@ -182,10 +182,16 @@ namespace CyberCity
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
-            query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
-            query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
-            query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
+            //string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
+            //query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
+            //query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
+            //query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
+
+            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+            query += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
+            query += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
+            query += "Program ON Event.ProgramID = Program.ProgramID ";
+            query += "WHERE(Program.ProgramID = " + ddlSelectProgram.SelectedValue + ") AND(OrgRep.OrgRepID = " + ddlOrgRep.SelectedValue + " ) ";
 
             DataSet orgRepDS = new DataSet();
             using (orgRepCon)
@@ -312,10 +318,16 @@ namespace CyberCity
                     SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
                     string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
-                    queryNew += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
-                    queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID ";
-                    queryNew += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
+                    //string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM OrgRep INNER JOIN ";
+                    //queryNew += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
+                    //queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID ";
+                    //queryNew += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
+
+                    string queryNew = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+                    queryNew += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
+                    queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
+                    queryNew += "Program ON Event.ProgramID = Program.ProgramID ";
+                    queryNew += "WHERE(Program.ProgramID = " + ddlSelectProgram.SelectedValue + ") AND(OrgRep.OrgRepID = " + ddlOrgRep.SelectedValue + " ) ";
 
                     DataSet orgRepDS = new DataSet();
                     using (orgRepCon)

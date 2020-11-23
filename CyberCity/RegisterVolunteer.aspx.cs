@@ -145,8 +145,8 @@ namespace CyberCity
 
             string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
-            query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
-            query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
+            query += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
+            query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue +")";
 
             //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
             DataSet volDS = new DataSet();
@@ -262,12 +262,18 @@ namespace CyberCity
                     SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
                     string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
 
-                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
-                    queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
-                    queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID ";
-                    queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
+                    //string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    //queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+                    //queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID ";
+                    //queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ")";
 
                     //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
+
+                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+                    queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
+                    queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue + ")";
+
                     DataSet volDS = new DataSet();
                     using (volCon)
                     {
