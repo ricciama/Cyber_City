@@ -60,7 +60,7 @@ namespace CyberCity
         // retrieves the program that was selected from the dropdown 
         private void GetProgram()
         {
-            String programQuery = "Select ProgramID, Name from Program";
+            String programQuery = "Select ProgramID, Name from Program where date >= GETDATE()";
             da2 = new SqlDataAdapter(programQuery, con);
             da2.Fill(ds2);
 

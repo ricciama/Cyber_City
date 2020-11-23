@@ -20,7 +20,7 @@ namespace CyberCity
             int check = 0;
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program ORDER by date";
+            string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program where date >= GETDATE() ORDER by date";
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
