@@ -57,11 +57,6 @@
                         <asp:TextBox CssClass="form-control" ID="txtEventName" runat="server" placeholder="Event Name"></asp:TextBox>
                     </div>
                 </asp:TableCell>
-                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtDate" runat="server" placeholder="Event Date" ></asp:TextBox>
-                    </div>
-                </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" placeholder="Event Time" TextMode="Time"></asp:TextBox>

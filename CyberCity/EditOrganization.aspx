@@ -20,11 +20,6 @@
                     <h4>Edit Organization</h4>              
                 </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow>
-                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">                    
-                    <h4>Select Organization</h4>              
-                </asp:TableCell>
-            </asp:TableRow>
           <asp:TableRow HorizontalAlign="Center">
                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
@@ -39,7 +34,6 @@
             </asp:Table>
             
             <%-- Name and Adress --%>
-   
            <asp:Table ID="EditInfo" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">  
             <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    

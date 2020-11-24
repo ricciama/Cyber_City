@@ -20,17 +20,12 @@
                     <h4>Edit Organizational Representative</h4>              
                 </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow>
-                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">                    
-                    <h4>Select Organizational Representative</h4>              
-                </asp:TableCell>
-            </asp:TableRow>
           <asp:TableRow HorizontalAlign="Center">
                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                         <div class="form-group">
                             <asp:DropDownList ID="ddlOrgReps" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Select Organizational Representitive" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Select Organizational Representative" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -38,7 +33,7 @@
               <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                         <div class="form-group">
-                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="editOrgRep" runat="server" Text="Load Organizational Representative to Edit" onclick="editOrgRep_Click"/>  
+                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="editOrgRep" runat="server" Text="Load Representative" onclick="editOrgRep_Click"/>  
                         </div>
                     </div>
                 </asp:TableCell>
@@ -46,7 +41,6 @@
               </asp:TableRow>
             </asp:Table>
 
- 
             
             <%-- First and Last name --%>
    
@@ -96,33 +90,25 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:DropDownList ID="ddlOrgName" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="0" Text="Select Organization"></asp:ListItem>
+                            <asp:ListItem Value="-1" Text="Select Organization"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
                 </asp:TableCell>
-
             </asp:TableRow>
             <%-- Grade taught Drop Down --%>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                     <asp:Label ID="lblGrade" runat="server" Text="GradeTaught" ></asp:Label>
                     <div class="form-group">                   
-                        <asp:CheckBox ID="chkElementary" runat="server" Text="Elementary"/> &nbsp;
-                        <asp:CheckBox ID="chkSixth" runat="server" Text="Sixth" /> &nbsp;
-                        <asp:CheckBox ID="chkSeventh" runat="server" Text="Seventh" /> &nbsp;
-                        <asp:CheckBox ID="chkEight" runat="server" Text="Eight" /> &nbsp;
+                        <asp:CheckBox ID="chkElementary" runat="server" Text="&nbsp Elementary"/> &nbsp;
+                        <asp:CheckBox ID="chkSixth" runat="server" Text="&nbsp Sixth" /> &nbsp;
+                        <asp:CheckBox ID="chkSeventh" runat="server" Text="&nbsp Seventh" /> &nbsp;
+                        <asp:CheckBox ID="chkEight" runat="server" Text="&nbsp Eight" /> &nbsp;
                         <asp:CheckBox ID="chkHighSchool" runat="server" Text="Highschool" /> &nbsp;
-                        <asp:CheckBox ID="chkNone" runat="server" Text="None" /> &nbsp;
+                        <asp:CheckBox ID="chkNone" runat="server" Text="&nbsp None" /> &nbsp;
                     </div>
                 </asp:TableCell>
-            </asp:TableRow>
-            <%-- Login credentials Logo --%>
-            <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
-                    <span class="badge badge-pill badge-info">Login Credentials</span>
-                </asp:TableCell>
-            </asp:TableRow>
-          
+            </asp:TableRow>     
           
             <%-- Register Button --%>
             <asp:TableRow>
