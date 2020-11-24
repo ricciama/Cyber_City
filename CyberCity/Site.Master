@@ -65,8 +65,9 @@
         <%-- Menu for when no one is logged in --%>
         <asp:Panel ID="MainMenu" runat="server">
             <div class="navbar navbar-custom navbar-fixed-top " id="main">
-                <div class="container">
+                <div class="container">                  
                     <div class="navbar-header">
+                        <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -99,6 +100,7 @@
             <div class="navbar navbar-custom navbar-fixed-top" id="spMain">
                 <div class="container">
                     <div class="navbar-header">
+                        <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -128,8 +130,9 @@
         <%-- Menu for when Volunteer is logged in --%>
         <asp:Panel ID="volunteerMenu" runat="server" Visible="false">
             <div class="navbar navbar-custom navbar-fixed-top" id="vMain">
-                            <div class="container">
+             <div class="container">
                 <div class="navbar-header">
+                    <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -160,6 +163,7 @@
             <div class="navbar navbar-custom navbar-fixed-top" id="tMain">
                 <div class="container">
                 <div class="navbar-header">
+                    <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -191,6 +195,7 @@
             <div class="navbar navbar-custom navbar-fixed-top" id="cMain">
                 <div class="container">
                     <div class="navbar-header">
+                        <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
