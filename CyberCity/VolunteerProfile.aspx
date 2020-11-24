@@ -1,14 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VolunteerProfile.aspx.cs" Inherits="CyberCity.VolunteerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <link href="css/CreatingEntity.css" rel="stylesheet" />
-    
+     <link href="css/CreatingEntity.css" rel="stylesheet" /> 
     <br />
     <br />
-    <asp:Panel ID="Panel2" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+    <asp:Panel ID="Panel2" runat="server" BorderColor="#cccccc" BorderStyle="Solid">
         <br />
         <br />
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
-
             <asp:TableRow HorizontalAlign="Center" >
                 <asp:TableCell ColumnSpan="2">
                     <img width="100" src="Images/volunteerAvatar.png"/>

@@ -10,10 +10,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+    <div style=" background-color: #450084; height:1000px;">
         <br />
         <br />
-        <asp:Panel ID="Panel2" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+        <asp:Panel ID="Panel2" runat="server" BorderColor="#cccccc" BackColor="White" BorderStyle="Solid" style="width:50%;margin-left:auto;margin-right:auto;">
             <br />
             <br />
             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
@@ -28,29 +28,25 @@
                         <h4>First Time Volunteer Login</h4>              
                     </asp:TableCell>
                 </asp:TableRow>
-                <%-- Gender and Phone --%>
+                <%-- Phone --%>
                 <asp:TableRow HorizontalAlign="Center">
-                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                        <div >
-                                <div class="form-group">
-                                    <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
-                                        <asp:ListItem Value ="0" Text="Select Gender"></asp:ListItem>
-                                        <asp:ListItem Value="Male" Text="Male"></asp:ListItem>
-                                        <asp:ListItem Value="Female" Text="Female"></asp:ListItem>
-                                        <asp:ListItem Value="Non-Binary" Text="Non-Binary"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RFVGender" runat="server" ControlToValidate="ddlGender" InitialValue="0" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-                    </asp:TableCell>
-                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                         <div class="form-group">
                             <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RFVPhone" runat="server" Text="Required Field" Font-Bold="true" ForeColor="Red" ControlToValidate="txtVolunteerPhone" SetFocusOnError="true" ></asp:RequiredFieldValidator>
                         </div>
                     </asp:TableCell>
                 </asp:TableRow>
-                <%-- Shirt size and Lunch --%>
+                <%-- Lunch Ticket --%>
+                <asp:TableRow>
+                    <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
+                        <div class="form-group form-control">
+                            <asp:Label ID="Label1" runat="server" Text="Lunch?"></asp:Label>&nbsp;
+                            <asp:CheckBox ID="chkLunch" runat="server"/>
+                        </div>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <%-- Shirt size and Gender --%>
                 <asp:TableRow HorizontalAlign="Center" CssClass="cellPadding">
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                         <div class="form-group">
@@ -66,9 +62,16 @@
                         </div>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                        <div class="form-group form-control">
-                            <asp:Label ID="Label1" runat="server" Text="Lunch?"></asp:Label>&nbsp;
-                            <asp:CheckBox ID="chkLunch" runat="server"/>
+                        <div >
+                                <div class="form-group">
+                                    <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value ="0" Text="Select Gender"></asp:ListItem>
+                                        <asp:ListItem Value="Male" Text="Male"></asp:ListItem>
+                                        <asp:ListItem Value="Female" Text="Female"></asp:ListItem>
+                                        <asp:ListItem Value="Non-Binary" Text="Non-Binary"></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RFVGender" runat="server" ControlToValidate="ddlGender" InitialValue="0" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
                     </asp:TableCell>
                 </asp:TableRow>

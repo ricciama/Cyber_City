@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class SiteMaster {
-        
+namespace CyberCity
+{
+
+
+    public partial class SiteMaster
+    {
+
         /// <summary>
         /// MainMenu control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel MainMenu;
-        
+
         /// <summary>
         /// SPMenu control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel SPMenu;
-        
+
         /// <summary>
         /// lblSPUser control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSPUser;
-        
+
         /// <summary>
         /// btnLogout control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogout;
-        
+
         /// <summary>
         /// volunteerMenu control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel volunteerMenu;
-        
+
         /// <summary>
         /// lblVUser control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVUser;
-        
+
         /// <summary>
         /// btnLogoutV control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogoutV;
-        
+
         /// <summary>
         /// orgRepMenu control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel orgRepMenu;
-        
+
         /// <summary>
         /// lblOrgUser control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrgUser;
-        
+
         /// <summary>
         /// btnLogoutOrg control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogoutOrg;
-        
+
         /// <summary>
         /// coordinatorMenu control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel coordinatorMenu;
-        
+
         /// <summary>
         /// lblCordUser control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCordUser;
-        
+
         /// <summary>
         /// btnLogoutC control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogoutC;
-        
+
         /// <summary>
         /// MainContent control.
         /// </summary>
