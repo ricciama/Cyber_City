@@ -13,10 +13,10 @@
             <h2>Download Files</h2>
             <p>
                 Click one of the following options to download an excel file:
-                <br />
-                <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" />
-                <br />
-                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" />
+            <p>
+                <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" CssClass="btn btn-default"/>
+                &nbsp;
+                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default" />
             </p>
             
             
