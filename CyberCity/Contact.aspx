@@ -11,7 +11,7 @@
         <asp:Table runat="server" HorizontalAlign="Center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Image ID="Image1" runat="server" ImageUrl="/Images/profileman.PNG" CssClass="photo1" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="/Images/ShawnLough.PNG" CssClass="photo1" Height="140px" Width="140px"/>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -36,7 +36,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                     <asp:Image ID="profile2" runat="server" ImageUrl="/Images/profileman.PNG" CssClass="photo1" />
+                     <asp:Image ID="profile2" runat="server" ImageUrl="/Images/TomDillon.png" CssClass="photo1" Height="140px" Width="140px" />
                 </asp:TableCell>
             </asp:TableRow>
 
@@ -61,8 +61,5 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-    
     </div> 
-
-    
 </asp:Content>
