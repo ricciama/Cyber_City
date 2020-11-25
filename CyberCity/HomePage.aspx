@@ -46,8 +46,7 @@
                     PagerStyle-CssClass="pgr" 
                     CellPadding="6">         
                 </asp:GridView>
-            </p>
-           
+            </p>       
          
         </div>
         <div class="col-md-4">
