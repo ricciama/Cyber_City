@@ -255,9 +255,13 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+
+            
+
+            <%--<footer>
+
                 <p>&copy; <%: DateTime.Now.Year %> - Cyber Day Rocks</p>
-            </footer>
+            </footer>--%>
         </div>
 
     </form>
