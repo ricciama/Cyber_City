@@ -10,7 +10,7 @@
 
     <asp:Panel ID="Panel1" runat="server" BorderColor="#cccccc" BorderStyle="Solid" Width="100%">
         <div style="text-align:center;">
-            <h1>Organizationl Reps!</h1>
+            <h1>Organizational Reps!</h1>
             <p>Here, you can see the list of students that have registered with CyberDay under your respective code. If you wish to remove a student, you can do so here</p>
         </div>
         <br />
@@ -24,9 +24,8 @@
                         AllowPaging="true"
                         CssClass="Grid"
                         AlternatingRowStyle-CssClass="alt"
-                        PagerStyle-CssClass="pgr" Width="100%" Font-Size="Large" OnRowDeleting="grdOrgStudent_RowDeleting">
+                        PagerStyle-CssClass="pgr" Width="100%" Font-Size="Large" OnRowDeleting="grdOrgStudent_RowDeleting" OnRowDataBound="grdOrgStudent_RowDataBound">
                     </asp:GridView>
-                    
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

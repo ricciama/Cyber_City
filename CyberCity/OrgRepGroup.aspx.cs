@@ -18,30 +18,35 @@ namespace CyberCity
             int check = 0;
             if (!Page.IsPostBack)
             {
-                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-                string orgRepUsername = Session["Username"].ToString();
-                string group = "SELECT Student.StudentID, Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
-                group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
-                group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
-                group += "WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
-
-
-                DataSet ds = new DataSet();
-                DataTable dt = new DataTable();
-                using (con)
-                {
-                    SqlCommand cmd = new SqlCommand(group, con);
-                    SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                    sched.Fill(ds);
-                    grdOrgStudent.DataSource = ds;
-                    grdOrgStudent.DataBind();
-
-                    Table1.Visible = true;
-                    tblCancel.Visible = false;
-                    tblNotRegistered.Visible = false;
-                }
+                BindGrid();
             }
 
+        }
+
+        private void BindGrid()
+        {
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            string orgRepUsername = Session["Username"].ToString();
+            string group = "SELECT Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.Gender, Student.UserName ";
+            group += "FROM OrgRep INNER JOIN StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
+            group += "Student ON StudentRegistration.StudentID = Student.StudentID ";
+            group += "WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
+
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            using (con)
+            {
+                SqlCommand cmd = new SqlCommand(group, con);
+                SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                sched.Fill(ds);
+                grdOrgStudent.DataSource = ds;
+                grdOrgStudent.DataBind();
+
+                Table1.Visible = true;
+                tblCancel.Visible = false;
+                tblNotRegistered.Visible = false;
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -51,20 +56,27 @@ namespace CyberCity
 
         protected void grdOrgStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int studentID = (int)e.Keys["StudentID"];
-
+            // auto controls
+            // look at grid controls
+            // document object model
+            int studentID = Convert.ToInt32(grdOrgStudent.DataKeys[e.RowIndex].Values[0]);
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string remove = "DELETE FROM StudentRegistration WHERE StudentID = " + studentID;
+            string remove = "DELETE FROM StudentRegistration WHERE StudentID = @StudentID";
 
             using (con)
             {
-                SqlCommand cmd2 = new SqlCommand(remove, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                cmd2.ExecuteNonQuery();
-                BindData();
+                using (SqlCommand cmd2 = new SqlCommand(remove, con))
+                {
+                    cmd2.Parameters.AddWithValue("@StudentID", studentID);
+                    cmd2.Connection = con;
+                    con.Open();
+                    cmd2.ExecuteNonQuery();
+                    con.Close();
+                }
 
             }
+            BindGrid();
          
         }
 
@@ -87,6 +99,13 @@ namespace CyberCity
             grdOrgStudent.DataBind();
         }
 
+        protected void grdOrgStudent_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != grdOrgStudent.EditIndex)
+            {
+                (e.Row.Cells[0].Controls[0] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to Delete this student?);";
+            }
+        }
     }
     
 }

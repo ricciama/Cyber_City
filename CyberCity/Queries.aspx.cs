@@ -127,7 +127,7 @@ namespace CyberCity
             }
 
             // Displays Gridview For Program 
-            string schedule = "SELECT Name, Time FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
+            string schedule = "SELECT Name, CONVERT(varchar,Time, 100) AS 'Event Time' FROM Event WHERE ProgramID = '" + ProgramID.ToString() + "'";
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             using (con)
@@ -157,7 +157,7 @@ namespace CyberCity
             SqlConnection orgRepCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string orgRepID = ddlOrgRep.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRep INNER JOIN ";
+            string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100), Event.Location FROM OrgRep INNER JOIN ";
             query += "OrgRepRegistration ON OrgRep.OrgRepID = OrgRepRegistration.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
@@ -226,7 +226,7 @@ namespace CyberCity
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerID = ddlVolunteers.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, Event.Time, Event.Location FROM Volunteer INNER JOIN ";
+            string query = "SELECT Event.Name, CONVERT(varchar,Event.Time,100) AS 'Event Time', Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
             query += "Event ON VolunteerRegistration.EventID = Event.EventID ";
             query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlVolunteers.SelectedValue + ")";
