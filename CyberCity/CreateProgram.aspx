@@ -11,7 +11,7 @@
         <asp:Table ID="tblCreateProgram" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="Center">
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell ColumnSpan="2">
-                    <img width="100" src="Images/loginguy.png"/>
+                    <img width="100" src="Images/JmuSeal.png"/>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">
