@@ -33,7 +33,7 @@
             
         </div>
         <div class="col-md-4">
-            <h2>Upcoming Events</h2>
+            <h2>Upcoming Cyber Days</h2>
             <p>
                 <asp:GridView 
                     runat="server" 
