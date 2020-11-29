@@ -133,6 +133,8 @@ namespace CyberCity
                 lblFeedback.ForeColor = Color.Green;
                 lblFeedback.Visible = true;
 
+                Response.Redirect("Login.aspx");
+
             } else if (userNameCount != 0)
             {
                 lblFeedback.Text = "Username is already taken please enter a different one.";
