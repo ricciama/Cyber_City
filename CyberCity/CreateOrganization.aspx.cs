@@ -118,5 +118,14 @@ namespace CyberCity
                 tblConfirmation.Visible = true;
             }
         }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            txtOrgName.Text = "Harrisonburg Middle School";
+            txtOrgEmail.Text = "hburgMiddleSchool@gmail.com";
+            txtOrgPhone.Text = "5439647869";
+            txtOrgContactName.Text = "Tim Smith";
+            txtOrgAddress.Text = "342 East Market Street, Harrisonburg Va, 22801";
+        }
     }
 }

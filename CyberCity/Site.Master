@@ -65,8 +65,9 @@
         <%-- Menu for when no one is logged in --%>
         <asp:Panel ID="MainMenu" runat="server">
             <div class="navbar navbar-custom navbar-fixed-top " id="main">
-                <div class="container">
+                <div class="container">                  
                     <div class="navbar-header">
+                        <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -99,6 +100,7 @@
             <div class="navbar navbar-custom navbar-fixed-top" id="spMain">
                 <div class="container">
                     <div class="navbar-header">
+                        <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -128,8 +130,9 @@
         <%-- Menu for when Volunteer is logged in --%>
         <asp:Panel ID="volunteerMenu" runat="server" Visible="false">
             <div class="navbar navbar-custom navbar-fixed-top" id="vMain">
-                            <div class="container">
+             <div class="container">
                 <div class="navbar-header">
+                    <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -160,6 +163,7 @@
             <div class="navbar navbar-custom navbar-fixed-top" id="tMain">
                 <div class="container">
                 <div class="navbar-header">
+                    <img width="100" src="Images/JmuLogo.png" style="float:left; display:inline-block; padding-top:1em;"/>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -198,8 +202,8 @@
                     </div>
                     <div id="cNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
-                            <li><a class="navbar-brand" runat="server" href="~/HomePage">Cyber Day</a></li>
-                            <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
+                            <li><a class="navbar-brand" runat="server" href="CoordinatorHomePage.aspx">Cyber Day</a></li>
+                            <li><a runat="server" style="color:white" href="CoordinatorHomePage.aspx">Home</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>
                                     <ul class="dropdown-menu" aria-labelledby="ddlCreateEntity">

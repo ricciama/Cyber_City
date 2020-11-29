@@ -43,7 +43,7 @@ namespace CyberCity
             //fill Drop down list
             if (!IsPostBack)
             {
-                String sqlQuery2 = "Select ProgramID, Name from Program order by ProgramID";
+                String sqlQuery2 = "Select ProgramID, Name from Program where date >= GETDATE() order by ProgramID";
                 String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
 
                 using (SqlConnection con = new SqlConnection(sqlConnection2))
@@ -88,7 +88,7 @@ namespace CyberCity
 
                 cnn = new SqlConnection(connectionString);
 
-                String sql = "Insert into [Event] (Name,, Time, Location, ProgramID) " +
+                String sql = "Insert into [Event] (Name, Time, Location, ProgramID) " +
                     "Values (@Name, @Time, @Location, @ProgramID)";
 
                 sqlCommand = new SqlCommand(sql, cnn);

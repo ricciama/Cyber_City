@@ -34,6 +34,7 @@ border: solid 1px #525252;
 border-collapse: collapse;
 font-family: Calibri;
 color: #474747;
+width:300px;
 }
 
 .Grid td {

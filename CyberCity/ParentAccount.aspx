@@ -11,7 +11,7 @@
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
             <asp:TableRow HorizontalAlign="Center" >
                 <asp:TableCell ColumnSpan="2">
-                    <img width="100" src="Images/loginguy.png"/>
+                    <img width="100" src="Images/studentAvatar.png"/>
                 </asp:TableCell>            
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">
@@ -142,6 +142,13 @@
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <div class="form-group">
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" CausesValidation="false"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class Queries {
-        
+namespace CyberCity
+{
+
+
+    public partial class Queries
+    {
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// Table1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-        
+
         /// <summary>
         /// lblProgram control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProgram;
-        
+
         /// <summary>
         /// lblOrgReps control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrgReps;
-        
+
         /// <summary>
         /// lblVolunteers control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVolunteers;
-        
+
         /// <summary>
         /// ddlProgram control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
-        
+
         /// <summary>
         /// ddlOrgRep control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlOrgRep;
-        
+
         /// <summary>
         /// ddlVolunteers control.
         /// </summary>
@@ -83,16 +85,16 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlVolunteers;
-        
+
         /// <summary>
-        /// Table2 control.
+        /// TblEvents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
-        
+        protected global::System.Web.UI.WebControls.Table TblEvents;
+
         /// <summary>
         /// lblAllEvents control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAllEvents;
-        
+
         /// <summary>
         /// grdAllEvents control.
         /// </summary>
@@ -110,7 +112,16 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdAllEvents;
-        
+
+        /// <summary>
+        /// TblOrgRepSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TblOrgRepSchedule;
+
         /// <summary>
         /// lblOrgRepSched control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrgRepSched;
-        
+
         /// <summary>
         /// grdOrgRepSchedule control.
         /// </summary>
@@ -128,25 +139,16 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdOrgRepSchedule;
-        
+
         /// <summary>
-        /// lblVolunteerSched control.
+        /// Table3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVolunteerSched;
-        
-        /// <summary>
-        /// grdVolunteerSchedule control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdVolunteerSchedule;
-        
+        protected global::System.Web.UI.WebControls.Table Table3;
+
         /// <summary>
         /// lblOrgRepRoster control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrgRepRoster;
-        
+
         /// <summary>
         /// grdOrgRepRoster control.
         /// </summary>
@@ -164,5 +166,32 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdOrgRepRoster;
+
+        /// <summary>
+        /// tblVolunteerSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblVolunteerSchedule;
+
+        /// <summary>
+        /// lblVolunteerSched control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVolunteerSched;
+
+        /// <summary>
+        /// grdVolunteerSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdVolunteerSchedule;
     }
 }

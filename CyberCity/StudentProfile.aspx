@@ -10,7 +10,7 @@
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
             <asp:TableRow HorizontalAlign="Center" >
                 <asp:TableCell ColumnSpan="2">
-                    <img width="100" src="Images/loginguy.png"/>
+                    <img width="100" src="Images/studentAvatar.png"/>
                 </asp:TableCell>            
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">

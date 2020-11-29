@@ -140,7 +140,7 @@ namespace CyberCity
             {
                 tblEventInfo.Visible = true;
                 string eventID = ddlEvents.SelectedValue.ToString();
-                string eventString = "select EventID, ProgramID, Name, Date, Time, Location from Event where EventID = " + eventID + "";
+                string eventString = "select EventID, ProgramID, Name, Time, Location from Event where EventID = " + eventID + "";
 
                 SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
                 SqlCommand sqlCommand2 = new SqlCommand(eventString, sqlConnection3);
@@ -154,7 +154,6 @@ namespace CyberCity
                         txtEventName.Text = (sqlRead["Name"].ToString());
                         txtEventTime.Text = (sqlRead["Time"].ToString());
                         txtEventLocation.Text = (sqlRead["Location"].ToString());
-                        txtDate.Text = (sqlRead["Date"].ToString());
                         ddlProgram.SelectedValue= (sqlRead["ProgramID"].ToString());
 
 
@@ -182,7 +181,7 @@ namespace CyberCity
 
             cnn = new SqlConnection(connectionString);
 
-            String sql = "UPDATE Event SET [Name] = @Name, [Date] = @Date, [Location] = @Location, [Time] = @Time, [ProgramID] = @ProgramID";
+            String sql = "UPDATE Event SET [Name] = @Name, [Location] = @Location, [Time] = @Time, [ProgramID] = @ProgramID";
             sql += " WHERE EventID = " + eventID + "";
 
             sqlCommand = new SqlCommand(sql, cnn);
@@ -193,7 +192,6 @@ namespace CyberCity
             //Inserts the data from the new student page into the database
 
             sqlCommand.Parameters.AddWithValue("@Name", HttpUtility.HtmlEncode(txtEventName.Text));
-            sqlCommand.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(txtDate.Text));
             sqlCommand.Parameters.AddWithValue("@Location", HttpUtility.HtmlEncode(txtEventLocation.Text));
             sqlCommand.Parameters.AddWithValue("@Time", HttpUtility.HtmlEncode(txtEventTime.Text));
             sqlCommand.Parameters.AddWithValue("@ProgramID", HttpUtility.HtmlEncode(ddlProgram.SelectedIndex.ToString()));

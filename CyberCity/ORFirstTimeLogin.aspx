@@ -7,21 +7,20 @@
     <title></title>
     <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
-
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-<br />
+    <div style=" background-color: #450084; height:1500px;">
     <br />
-    <asp:Panel ID="OrgRepFirstTimeLogin" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
+    <br />
+    <asp:Panel ID="OrgRepFirstTimeLogin" runat="server" BorderColor="#cccccc" BackColor="White" BorderStyle="Solid" style="width:50%;margin-left:auto;margin-right:auto;">
         <br />
         <br />
         <asp:Table ID="tblOrgRepFirstTimeLogin" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
 
             <asp:TableRow HorizontalAlign="Center" >
                 <asp:TableCell ColumnSpan="2">
-                    <img width="100" src="Images/loginguy.png"/>
+                    <img width="100" src="Images/OrgRepAvatar.png"/>
                 </asp:TableCell>            
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Center">
@@ -29,15 +28,18 @@
                     <h4>Organizational Representative First Time Login</h4>              
                 </asp:TableCell>
             </asp:TableRow>
-            <%-- Phone and Luch --%>
+            <%-- Phone --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgRepPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RFVPhone" runat="server" Text="Required Field" ForeColor="Red" ControlToValidate="txtOrgRepPhone" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" Width="50%">
+            </asp:TableRow>
+            <%-- Lunch --%>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group form-control">
                         <asp:Label ID="lblLunch" runat="server" Text="Lunch?" Font-Bold="True"></asp:Label> &nbsp;                                                                   
                         <asp:CheckBox ID="chbxLunch" runat="server"/>
@@ -47,14 +49,14 @@
             <%-- Grade Taught --%>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
-                    <asp:Label ID="lblGrade" runat="server" Text="GradeTaught" ></asp:Label>
+                    <asp:Label ID="lblGrade" runat="server" Text="Grades Taught" ></asp:Label>
                     <div class="form-group">                   
-                        <asp:CheckBox ID="chkElementary" runat="server" Text="Elementary"/> &nbsp;
-                        <asp:CheckBox ID="chkSixth" runat="server" Text="Sixth" /> &nbsp;
-                        <asp:CheckBox ID="chkSeventh" runat="server" Text="Seventh" /> &nbsp;
-                        <asp:CheckBox ID="chkEight" runat="server" Text="Eight" /> &nbsp;
-                        <asp:CheckBox ID="chkHighSchool" runat="server" Text="Highschool" /> &nbsp;
-                        <asp:CheckBox ID="chkNone" runat="server" Text="None" /> &nbsp;
+                        <asp:CheckBox ID="chkElementary" runat="server" Text="&nbsp; Elementary"/> &nbsp;
+                        <asp:CheckBox ID="chkSixth" runat="server" Text="&nbsp Sixth" /> &nbsp;
+                        <asp:CheckBox ID="chkSeventh" runat="server" Text="&nbsp Seventh" /> &nbsp;
+                        <asp:CheckBox ID="chkEight" runat="server" Text="&nbsp Eight" /> &nbsp;
+                        <asp:CheckBox ID="chkHighSchool" runat="server" Text="&nbsp Highschool" /> &nbsp;
+                        <asp:CheckBox ID="chkNone" runat="server" Text="&nbsp None" /> &nbsp;
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -77,7 +79,6 @@
         </asp:Table>
         <br />
     </asp:Panel>
-
         </div>
     </form>
 </body>

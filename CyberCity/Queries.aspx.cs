@@ -71,7 +71,7 @@ namespace CyberCity
                     ddlOrgRep.DataValueField = "OrgRepID";
                     ddlOrgRep.DataBind();
                     ddlOrgRep.Items.Insert(0, new ListItem("Select Organizational Rep", "-1"));
-                    ddlOrgRep.SelectedIndex = 0;
+                    ddlOrgRep.SelectedIndex = -1;
                 }
 
                 string volunteerQuery = "SELECT DISTINCT Volunteer.VolunteerID, Volunteer.FName + ' ' + Volunteer.Lname AS VolunteerName FROM Volunteer INNER JOIN ";
@@ -89,7 +89,7 @@ namespace CyberCity
                     ddlVolunteers.DataValueField = "VolunteerID";
                     ddlVolunteers.DataBind();
                     ddlVolunteers.Items.Insert(0, new ListItem("Select Volunteer", "-1"));
-                    ddlVolunteers.SelectedIndex = 0;
+                    ddlVolunteers.SelectedIndex = -1;
                 }
 
             }

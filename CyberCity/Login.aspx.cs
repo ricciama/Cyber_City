@@ -63,6 +63,10 @@ namespace CyberCity
                     {
                         Response.Redirect("StudentHomePage.aspx");
                     }
+                    else if (type.Equals("C"))
+                    {
+                        Response.Redirect("CoordinatorHomePage.aspx");
+                    }
                     else
                     {
                         Response.Redirect("HomePage.aspx");
