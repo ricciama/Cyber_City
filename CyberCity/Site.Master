@@ -16,6 +16,10 @@
 
     <%-- custom coloring --%>
     <style>
+        .nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+    }
         .navbar-custom{
             background-color: #450084;
         }
@@ -23,6 +27,11 @@
         .navbar-custom .navbar-brand,
         .navbar-custom .navbar-text{
             color: white;
+        }
+        li:hover{
+            outline:solid;
+            outline-color:white;
+            outline-width:thin;
         }
     </style>
 
@@ -74,7 +83,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
-                            <li><a class="navbar-brand" runat="server" href="~/HomePage">Cyber Day</a></li>
+                            <li><a runat="server" style="color:white; font-size:large;" href="HomePage.aspx">Cyber Day</a></li>
                             <li><a runat="server" style="color:white" href="~/HomePage" >Home</a></li>
                             <li><a runat="server" style="color:white" href="~/About">About</a></li>
                             <li><a runat="server" style="color:white" href="~/Contact">Contact</a></li>
@@ -107,7 +116,7 @@
                     </div>
                     <div id="spNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
-                            <li><a class="navbar-brand" runat="server" href="~/StudentHomePage">Cyber Day</a></li>
+                            <li><a runat="server" style="color:white; font-size:large;" href="~/StudentHomePage.aspx">Cyber Day</a></li>
                             <li><a runat="server" style="color:white" href="~/StudentHomePage">Home</a></li>
                             <li><a runat="server" style="color:white" href="~/StudentSchedule">Schedule</a></li>
                             <li><a runat="server" style="color:white" href="~/StudentProfile">Profile</a></li>
@@ -139,7 +148,7 @@
                 </div>
                 <div id="vNavbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-form navbar-left">
-                        <li><a class="navbar-brand" runat="server" href="~/HomePage">Cyber Day</a></li>
+                        <li><a runat="server" style="color:white; font-size:large;" href="HomePage.aspx">Cyber Day</a></li>
                         <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
                         <li><a runat="server" style="color:white" href="~/VolunteerSchedule">Schedule</a></li>
                         <li><a runat="server" style="color:white" href="~/VolunteerProfile">Profile</a></li>
@@ -170,7 +179,7 @@
                 </div>
                 <div id="tNavbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-form navbar-left">
-                        <li><a class="navbar-brand" runat="server" href="~/HomePage">Cyber Day</a></li>
+                        <li><a runat="server" style="color:white; font-size:large;" href="HomePage.aspx">Cyber Day</a></li>
                         <li><a runat="server" style="color:white" href="~/HomePage">Home</a></li>
                         <li><a runat="server" style="color:white" href="~/OrgRepSchedule">Schedule</a></li>
                         <li><a runat="server" style="color:white" href="~/OrgRepGroup">Group</a></li>
@@ -202,7 +211,7 @@
                     </div>
                     <div id="cNavbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-form navbar-left">
-                            <li><a class="navbar-brand" runat="server" href="CoordinatorHomePage.aspx">Cyber Day</a></li>
+                            <li><a runat="server" style="color:white;" href="CoordinatorHomePage.aspx">Cyber Day</a></li>
                             <li><a runat="server" style="color:white" href="CoordinatorHomePage.aspx">Home</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" style="color:white" data-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" id="ddlCreateEntity">Create Entity<span class="caret"></span></a>

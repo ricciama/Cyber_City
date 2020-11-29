@@ -5,7 +5,7 @@
     
     <br />
     <br />
-    <asp:Panel ID="pnlCreateOrg" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="700px">
+    <asp:Panel ID="pnlCreateOrg" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="750px">
         <br />
         <br />
         <asp:Table ID="tblCreateOrg" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">

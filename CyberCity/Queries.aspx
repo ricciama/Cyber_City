@@ -62,7 +62,7 @@
                 <asp:TableRow>
                     <asp:TableCell HorizontalAlign="Center">
                         <div class="form-group">
-                            <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblAllEvents" runat="server" Text="All Events" Visible="false" Font-Bold="true" Font-Size="Medium"></asp:Label>
                         </div>
                         <asp:GridView ID="grdAllEvents"  runat="server" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"  Width="600px" CellPadding="6"></asp:GridView>
                     </asp:TableCell>
@@ -76,7 +76,7 @@
                             &nbsp;
                             &nbsp;
                             &nbsp;
-                            <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblOrgRepSched" runat="server" Text="Organizational Rep Schedule" Visible="false" Font-Bold="true" Font-Size="Medium"></asp:Label>
                         </div>
                             <asp:GridView ID="grdOrgRepSchedule" runat="server" Width="600px" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </asp:TableCell>
@@ -87,7 +87,7 @@
                 <asp:TableRow>
                     <asp:TableCell HorizontalAlign="Center" VerticalAlign="Top">
                         <div class="form-group">
-                            <asp:Label ID="lblOrgRepRoster" runat="server" Text="Organizational Rep Roster" Visible="false" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblOrgRepRoster" runat="server" Text="Organizational Rep Roster" Visible="false" Font-Bold="true" Font-Size="Medium"></asp:Label>
                         </div>
                             <asp:GridView ID="grdOrgRepRoster" runat="server" Width="600px" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </asp:TableCell>
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             &nbsp;
                             &nbsp;
-                            <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblVolunteerSched" runat="server" Text="VolunteerSchedule" Visible="false" Font-Bold="true" Font-Size="Medium"></asp:Label>
                         </div>
                         <asp:GridView ID="grdVolunteerSchedule" runat="server" Width="600px" AutoGenerateColumns="true" AllowPaging="true" CssClass="Grid" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr"></asp:GridView>
                     </asp:TableCell>

@@ -66,11 +66,17 @@
     <!-- Footer -->
 
     <style>
+
+    a:link{
+    font-size:medium;
+    color:black;
+    }
     .page-footer {
-        background-color: #450084;
+        background-color: #EDE9E8;
     }
     h5{
-       color:white;
+        font-size:large;
+       color:black;
     }
     </style>
     <hr />
@@ -87,7 +93,7 @@
 
                 <!-- Content -->
                 <h5 class="text-uppercase">Questions? Send a message here.</h5>
-                  <asp:Table ID="Table1" runat="server">
+                  <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
                       <asp:TableRow>
                           <asp:TableCell>
                               <div class="form-group">
@@ -151,7 +157,7 @@
               <!-- Grid column -->
 
               <!-- Grid column -->
-              <div class="col-md-3 mb-md-0 mb-3">
+<%--              <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
                 <h5 class="text-uppercase">Links</h5>
@@ -171,7 +177,7 @@
                   </li>
                 </ul>
 
-              </div>
+              </div>--%>
               <!-- Grid column -->
 
             </div>
@@ -182,7 +188,7 @@
 
           <!-- Copyright -->
           <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            <a href="http://cybercity-dev.us-east-1.elasticbeanstalk.com/HomePage.aspx"> Cyber Day</a>
           </div>
           <!-- Copyright -->
 
