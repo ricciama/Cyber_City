@@ -49,7 +49,7 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditProgram" runat="server" Text="Edit Program" OnClick="btnEditProgram_Click" Visible="false"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnEditProgram" runat="server" Text="Commit Edits" OnClick="btnEditProgram_Click" Visible="false"/>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

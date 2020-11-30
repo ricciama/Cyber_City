@@ -201,6 +201,11 @@ namespace CyberCity
             sqlCommand.Dispose();
             cnn.Close();
             tblConfirmation.Visible = true;
+            ddlEvents.SelectedIndex = -1;
+            ddlPrograms.SelectedIndex = -1;
+            EventTable.Visible = false;
+            tblEventInfo.Visible = false;
+           
 
         }
     }

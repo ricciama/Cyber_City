@@ -24,19 +24,13 @@
                  <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div >
                         <div class="form-group">
-                            <asp:DropDownList ID="ddlOrgReps" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Select Organizational Representative" Value="0"></asp:ListItem>
+                            <asp:DropDownList ID="ddlOrgReps" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlOrgReps_SelectedIndexChanged">
+                                <asp:ListItem Text="Select Organizational Rep." Value="-1"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
                 </asp:TableCell>
-              <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div >
-                        <div class="form-group">
-                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="editOrgRep" runat="server" Text="Load Representative" onclick="editOrgRep_Click"/>  
-                        </div>
-                    </div>
-                </asp:TableCell>
+             
                          
               </asp:TableRow>
             </asp:Table>
@@ -61,7 +55,7 @@
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtOrgRepPhone" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtOrgRepPhone" runat="server" placeholder="Contact No" ></asp:TextBox>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
@@ -82,12 +76,7 @@
 
             <%-- Code and Organization --%>
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtCode" runat="server" placeholder="Code"></asp:TextBox>
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
+               <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:DropDownList ID="ddlOrgName" runat="server" CssClass="form-control">
                             <asp:ListItem Value="-1" Text="Select Organization"></asp:ListItem>
