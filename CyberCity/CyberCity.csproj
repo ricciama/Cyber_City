@@ -149,6 +149,7 @@
     <Content Include="Images\comp.jpg" />
     <Content Include="Images\coordinatorAvatar.png" />
     <Content Include="Images\dukes.jpg" />
+    <Content Include="Images\EventAvatar.jpg" />
     <Content Include="Images\glasses.jpg" />
     <Content Include="Images\hand.JPG" />
     <Content Include="Images\header_back.gif" />
@@ -156,7 +157,9 @@
     <Content Include="Images\jmuback.jpg" />
     <Content Include="Images\JmuLogo.png" />
     <Content Include="Images\jmuquad.jpg" />
+    <Content Include="Images\JmuSeal.png" />
     <Content Include="Images\man.JPG" />
+    <Content Include="Images\OrganizationAvatar.png" />
     <Content Include="Images\OrgRepAvatar.png" />
     <Content Include="Images\phone.jpg" />
     <Content Include="Images\pic.jpg" />

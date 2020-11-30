@@ -35,19 +35,5 @@
         </asp:Table>
         <br />
         <br />
-        <asp:Table ID="tblCancel" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="center">
-            <asp:TableRow>
-                <asp:TableCell>
-                    <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Cancel Program Registration" OnClick="btnUpdate_Click" />
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell ID="cellConfirmation" HorizontalAlign="center" Visible="false">
-                    <asp:Label ID="lblConfirmation" runat="server" Text="Registration Cancelled Successfully!" Font-Bold="true" ForeColor="Green" autopostback ="true"></asp:Label>
-                </asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
     </asp:Panel>
 </asp:Content>

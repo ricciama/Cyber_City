@@ -59,7 +59,6 @@ namespace CyberCity
             if (check == 0)
             {
                 Table1.Visible = false;
-                tblCancel.Visible = false;
                 tblNotRegistered.Visible = true;
 
             }

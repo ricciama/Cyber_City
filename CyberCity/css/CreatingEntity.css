@@ -4,6 +4,8 @@ table.PerformanceTable{
     width:auto;
 }
 
+
+
 table{
     padding:inherit;
     width:auto;
@@ -45,3 +47,10 @@ table{
 
 }
 
+.paddingRight {
+    padding-right:10px;
+}
+
+.footerbg{
+    background-color:aquamarine;
+}

@@ -143,7 +143,7 @@ namespace CyberCity
             SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
             string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
 
-            string query = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+            string query = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
             query += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
             query += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
             query += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue +")";
@@ -160,6 +160,7 @@ namespace CyberCity
                     volDA.Fill(volDS);
                     volunteerSchedule.DataSource = volDS;
                     volunteerSchedule.DataBind();
+                    //volunteerSchedule.Columns[1].Visible = false;
                     lblVolSchedule.Visible = true;
                     volunteerSchedule.Visible = true;
                 }
@@ -269,7 +270,7 @@ namespace CyberCity
 
                     //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
 
-                    string queryNew = "SELECT Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
                     queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
                     queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
                     queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue + ")";
@@ -285,6 +286,7 @@ namespace CyberCity
                             volDA.Fill(volDS);
                             volunteerSchedule.DataSource = volDS;
                             volunteerSchedule.DataBind();
+                            //volunteerSchedule.Columns[1].Visible = false;
                             lblVolSchedule.Visible = true;
                             volunteerSchedule.Visible = true;
                         }
@@ -308,6 +310,59 @@ namespace CyberCity
                 
             }
 
+        }
+
+        protected void volunteerSchedule_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int vrID = Convert.ToInt32(volunteerSchedule.DataKeys[e.RowIndex].Values[0]);
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            
+            string volunteerID = ddlSelectVolunteer.SelectedValue.ToString();
+
+            string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Name, CONVERT(varchar, Event.Time, 100) as Time, Event.Location FROM Volunteer INNER JOIN ";
+            queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
+            queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
+            queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue + ")";
+            DataSet volDS = new DataSet();
+
+            using (con)
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM VolunteerRegistration WHERE VolunteerRegistrationID = @VolunteerRegistrationID"))
+                {
+                    cmd.Parameters.AddWithValue("@VolunteerRegistrationID", vrID);
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+
+                if (volunteerID != "-1")
+                {
+                    lblVolSchedule.Text = "Volunteer Schedule For " + ddlSelectVolunteer.SelectedItem.Text;
+                    SqlCommand volCMD = new SqlCommand(queryNew, con);
+                    SqlDataAdapter volDA = new SqlDataAdapter(volCMD);
+                    volDA.Fill(volDS);
+                    volunteerSchedule.DataSource = volDS;
+                    volunteerSchedule.DataBind();
+                    //volunteerSchedule.Columns[1].Visible = false;
+                    lblVolSchedule.Visible = true;
+                    volunteerSchedule.Visible = true;
+                }
+                else
+                {
+                    volunteerSchedule.Visible = false;
+                    lblVolSchedule.Visible = false;
+                }
+            }
+            
+        }
+
+        protected void volunteerSchedule_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != volunteerSchedule.EditIndex)
+            {
+                (e.Row.Cells[0].Controls[0] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
+            }
         }
     }
 }

@@ -187,7 +187,7 @@ namespace CyberCity
             //query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             //query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
 
-            string query = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+            string query = "SELECT OrgRepRegistration.OrgRepRegistrationID AS ID, Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
             query += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
             query += "Program ON Event.ProgramID = Program.ProgramID ";
@@ -323,7 +323,7 @@ namespace CyberCity
                     //queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID ";
                     //queryNew += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
 
-                    string queryNew = "SELECT Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+                    string queryNew = "SELECT OrgRepRegistration.OrgRepRegistrationID AS ID, Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
                     queryNew += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
                     queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
                     queryNew += "Program ON Event.ProgramID = Program.ProgramID ";
@@ -358,6 +358,58 @@ namespace CyberCity
                     lblSuccess.ForeColor = System.Drawing.Color.Red;
                     lblSuccess.Font.Bold = true;
                 }
+            }
+        }
+
+        protected void orgRepSchedule_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int orID = Convert.ToInt32(orgRepSchedule.DataKeys[e.RowIndex].Values[0]);
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+
+            string orgRepID = ddlOrgRep.SelectedValue.ToString();
+
+            string queryNew = "SELECT OrgRepRegistration.OrgRepRegistrationID AS ID, Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+            queryNew += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
+            queryNew += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
+            queryNew += "Program ON Event.ProgramID = Program.ProgramID ";
+            queryNew += "WHERE(Program.ProgramID = " + ddlSelectProgram.SelectedValue + ") AND(OrgRep.OrgRepID = " + ddlOrgRep.SelectedValue + " ) ";
+
+            DataSet ds = new DataSet();
+
+            using (con)
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM OrgRepRegistration WHERE OrgRepRegistrationID = @OrgRepRegistrationID"))
+                {
+                    cmd.Parameters.AddWithValue("@OrgRepRegistrationID", orID);
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                if (orgRepID != "-1")
+                {
+                    lblOrgRepSchedule.Text = "Organization Rep Schedule For " + ddlOrgRep.SelectedItem.Text;
+                    SqlCommand repCMD = new SqlCommand(queryNew, con);
+                    SqlDataAdapter repDA = new SqlDataAdapter(repCMD);
+                    repDA.Fill(ds);
+                    orgRepSchedule.DataSource = ds;
+                    orgRepSchedule.DataBind();
+                    lblOrgRepSchedule.Visible = true;
+                    orgRepSchedule.Visible = true;
+
+                }
+                else
+                {
+                    lblOrgRepSchedule.Visible = false;
+                }
+            }
+        }
+
+        protected void orgRepSchedule_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != orgRepSchedule.EditIndex)
+            {
+                (e.Row.Cells[0].Controls[0] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
     }
