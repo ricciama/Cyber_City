@@ -20,14 +20,30 @@
         <div class="col-md-4">
             <h2>Download Files</h2>
             <p>
-                Click one of the following options to download an excel file:
-            <p>
-                <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" CssClass="btn btn-default"/>
-                &nbsp;
-                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default" />
+                Choose a program from the dropdown list to download an excel file:
             </p>
-            
-            
+                <asp:Table ID="Table1" runat="server">
+                    <asp:TableRow>
+                        <asp:TableCell ColumnSpan="2">
+                            <div class="form-group">
+                                <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control"></asp:DropDownList>
+                            </div>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <div class="form-group">
+                                <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" CssClass="btn btn-default" OnClick="btnStudentRoster_Click"/>
+                            </div>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <div class="form-group">
+                                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default" OnClick="btnProgramSchedule_Click" />
+                            </div>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+                               
         </div>
         <div class="col-md-4">
             <h2>Upcoming Cyber Days</h2>
@@ -58,6 +74,10 @@
             </p>
 
         </div>
+
+        <asp:GridView ID="grdOrgRep" runat="server" Visible="false"></asp:GridView>
+        <asp:GridView ID="grdVolunteer" runat="server" Visible="false"></asp:GridView>
+        <asp:GridView ID="grdStudentRoster" runat="server" Visible="false"></asp:GridView>
     </div>
 
 </asp:Content>
