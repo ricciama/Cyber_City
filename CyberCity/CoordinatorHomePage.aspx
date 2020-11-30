@@ -24,7 +24,7 @@
             <p>
                 <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" CssClass="btn btn-default"/>
                 &nbsp;
-                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default" />
+                <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default"/>
             </p>
             
             

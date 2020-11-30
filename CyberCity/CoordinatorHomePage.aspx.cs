@@ -8,6 +8,8 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.WebSockets;
+using Microsoft.Office.Interop.Excel;
+
 
 
 
@@ -69,7 +71,7 @@ namespace CyberCity
             string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program where date >= GETDATE() ORDER BY date";
 
             DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
+            var dt = new System.Data.DataTable();
             using (con)
             {
                 SqlCommand cmd = new SqlCommand(schedule, con);
@@ -81,14 +83,11 @@ namespace CyberCity
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-        }
-
         protected void learnMoreHomePage_Click(object sender, EventArgs e)
         {
             Response.Redirect("https://www.jmu.edu/cob/cis/about/cyberday.shtml");
         }
+
     }
    
 }
