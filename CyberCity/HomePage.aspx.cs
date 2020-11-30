@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using Microsoft.Ajax.Utilities;
+using System.Net.Mail;
 
 namespace CyberCity
 {
@@ -15,6 +16,7 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            tblMessageConfirmation.Visible = false;
             if (Session["UserType"] != null)
             {
                 if (Session["UserType"].ToString().Equals("V"))
@@ -88,6 +90,25 @@ namespace CyberCity
 
         protected void btnSendMessage_Click(object sender, EventArgs e)
         {
+            //Sends email to user with login credentials
+            MailMessage msg = new MailMessage();
+            msg.From = new MailAddress("cybercityjmu1@gmail.com");
+            msg.To.Add("cybercityjmu1@gmail.com");
+            msg.Subject = "New Message From " + txtName.Text + " (" + txtEmail.Text + ")";
+            string emailBody = "Subject: " + txtSubject.Text + "<br/> <br/> ";
+            emailBody += txtMessage.Text + "<br/> <br/> ";
+            emailBody += "From, <br/> " + txtName.Text;
+            msg.Body = emailBody;
+            msg.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Send(msg);
+            msg.Dispose();
+
+            txtName.Text = "";
+            txtMessage.Text = "";
+            txtSubject.Text = "";
+            txtEmail.Text = "";
+            tblMessageConfirmation.Visible = true;
 
         }
     }
