@@ -202,8 +202,9 @@ namespace CyberCity
                 msg.From = new MailAddress("cybercityjmu1@gmail.com");
                 msg.To.Add(txtOrgRepEmail.Text);
                 msg.Subject = "Cyber Day Credentials For " + txtOrgRepFN.Text + ' ' + txtOrgRepLN.Text;
-                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as an Organizational Representative for the Cyber Day. <br/><br/> Your Login Credentials can be found below.<br/><br/> Login Details <br /> Username: " + txtUsernme.Text + " <br /> Password: " + sb.ToString();
-                emailBody += "<br /> <br /> Please click this link to view/edit your profile and change your password if necessary";
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as an Organizational Representative for the Cyber Day. <br/><br/> Your Login Credentials can be found below.<br/><br/> Login Details <br/><b> Username:</b> " + txtUsernme.Text + " <br/><b>Password:</b> " + sb.ToString();
+                emailBody += "<br/> <br/> Please click the link below to view/edit your profile and change your password if necessary. <br/><br/>Note: it is STRONGLY Encouraged to change your password.";
+                emailBody += "<br/><br/><a href='http://cybercity-dev.us-east-1.elasticbeanstalk.com/Login.aspx'>Login Here</a>";
                 msg.Body = emailBody;
                 msg.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
@@ -228,11 +229,13 @@ namespace CyberCity
                 confirmationlbl.Text = "Username already exists please select a new one!";
                 confirmationlbl.ForeColor = Color.Red;
                 confirmationlbl.Visible = true;
+                lblEmailSuccess.Visible = false;
             } else if (codeCount != 0)
             {
                 confirmationlbl.Text = "Org Rep Code already exists please select a new one!";
                 confirmationlbl.ForeColor = Color.Red;
                 confirmationlbl.Visible = true;
+                lblEmailSuccess.Visible = false;
             }
            
         }

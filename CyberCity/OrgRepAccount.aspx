@@ -100,7 +100,7 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center">
                     <asp:Label ID="lblEmailSuccess" runat="server" Text="Email sent to user" Font-Bold="true" ForeColor="Green" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
