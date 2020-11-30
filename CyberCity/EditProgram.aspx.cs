@@ -54,7 +54,7 @@ namespace CyberCity
 
             cnn = new SqlConnection(connectionString);
 
-            String sql = "UPDATE Program SET [Name] = @Name, [Date] = @Date";
+            String sql = "UPDATE Program SET [Name] = @Name, [DATE] = @Date";
             sql += " WHERE ProgramID = " + progID + "";
 
             sqlCommand = new SqlCommand(sql, cnn);
@@ -72,6 +72,10 @@ namespace CyberCity
             sqlCommand.Dispose();
             cnn.Close();
             tblConfirmation.Visible = true;
+            btnEditProgram.Visible = false;
+            txtProgramName.Visible = false;
+            txtProgramDateTime.Visible = false;
+            ddlProgamNames.SelectedIndex = -1;
         }
 
        

@@ -42,15 +42,6 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlOrgReps;
 
         /// <summary>
-        /// editOrgRep control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button editOrgRep;
-
-        /// <summary>
         /// EditInfo control.
         /// </summary>
         /// <remarks>
@@ -112,15 +103,6 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkLunch;
-
-        /// <summary>
-        /// txtCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCode;
 
         /// <summary>
         /// ddlOrgName control.

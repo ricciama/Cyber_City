@@ -133,8 +133,9 @@ namespace CyberCity
                 msg.From = new MailAddress("cybercityjmu1@gmail.com");
                 msg.To.Add(txtCoordinatorEmail.Text);
                 msg.Subject = "Cyber Day Credentials For " + txtCoordinatorFN.Text + ' ' + txtCoordinatorLN.Text;
-                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as a coordinator for the Cyber Day Team. <br/> Your Login Credentials can be found below<br/><br/> Login Details <br/> Username: " + txtUsernme.Text + " <br/> Password: " + sb.ToString();
-                emailBody += "<br/><br/> Please click this link to view/edit your profile and change your password. <br/><br/>Note: it is STRONGLY Encouraged to change our password."; 
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you have been added as a coordinator for the Cyber Day Team. <br/><br/> Your Login Credentials can be found below.<br/><br/> Login Details <br/><b> Username:</b> " + txtUsernme.Text + " <br/><b> Password:</b> " + sb.ToString();
+                emailBody += "<br/><br/> Please click the link below to login, view/edit your profile and change your password. <br/><br/>Note: it is STRONGLY Encouraged to change your password.";
+                emailBody += "<br/><br/> <a href='http://cybercity-dev.us-east-1.elasticbeanstalk.com/Login.aspx'>Login Here</a>";
                 msg.Body = emailBody;
                 msg.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
