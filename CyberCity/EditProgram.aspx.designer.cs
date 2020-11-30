@@ -51,6 +51,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtProgramName;
 
         /// <summary>
+        /// RFVProgramName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVProgramName;
+
+        /// <summary>
         /// txtProgramDateTime control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProgramDateTime;
+
+        /// <summary>
+        /// RFVDateTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDateTime;
 
         /// <summary>
         /// btnEditProgram control.

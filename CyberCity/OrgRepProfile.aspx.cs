@@ -87,7 +87,7 @@ namespace CyberCity
             string Username = Session["Username"].ToString();
             string gradesTaught = "";
             String sqlUpdate = "UPDATE OrgRep SET FName = @FirstName, LName = @LastName, Email = @Email, " +
-              "PhoneNumber = @Phone, GradesTaught = @GradesTaught, Code = @Code, LunchTicket = @LunchTicket " +
+              "PhoneNumber = @Phone, GradesTaught = @GradesTaught, LunchTicket = @LunchTicket " +
               "WHERE Username =  " + Username + "";
             SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -96,7 +96,6 @@ namespace CyberCity
 
             sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtOrgRepFN.Text));
             sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtOrgRepLN.Text));
-            sqlCommand.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtCode.Text));
             sqlCommand.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtOrgRepPhone.Text));
             sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgRepEmail.Text));
 
