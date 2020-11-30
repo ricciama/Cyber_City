@@ -78,6 +78,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtEventName;
 
         /// <summary>
+        /// RFVEventName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEventName;
+
+        /// <summary>
         /// txtEventTime control.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtEventTime;
 
         /// <summary>
+        /// RFVEventTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEventTime;
+
+        /// <summary>
         /// txtEventLocation control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventLocation;
+
+        /// <summary>
+        /// RFVLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVLocation;
 
         /// <summary>
         /// ddlProgram control.
