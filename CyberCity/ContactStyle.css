@@ -9,11 +9,11 @@
 
 .Box {
     position: absolute;
-    top: 55%;
+    top: 54%;
     left: 50%;
     transform: translate(-90%,-50%);
     width: 500px;
-    height: 600px;
+    height: 662px;
     /*padding: 80px;*/
     box-sizing: border-box;
     background: rgba(0,0,0,0.5);
@@ -31,10 +31,10 @@ p {
     margin: 0;
     text-align: center;
     color: white;
-    font-size =18px;
+    font-size: 18px;
 }
 .photo1{
-    padding:7%;
+   /* padding:7%;*/
     margin-top:30px;
     width:90px;
     /*height:150px;*/
