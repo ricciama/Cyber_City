@@ -158,6 +158,7 @@ namespace CyberCity
                 lblFeedback.Text = "Username is already taken please enter a different one.";
                 lblFeedback.ForeColor = Color.Red;
                 lblFeedback.Visible = true;
+                lblEmailSuccess.Visible = false;
 
             }
 }
