@@ -236,5 +236,15 @@ namespace CyberCity
             }
            
         }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            txtOrgRepFN.Text = "Jill";
+            txtOrgRepLN.Text = "Connely";
+            txtOrgRepEmail.Text = "langzg@dukes.jmu.edu";
+            txtUsernme.Text = "OrgRep";
+            txtCode.Text = "Connely";
+            ddlOrgName.SelectedIndex = 2;
+        }
     }
 }
