@@ -114,6 +114,9 @@ namespace CyberCity
                 txtEventTime.Text = "";
 
                 tblConfirmation.Visible = true;
+                
+                
+            
 
         }
     }

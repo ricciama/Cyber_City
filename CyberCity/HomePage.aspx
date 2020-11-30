@@ -73,6 +73,9 @@
     }
     .page-footer {
         background-color: #EDE9E8;
+        border: groove
+            
+       
     }
     h5{
         font-size:large;
@@ -107,30 +110,37 @@
                           </asp:TableCell>
                       </asp:TableRow>
                       <asp:TableRow>
-                         <asp:TableCell ColumnSpan="2">
+                         <asp:TableCell ColumnSpan="12" HorizontalAlign="Center">
                              <div class="form-group">
                                  <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control" placeholder="Subject"></asp:TextBox>
                              </div>
                          </asp:TableCell>
                       </asp:TableRow>
                       <asp:TableRow>
-                          <asp:TableCell ColumnSpan="2">
+                          <asp:TableCell ColumnSpan="12" HorizontalAlign="Center">
                               <div class="form-group">
-                                  <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" placeholder="Type Message here.."></asp:TextBox>
+                                  <asp:TextBox ID="txtMessage" TextMode="MultiLine" Height="120" runat="server" CssClass="form-control" placeholder="Type Message here.."></asp:TextBox>
                               </div>
                           </asp:TableCell>
                       </asp:TableRow>
                       <asp:TableRow HorizontalAlign="Right">
+                          <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
+                              <asp:Button ID="btnSendMessage" Width="150" Height="40" runat="server" CssClass="btn btn-sm btn-primary" Text="Send" OnClick="btnSendMessage_Click" />
+                          </asp:TableCell>
+                      </asp:TableRow>
+                    </asp:Table>
+                  <asp:Table ID="tblMessageConfirmation" runat="server" HorizontalAlign="Center">
+                      <asp:TableRow>
                           <asp:TableCell>
-                              <asp:Button ID="btnSendMessage" runat="server" CssClass="btn btn-sm btn-primary" Text="Send" OnClick="btnSendMessage_Click" />
+                              <asp:Label ID="Confirmation" runat="server" Text="Message Successfullly Sent!" ForeColor="Green" Font-Bold="true"></asp:Label>
                           </asp:TableCell>
                       </asp:TableRow>
                   </asp:Table>
 
               </div>
-<%--              <!-- Grid column -->
+              <!-- Grid column -->
 
-              <hr class="clearfix w-100 d-md-none pb-3">--%>
+              <hr class="clearfix w-100 d-md-none pb-3">
 
               <!-- Grid column -->
               <div class="col-md-3 mb-md-0 mb-3">

@@ -149,10 +149,10 @@ namespace CyberCity
             txtParentEmail.Text = "DavidLang@gmail.com";
             txtParentFN.Text = "David";
             txtParentLN.Text = "Lang";
-            txtParentPhone.Text = "7042633423";
+            txtParentPhone.Text = "704-263-3423";
             txtStudentFN.Text = "Zach";
             txtStudentLN.Text = "Lang";
-            txtStudentDOB.Text = "11/02/1998";
+            txtStudentDOB.Text = "1998-11-02";
             ddlGender.SelectedValue = "Male";
             ddlEthnicity.SelectedIndex = 1;
         }

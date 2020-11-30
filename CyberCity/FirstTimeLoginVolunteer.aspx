@@ -32,7 +32,7 @@
                 <asp:TableRow HorizontalAlign="Center">
                     <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding" ColumnSpan="2">
                         <div class="form-group">
-                            <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server" placeholder="Phone Number" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="txtVolunteerPhone" runat="server"  width ="238" placeholder="Phone Number (### - ### - ####)"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RFVPhone" runat="server" Text="Required Field" Font-Bold="true" ForeColor="Red" ControlToValidate="txtVolunteerPhone" SetFocusOnError="true" ></asp:RequiredFieldValidator>
                         </div>
                     </asp:TableCell>
