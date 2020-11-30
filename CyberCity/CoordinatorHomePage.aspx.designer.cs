@@ -7,13 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity
-{
-
-
-    public partial class CoordinatorHomePage
-    {
-
+namespace CyberCity {
+    
+    
+    public partial class CoordinatorHomePage {
+        
+        /// <summary>
+        /// Table1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
+        /// <summary>
+        /// ddlProgram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
+        
         /// <summary>
         /// btnStudentRoster control.
         /// </summary>
@@ -22,7 +38,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnStudentRoster;
-
+        
         /// <summary>
         /// btnProgramSchedule control.
         /// </summary>
@@ -31,7 +47,7 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnProgramSchedule;
-
+        
         /// <summary>
         /// studentSchedule control.
         /// </summary>
@@ -40,5 +56,32 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView studentSchedule;
+        
+        /// <summary>
+        /// grdOrgRep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdOrgRep;
+        
+        /// <summary>
+        /// grdVolunteer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdVolunteer;
+        
+        /// <summary>
+        /// grdStudentRoster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdStudentRoster;
     }
 }

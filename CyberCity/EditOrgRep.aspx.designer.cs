@@ -42,15 +42,6 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.DropDownList ddlOrgReps;
 
         /// <summary>
-        /// editOrgRep control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button editOrgRep;
-
-        /// <summary>
         /// EditInfo control.
         /// </summary>
         /// <remarks>
@@ -69,6 +60,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepFN;
 
         /// <summary>
+        /// RFVFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVFirstName;
+
+        /// <summary>
         /// txtOrgRepLN control.
         /// </summary>
         /// <remarks>
@@ -76,6 +76,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepLN;
+
+        /// <summary>
+        /// RFVLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVLastName;
 
         /// <summary>
         /// txtOrgRepPhone control.
@@ -87,6 +96,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepPhone;
 
         /// <summary>
+        /// RFVPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhone;
+
+        /// <summary>
         /// txtOrgRepEmail control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgRepEmail;
+
+        /// <summary>
+        /// RFVEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEmail;
 
         /// <summary>
         /// Label2 control.
@@ -114,6 +141,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.CheckBox chkLunch;
 
         /// <summary>
+        /// ddlOrgName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrgName;
+
+        /// <summary>
         /// txtCode control.
         /// </summary>
         /// <remarks>
@@ -123,13 +159,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtCode;
 
         /// <summary>
-        /// ddlOrgName control.
+        /// RFVCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrgName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCode;
 
         /// <summary>
         /// lblGrade control.

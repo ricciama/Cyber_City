@@ -161,5 +161,12 @@ namespace CyberCity
 
         }
 
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            txtVolunteerFN.Text = "Jim";
+            txtVolunteerLN.Text = "Higgins";
+            txtUsernme.Text = "Volunteer";
+            txtVolunteerEmail.Text = "langzg@dukes.jmu.edu";
+        }
     }
 }

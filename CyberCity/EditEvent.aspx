@@ -55,11 +55,13 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventName" runat="server" placeholder="Event Name"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVEventName" runat="server" ControlToValidate="txtEventName" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" placeholder="Event Time" TextMode="Time"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVEventTime" runat="server" ControlToValidate="txtEventTime" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 
@@ -69,6 +71,7 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">               
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtEventLocation" runat="server" placeholder="Location - Ex: Hartman Hall 1207"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVLocation" runat="server" ControlToValidate="txtEventLocation" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">

@@ -20,7 +20,7 @@ namespace CyberCity
                 EditInfo.Visible = false;
                 String sqlQuery2 = "Select OrgRepID, FName + ' ' + LName as Name from OrgRep order by OrgRepID";
                 String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
-
+                
                 using (SqlConnection con = new SqlConnection(sqlConnection2))
                 {
                     using (SqlCommand cmd = new SqlCommand(sqlQuery2))
@@ -46,14 +46,54 @@ namespace CyberCity
         }
 
      
-        protected void editOrgRep_Click(object sender, EventArgs e)
+      
+        protected void btnCommitEdits_Click(object sender, EventArgs e)
         {
+            string orgRepId = ddlOrgReps.SelectedValue.ToString();
+            String sqlUpdate = "UPDATE OrgRep SET [FName] = @FirstName, [LName] = @LastName, [Email] = @Email, " +
+              "[PhoneNumber] = @Phone, [OrganizationID] = @OrganizationID, [LunchTicket] = @LunchTicket " +
+              "WHERE OrgRepID =  " + orgRepId + "";
+            SqlDataAdapter adapter = new SqlDataAdapter();
 
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            SqlCommand sqlCommand = new SqlCommand(sqlUpdate, sqlConnection);
+
+            sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtOrgRepFN.Text));
+            sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtOrgRepLN.Text));            
+            sqlCommand.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtOrgRepPhone.Text));
+            sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgRepEmail.Text));
+            sqlCommand.Parameters.AddWithValue("@OrganizationID", HttpUtility.HtmlEncode(ddlOrgName.SelectedValue));
+
+
+            int lunchTicket = 0;
+            if (chkLunch.Checked == true)
+            {
+                lunchTicket = 1;
+            }
+            sqlCommand.Parameters.AddWithValue("@LunchTicket", lunchTicket);
+            
+
+            sqlConnection.Open();
+
+            adapter.UpdateCommand = sqlCommand;
+            adapter.UpdateCommand.ExecuteNonQuery();
+
+            sqlCommand.Dispose();
+
+            sqlConnection.Close();
+            EditInfo.Visible = false;
+            ddlOrgReps.SelectedIndex = -1;
+            tblConfirmation.Visible = true;
+        }
+
+        protected void ddlOrgReps_SelectedIndexChanged(object sender, EventArgs e)
+        {
             EditInfo.Visible = true;
 
             String sqlQuery2 = "Select Name, OrganizationID from Organization order by OrganizationID";
             String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
 
+            ddlOrgName.Items.Clear();
             using (SqlConnection con = new SqlConnection(sqlConnection2))
             {
                 using (SqlCommand cmd = new SqlCommand(sqlQuery2))
@@ -76,29 +116,29 @@ namespace CyberCity
             }
             string gradeTaught = "";
             string orgRepId = ddlOrgReps.SelectedValue.ToString();
-            string orgRep = "select FName, Lname, Email, PhoneNumber, OrganizationID, Code, LunchTicket, GradesTaught from OrgRep ";
+            string orgRep = "select FName, Lname, Email, PhoneNumber, Code, OrganizationID, LunchTicket, GradesTaught from OrgRep ";
             orgRep += "where OrgRepID = " + orgRepId + "";
-           
+
             SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-           
+
             SqlCommand sqlCommand2 = new SqlCommand(orgRep, sqlConnection3);
 
             sqlConnection3.Open();
 
             SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
-            
+
 
             while (sqlRead.Read())
             {
                 txtOrgRepFN.Text = (sqlRead["FName"].ToString());
                 txtOrgRepLN.Text = (sqlRead["LName"].ToString());
-                txtOrgRepPhone.Text = (sqlRead["PhoneNumber"].ToString());
-                ddlOrgName.SelectedValue=(sqlRead["OrganizationID"].ToString());
                 txtOrgRepEmail.Text = (sqlRead["Email"].ToString());
-                txtCode.Text = (sqlRead["Code"].ToString());
+                txtOrgRepPhone.Text = (sqlRead["PhoneNumber"].ToString());
+                txtCode.Text= (sqlRead["Code"].ToString());
+                ddlOrgName.SelectedValue = (sqlRead["OrganizationID"].ToString());
+                int lunch = Int32.Parse(sqlRead["LunchTicket"].ToString());
                 gradeTaught = (sqlRead["GradesTaught"].ToString());
                 
-                int lunch = Int32.Parse(sqlRead["LunchTicket"].ToString());
                 if (lunch == 1)
                 {
                     chkLunch.Checked = true;
@@ -107,6 +147,8 @@ namespace CyberCity
                 {
                     chkLunch.Checked = false;
                 }
+
+               
             }
             if (gradeTaught.Contains("Elementary"))
             {
@@ -118,7 +160,7 @@ namespace CyberCity
             }
             if (gradeTaught.Contains("Seventh"))
             {
-                chkSeventh.Checked = true; 
+                chkSeventh.Checked = true;
             }
             if (gradeTaught.Contains("Eighth"))
             {
@@ -132,47 +174,12 @@ namespace CyberCity
             {
                 chkNone.Checked = true;
             }
+            
             sqlRead.Close();
             sqlConnection3.Close();
         }
-        protected void btnCommitEdits_Click(object sender, EventArgs e)
-        {
-            string orgRepId = ddlOrgReps.SelectedValue.ToString();
-            String sqlUpdate = "UPDATE OrgRep SET [FName] = @FirstName, [LName] = @LastName, [Email] = @Email, " +
-              "[PhoneNumber] = @LunchTicket, [OrganizationID] = @OrganizationID, [Code] = @Code, [LunchTicket] = @LunchTicket " +
-              "WHERE OrgRepID =  " + orgRepId + "";
-            SqlDataAdapter adapter = new SqlDataAdapter();
 
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            SqlCommand sqlCommand = new SqlCommand(sqlUpdate, sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtOrgRepFN.Text));
-            sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtOrgRepLN.Text));
-            sqlCommand.Parameters.AddWithValue("@Code", HttpUtility.HtmlEncode(txtCode.Text));
-            sqlCommand.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtOrgRepPhone.Text));
-            sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtOrgRepEmail.Text));
-            sqlCommand.Parameters.AddWithValue("@OrganizationID", HttpUtility.HtmlEncode(ddlOrgName.SelectedValue));
-
-
-            int lunchTicket = 0;
-            if (chkLunch.Checked == true)
-            {
-                lunchTicket = 1;
-            }
-            sqlCommand.Parameters.AddWithValue("@LunchTicket", lunchTicket);
-            
-
-            sqlConnection.Open();
-
-            adapter.UpdateCommand = sqlCommand;
-            adapter.UpdateCommand.ExecuteNonQuery();
-
-            sqlCommand.Dispose();
-
-            sqlConnection.Close();
-
-            tblConfirmation.Visible = true;
-        }
+     
     }
 
       

@@ -60,6 +60,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtOrgName;
 
         /// <summary>
+        /// RFVOrgName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVOrgName;
+
+        /// <summary>
         /// txtOrgAddress control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgAddress;
+
+        /// <summary>
+        /// RFVOrgAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVOrgAddress;
 
         /// <summary>
         /// txtOrgContact control.
@@ -78,6 +96,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtOrgContact;
 
         /// <summary>
+        /// RFVOrgContact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVOrgContact;
+
+        /// <summary>
         /// txtOrgEmail control.
         /// </summary>
         /// <remarks>
@@ -85,6 +112,15 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrgEmail;
+
+        /// <summary>
+        /// RFVEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEmail;
 
         /// <summary>
         /// txtOrgPhone control.
@@ -96,6 +132,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtOrgPhone;
 
         /// <summary>
+        /// RFVOrgPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVOrgPhone;
+
+        /// <summary>
         /// btnCommitEdits control.
         /// </summary>
         /// <remarks>
@@ -103,15 +148,6 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCommitEdits;
-
-        /// <summary>
-        /// btnDeleteOrg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteOrg;
 
         /// <summary>
         /// tblConfirmation control.
@@ -130,23 +166,5 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// tblDeleteConfirmation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblDeleteConfirmation;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
     }
 }

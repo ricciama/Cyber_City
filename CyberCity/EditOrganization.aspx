@@ -39,11 +39,13 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgName" runat="server" placeholder="Name"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgName" runat="server" ControlToValidate="txtOrgName" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgAddress" runat="server" placeholder="Address"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgAddress" runat="server" ControlToValidate="txtOrgAddress" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -53,18 +55,23 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgContact" runat="server" placeholder="Primary Contact" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgContact" runat="server" ControlToValidate="txtOrgContact" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
                         <asp:TextBox CssClass="form-control" ID="txtOrgEmail" runat="server" placeholder="Primary Contact Email" TextMode="Email"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ControlToValidate="txtOrgEmail" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
-                        <asp:TextBox CssClass="form-control" ID="txtOrgPhone" runat="server" placeholder="Primary Contact Phone" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtOrgPhone"  runat="server" placeholder="Primary Contact Phone" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgPhone" runat="server" ControlToValidate="txtOrgPhone" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
+            
+
             </asp:TableRow>
             
            
@@ -73,14 +80,9 @@
           
             <%-- Register Button --%>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                <asp:TableCell ColumnSpan="3" HorizontalAlign="Center">
                     <div class="form-group">
                          <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnCommitEdits" runat="server" Text="Commit Edits" OnClick="editOrg_Click"/>  
-                    </div>
-                </asp:TableCell>
-                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
-                    <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnDeleteOrg" runat="server" Text="Delete Organization" onclick="btnDeleteOrg_Click"/>  
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -93,14 +95,7 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <br />
-         <asp:Table ID="tblDeleteConfirmation" runat="server" Visible="false" HorizontalAlign="center">
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label2" runat="server" Text="Organiztation Deleted!" Font-Bold="true" ForeColor="Green"></asp:Label>
-                </asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
+              
         </asp:Panel>
 
 </asp:Content>

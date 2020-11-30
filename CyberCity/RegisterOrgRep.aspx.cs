@@ -187,7 +187,7 @@ namespace CyberCity
             //query += "Event ON OrgRepRegistration.EventID = Event.EventID ";
             //query += "WHERE(OrgRepRegistration.OrgRepID = " + ddlOrgRep.SelectedValue + ")";
 
-            string query = "SELECT OrgRepRegistration.OrgRepRegistrationID AS ID, Event.Name, Event.Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
+            string query = "SELECT OrgRepRegistration.OrgRepRegistrationID AS ID, Event.Name, LTRIM(RIGHT(CONVERT(VARCHAR(20), Event.Time, 100), 7)) as Time, Event.Location FROM OrgRepRegistration INNER JOIN ";
             query += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
             query += "Event ON OrgRepRegistration.EventID = Event.EventID INNER JOIN ";
             query += "Program ON Event.ProgramID = Program.ProgramID ";
