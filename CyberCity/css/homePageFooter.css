@@ -1,0 +1,39 @@
+﻿body {
+}
+.header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 394px;
+   
+}
+
+
+.FooterMessage {
+    /* margin: 30px 30px 50px 580px;*/
+    margin-top: 10px;
+    margin-left:394px;
+    width:900px;
+}
+
+.FooterFullName {
+    /* margin: 30px 30px 50px 80px;*/
+    margin-top: 10px;
+    margin-left: 394px;
+    width: 700px;
+}
+
+.FooterSubject{
+    width: 1050px;
+    margin-top:10px;
+    margin-left: 394px;
+}
+.FooterEmail {
+    margin-top: 10px;
+    margin-left: 394px;
+    width: 700px;
+}
+.FooterBtn{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:394px;
+}
