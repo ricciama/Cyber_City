@@ -92,26 +92,26 @@ namespace CyberCity
         {
             //Sends email to user with login credentials
 
-           
+
 
             MailMessage msg = new MailMessage();
             msg.From = new MailAddress("cybercityjmu1@gmail.com");
             msg.To.Add("cybercityjmu1@gmail.com");
-            msg.Subject = "New Message From " + txtName.Text + " (" + txtEmail.Text + ")";
-            string emailBody = "Subject: " + txtSubject.Text + "<br/> <br/> ";
+            msg.Subject = "New Message From " + txtEmail.Text;
+            string emailBody = "Subject: Online Question " + "<br/> <br/> ";
             emailBody += txtMessage.Text + "<br/> <br/> ";
-            emailBody += "From, <br/> " + txtName.Text;
+            emailBody += "From, <br/> " + txtEmail.Text;
             msg.Body = emailBody;
             msg.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Send(msg);
             msg.Dispose();
 
-            txtName.Text = "";
+            //txtName.Text = "";
             txtMessage.Text = "";
-            txtSubject.Text = "";
+            //txtSubject.Text = "";
             txtEmail.Text = "";
-            //tblMessageConfirmation.Visible = true;
+            //tblMessageConfirmation.Visible = true; // commented this out because it is commented out on the aspx file
 
         }
     }
