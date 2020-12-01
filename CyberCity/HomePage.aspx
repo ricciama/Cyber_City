@@ -4,7 +4,7 @@
 
     <link href="css/GridView.css" rel="stylesheet" />
     <link href="css/CreatingEntity.css" rel="stylesheet" />
-    <link href="homePageFooter.css" rel="stylesheet" />
+    <link href="css/homePageFooter.css" rel="stylesheet" />
 
     <div class="jumbotron">
         <div class="box">

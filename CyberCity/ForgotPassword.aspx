@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="CyberCity.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-        <link href="ForgotPassword.css" rel="stylesheet" />
+        <link href="css/ForgotPassword.css" rel="stylesheet" />
     
     <div class="loginbox">
         <asp:Image ID="userLogoin" runat="server" ImageUrl="/Images/loginguy.PNG" CssClass="userPhoto" />
