@@ -11,7 +11,7 @@ namespace CyberCity
 {
 
 
-    public partial class EditOrgRep
+    public partial class EditVolunteer
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Table tblEditOrgRep;
 
         /// <summary>
-        /// ddlOrgReps control.
+        /// ddlVolunteers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrgReps;
+        protected global::System.Web.UI.WebControls.DropDownList ddlVolunteers;
 
         /// <summary>
         /// EditInfo control.
@@ -51,13 +51,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Table EditInfo;
 
         /// <summary>
-        /// txtOrgRepFN control.
+        /// txtVolunteerFN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepFN;
+        protected global::System.Web.UI.WebControls.TextBox txtVolunteerFN;
 
         /// <summary>
         /// RFVFirstName control.
@@ -69,13 +69,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVFirstName;
 
         /// <summary>
-        /// txtOrgRepLN control.
+        /// txtVolunteerLN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepLN;
+        protected global::System.Web.UI.WebControls.TextBox txtVolunteerLN;
 
         /// <summary>
         /// RFVLastName control.
@@ -87,13 +87,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVLastName;
 
         /// <summary>
-        /// txtOrgRepPhone control.
+        /// txtVolunteerPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtVolunteerPhone;
 
         /// <summary>
         /// RFVPhone control.
@@ -105,13 +105,13 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPhone;
 
         /// <summary>
-        /// txtOrgRepEmail control.
+        /// txtVolunteerEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrgRepEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtVolunteerEmail;
 
         /// <summary>
         /// RFVEmail control.
@@ -141,94 +141,40 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.CheckBox chkLunch;
 
         /// <summary>
-        /// ddlOrgName control.
+        /// ddlShirtSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrgName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlShirtSize;
 
         /// <summary>
-        /// txtCode control.
+        /// ddlGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCode;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
 
         /// <summary>
-        /// RFVCode control.
+        /// txtUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCode;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
 
         /// <summary>
-        /// lblGrade control.
+        /// RFVUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGrade;
-
-        /// <summary>
-        /// chkElementary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkElementary;
-
-        /// <summary>
-        /// chkSixth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSixth;
-
-        /// <summary>
-        /// chkSeventh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSeventh;
-
-        /// <summary>
-        /// chkEight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEight;
-
-        /// <summary>
-        /// chkHighSchool control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkHighSchool;
-
-        /// <summary>
-        /// chkNone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkNone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVUserName;
 
         /// <summary>
         /// btnCommitEdits control.

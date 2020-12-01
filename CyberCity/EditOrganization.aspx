@@ -39,11 +39,13 @@
                 <asp:TableCell  HorizontalAlign="Center" CssClass="cellPadding">                    
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgName" runat="server" placeholder="Name"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgName" runat="server" ControlToValidate="txtOrgName" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">             
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgAddress" runat="server" placeholder="Address"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgAddress" runat="server" ControlToValidate="txtOrgAddress" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -53,16 +55,19 @@
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
                         <asp:TextBox CssClass="form-control" ID="txtOrgContact" runat="server" placeholder="Primary Contact" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgContact" runat="server" ControlToValidate="txtOrgContact" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
                         <asp:TextBox CssClass="form-control" ID="txtOrgEmail" runat="server" placeholder="Primary Contact Email" TextMode="Email"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ControlToValidate="txtOrgEmail" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">                   
                         <asp:TextBox CssClass="form-control" ID="txtOrgPhone"  runat="server" placeholder="Primary Contact Phone" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFVOrgPhone" runat="server" ControlToValidate="txtOrgPhone" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             

@@ -228,6 +228,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="ddlEdit/Remove">
                                     <li><a class="dropdown-item" href="EditEvent.aspx">Event</a></li>
                                     <li><a class="dropdown-item" href="EditProgram.aspx">Program</a></li>
+                                    <li><a class="dropdown-item" href="EditVolunteer.aspx">Volunteer</a></li>
                                     <li><a class="dropdown-item" href="EditOrganization.aspx">Organization</a></li>
                                     <li><a class="dropdown-item" href="EditOrgRep.aspx">Organizational Representative</a></li>
                                  </ul>
