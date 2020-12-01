@@ -70,7 +70,8 @@ namespace CyberCity
 
             if(Session["Program"] != null)
             {
-                ddlProgram.SelectedIndex = programID + 1;
+                ddlProgram.SelectedValue = programID.ToString();
+
             }
 
             Session["Program"] = null;

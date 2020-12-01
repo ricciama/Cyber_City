@@ -19,6 +19,13 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Forces a user to login before accessing this page (The application will crash otherwise)
+            if(Session["UserType"].ToString() != "C")
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+
+
             if (!Page.IsPostBack)
             {
                 String sqlQuery2 = "Select ProgramID, Name FROM Program";
