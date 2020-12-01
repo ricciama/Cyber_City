@@ -64,15 +64,17 @@ namespace CyberCity
                  check = Int32.Parse(sqlRead["count"].ToString());
 
             }
+            studentUsername = studentUsername.Substring(0, 1).ToUpper() + studentUsername.Substring(1);
+            lblStudentSchedule.Text = studentUsername + "'s CyberDay Schedule";
 
             if (check == 0)
             {
+                ScheduleHeader.Visible = false;
                 Table1.Visible = false;
                 tblCancel.Visible = false;
                 tblNotRegistered.Visible = true;
 
             }
-
             connect.Close();
    
         }

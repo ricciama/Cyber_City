@@ -60,10 +60,12 @@ namespace CyberCity
                 check = Int32.Parse(sqlRead["count"].ToString());
 
             }
-
+            volunteerUsername = volunteerUsername.Substring(0, 1).ToUpper() + volunteerUsername.Substring(1);
+            lblVolunteerSchedule.Text = volunteerUsername + "'s CyberDay Schedule";
             if (check == 0)
             {
                 Table1.Visible = false;
+                ScheduleHeader.Visible = false;
                 tblNotRegistered.Visible = true;
 
             }
