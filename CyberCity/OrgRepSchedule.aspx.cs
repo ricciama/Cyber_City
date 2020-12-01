@@ -43,9 +43,9 @@ namespace CyberCity
             SqlConnection connect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
 
             string sqlCheck = "SELECT Count(*) AS count ";
-            schedule += "FROM Event INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID INNER JOIN ";
-            schedule += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
-            schedule += "Program ON Event.ProgramID = Program.ProgramID WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
+            sqlCheck += "FROM Event INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepRegistration.EventID INNER JOIN ";
+            sqlCheck += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
+            sqlCheck += "Program ON Event.ProgramID = Program.ProgramID WHERE(OrgRep.UserName = '" + orgRepUsername + "')";
 
             SqlCommand sqlCommand2 = new SqlCommand(sqlCheck, connect);
             connect.Open();
@@ -56,9 +56,12 @@ namespace CyberCity
 
             }
 
+            orgRepUsername = orgRepUsername.Substring(0, 1).ToUpper() + orgRepUsername.Substring(1);
+            lblOrgRepSchedule.Text = orgRepUsername + "'s CyberDay Schedule";
             if (check == 0)
             {
                 Table1.Visible = false;
+                ScheduleHeader.Visible = false;
                 tblNotRegistered.Visible = true;
 
             }
