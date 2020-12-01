@@ -18,6 +18,16 @@ namespace CyberCity
         {
             if (!IsPostBack)
             {
+                // Forces a user to login before accessing this page
+                if (Session["UserType"] == null)
+                {
+                    Response.Redirect("HomePage.aspx");
+                }
+                else if (Session["UserType"].ToString() != "OR")
+                {
+                    Response.Redirect("HomePage.aspx");
+                }
+
                 string gradeTaught = "";
 
                 string Username = Session["Username"].ToString();

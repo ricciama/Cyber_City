@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CyberCity {
-    
-    
-    public partial class StudentSchedule {
-        
+namespace CyberCity
+{
+
+
+    public partial class StudentSchedule
+    {
+
         /// <summary>
         /// Panel2 control.
         /// </summary>
@@ -20,7 +22,25 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel2;
-        
+
+        /// <summary>
+        /// ScheduleHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ScheduleHeader;
+
+        /// <summary>
+        /// lblStudentSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStudentSchedule;
+
         /// <summary>
         /// Table1 control.
         /// </summary>
@@ -29,7 +49,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-        
+
         /// <summary>
         /// studentSchedule control.
         /// </summary>
@@ -38,7 +58,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView studentSchedule;
-        
+
         /// <summary>
         /// tblNotRegistered control.
         /// </summary>
@@ -47,7 +67,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblNotRegistered;
-        
+
         /// <summary>
         /// lblNotRegistered control.
         /// </summary>
@@ -56,7 +76,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotRegistered;
-        
+
         /// <summary>
         /// tblCancel control.
         /// </summary>
@@ -65,7 +85,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblCancel;
-        
+
         /// <summary>
         /// btnUpdate control.
         /// </summary>
@@ -74,7 +94,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdate;
-        
+
         /// <summary>
         /// cellConfirmation control.
         /// </summary>
@@ -83,7 +103,7 @@ namespace CyberCity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TableCell cellConfirmation;
-        
+
         /// <summary>
         /// lblConfirmation control.
         /// </summary>

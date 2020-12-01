@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace CyberCity
 {
@@ -15,23 +16,29 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-            int check = 0;
-
-            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
-            string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program where date >= GETDATE() ORDER by date";
-
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            using (con)
+            if (!Page.IsPostBack)
             {
-                SqlCommand cmd = new SqlCommand(schedule, con);
-                SqlDataAdapter sched = new SqlDataAdapter(cmd);
-                sched.Fill(ds);
-                studentSchedule.DataSource = ds;
-                studentSchedule.DataBind();
+                int check = 0;
+
+                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+                string schedule = "SELECT name as Name, FORMAT(date, 'd') as Date from Program where date >= GETDATE() ORDER by date";
+
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                using (con)
+                {
+                    SqlCommand cmd = new SqlCommand(schedule, con);
+                    SqlDataAdapter sched = new SqlDataAdapter(cmd);
+                    sched.Fill(ds);
+                    studentSchedule.DataSource = ds;
+                    studentSchedule.DataBind();
+                }
+
+                MessageBox();
+
+
             }
+            
 
         }
 
@@ -185,6 +192,51 @@ namespace CyberCity
             ddlPhotoPermission.SelectedIndex = 1;
             ddlLunchTicket.SelectedIndex = 1;
  
+        }
+
+        public void MessageBox()
+        {
+            // Used to pull the students ID number
+            int studentID = -1;
+            string Username = Session["Username"].ToString();
+            String student = "Select StudentID from Student where Username = '" + Username + "'";
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            SqlCommand sqlCommand2 = new SqlCommand(student, sqlConnection2);
+
+            sqlConnection2.Open();
+
+            SqlDataReader sqlRead = sqlCommand2.ExecuteReader();
+
+            while (sqlRead.Read())
+            {
+                studentID = Int32.Parse(sqlRead["StudentID"].ToString());
+
+            }
+            sqlRead.Close();
+            sqlConnection2.Close();
+
+            // checks if student is registered, if not display a popup box
+            int codeCheck = 0;
+            string code = "SELECT Count(*) AS student FROM StudentRegistration where StudentID = " + studentID;
+            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
+            SqlCommand sqlCommand3 = new SqlCommand(code, sqlConnection3);
+
+            sqlConnection3.Open();
+
+            SqlDataReader sqlRead2 = sqlCommand3.ExecuteReader();
+
+            while (sqlRead2.Read())
+            {
+                codeCheck = Int32.Parse(sqlRead2["student"].ToString());
+            }
+            sqlRead2.Close();
+            sqlConnection3.Close();
+
+            if (codeCheck == 0)
+            {
+                string myStringVariable = "Please Fill out the Student Registration Survey!";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+            }
         }
     }
 }

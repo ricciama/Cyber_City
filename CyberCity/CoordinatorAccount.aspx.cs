@@ -18,6 +18,15 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Forces a user to login before accessing this page
+            if (Session["UserType"] == null)
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else if (Session["UserType"].ToString() != "C")
+            {
+                Response.Redirect("HomePage.aspx");
+            }
 
         }
 

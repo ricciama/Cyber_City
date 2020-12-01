@@ -10,6 +10,8 @@ using System.Web.UI.WebControls;
 using System.Web.WebSockets;
 using OfficeOpenXml;
 using System.IO;
+using System.Windows.Media;
+using System.Drawing;
 
 
 
@@ -19,6 +21,17 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Forces a user to login before accessing this page
+            if(Session["UserType"] == null)
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else if(Session["UserType"].ToString() != "C")
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+
+
             if (!Page.IsPostBack)
             {
                 String sqlQuery2 = "Select ProgramID, Name FROM Program";
@@ -173,7 +186,7 @@ namespace CyberCity
         //fills hidden gridview with student Roster
         public DataTable GetStudentRoster()
         {
-            string program = "SELECT DISTINCT Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.ParentPhone, Student.Gender AS 'Student Gender', Student.UserName ";
+            string program = "SELECT DISTINCT Student.StudentFName + ' ' + Student.StudentLName AS 'Student Name', Student.ParentFName + ' ' + Student.ParentLName AS 'Parent Name', Student.ParentEmail, Student.ParentPhone, Student.Gender AS 'Student Gender', StudentRegistration.PhotoConsent, StudentRegistration.LunchTicket, Student.UserName ";
             program += "FROM Event INNER JOIN OrgRepRegistration ON Event.EventID = OrgRepregistration.EventID INNER JOIN ";
             program += "OrgRep ON OrgRepRegistration.OrgRepID = OrgRep.OrgRepID INNER JOIN ";
             program += "StudentRegistration ON OrgRep.Code = StudentRegistration.Code INNER JOIN ";
@@ -218,6 +231,9 @@ namespace CyberCity
             var totalCols = orgReps.Columns.Count;
             var totalRows = orgReps.Rows.Count;
 
+            // sets column width
+            workSheet.DefaultColWidth = 23;
+
             for (var col = 1; col <= totalCols; col++)
             {
                 workSheet.Cells[1, col].Value = orgReps.Columns[col - 1].ColumnName;
@@ -230,10 +246,24 @@ namespace CyberCity
                 }
             }
 
+            // Select only the header cells
+            var headerCells = workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns];
+
+            // Set header text to bold and background purple
+            headerCells.Style.Font.Bold = true;
+            headerCells.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+
+            System.Drawing.Color colFromHex = System.Drawing.ColorTranslator.FromHtml("#E0C1F3");
+            workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns].Style.Fill.BackgroundColor.SetColor(colFromHex);
+
             //volunteers worksheet
             var workSheet2 = excel.Workbook.Worksheets.Add("Volunteers");
             var totalCols2 = volunteers.Columns.Count;
             var totalRows2 = volunteers.Rows.Count;
+
+            // sets column width
+            workSheet2.DefaultColWidth = 23;
 
             for (var col = 1; col <= totalCols2; col++)
             {
@@ -246,6 +276,18 @@ namespace CyberCity
                     workSheet2.Cells[row + 1, col + 1].Value = volunteers.Rows[row - 1][col];
                 }
             }
+
+            // Select only the header cells
+            var headerCells2 = workSheet2.Cells[1, 1, 1, workSheet2.Dimension.Columns];
+
+            // Set header text to bold and background purple
+            headerCells2.Style.Font.Bold = true;
+            headerCells2.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+
+            System.Drawing.Color colFromHex2 = System.Drawing.ColorTranslator.FromHtml("#E0C1F3");
+            workSheet2.Cells[1, 1, 1, workSheet2.Dimension.Columns].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            workSheet2.Cells[1, 1, 1, workSheet2.Dimension.Columns].Style.Fill.BackgroundColor.SetColor(colFromHex2);
+            
 
             using (var memoryStream = new MemoryStream())
             {
@@ -269,6 +311,9 @@ namespace CyberCity
             var totalCols = studentRoster.Columns.Count;
             var totalRows = studentRoster.Rows.Count;
 
+            // sets column width
+            workSheet.DefaultColWidth = 23;
+
             for (var col = 1; col <= totalCols; col++)
             {
                 workSheet.Cells[1, col].Value = studentRoster.Columns[col - 1].ColumnName;
@@ -278,8 +323,20 @@ namespace CyberCity
                 for (var col = 0; col < totalCols; col++)
                 {
                     workSheet.Cells[row + 1, col + 1].Value = studentRoster.Rows[row - 1][col];
+                    
                 }
             }
+            // Select only the header cells
+            var headerCells = workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns];
+
+            // Set header text to bold and background purple
+            headerCells.Style.Font.Bold = true;
+            headerCells.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+
+            System.Drawing.Color colFromHex = System.Drawing.ColorTranslator.FromHtml("#E0C1F3");
+            workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            workSheet.Cells[1, 1, 1, workSheet.Dimension.Columns].Style.Fill.BackgroundColor.SetColor(colFromHex);
+
 
             using (var memoryStream = new MemoryStream())
             {

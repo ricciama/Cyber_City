@@ -15,6 +15,16 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Forces a user to login before accessing this page
+            if (Session["UserType"] == null)
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else if (Session["UserType"].ToString() != "V")
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+
             int check = 0;
 
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
@@ -50,10 +60,12 @@ namespace CyberCity
                 check = Int32.Parse(sqlRead["count"].ToString());
 
             }
-
+            volunteerUsername = volunteerUsername.Substring(0, 1).ToUpper() + volunteerUsername.Substring(1);
+            lblVolunteerSchedule.Text = volunteerUsername + "'s CyberDay Schedule";
             if (check == 0)
             {
                 Table1.Visible = false;
+                ScheduleHeader.Visible = false;
                 tblNotRegistered.Visible = true;
 
             }

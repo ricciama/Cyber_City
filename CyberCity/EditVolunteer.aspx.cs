@@ -14,8 +14,17 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-                if (!IsPostBack)
+            // Forces a user to login before accessing this page
+            if (Session["UserType"] == null)
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else if (Session["UserType"].ToString() != "C")
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+
+            if (!IsPostBack)
                 {
                     EditInfo.Visible = false;
                     String sqlQuery2 = "Select VolunteerID, FName + ' ' + LName as Name from Volunteer order by VolunteerID";
