@@ -137,7 +137,7 @@
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center" CssClass="cellPadding">
                     <div class="form-group">
-                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Updated Information" OnClick="btnUpdate_Click"/>
+                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnUpdate" runat="server" Text="Update Information" OnClick="btnUpdate_Click"/>
                     </div>
                 </asp:TableCell>
                 <asp:TableCell CssClass="cellPadding">
@@ -150,7 +150,7 @@
         <asp:Table ID="tblFeedback" runat="server" HorizontalAlign="Center" CellPadding="50" CellSpacing="50">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblFeedback" runat="server" Text="Profile Created Successfully. Please login above!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblFeedback" runat="server" Text="Profile Updated Successfully!" ForeColor="Green" Visible="false" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
