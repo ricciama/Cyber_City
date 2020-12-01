@@ -140,11 +140,11 @@
     <Content Include="FirstTimeLoginVolunteer.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="css\GridView.css" />
-    <Content Include="ForgotPassword.css" />
+    <Content Include="css\ForgotPassword.css" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="homePageFooter.css" />
+    <Content Include="css\homePageFooter.css" />
     <Content Include="Images\background.png" />
     <Content Include="Images\banner.png" />
     <Content Include="Images\cob.jpg" />
