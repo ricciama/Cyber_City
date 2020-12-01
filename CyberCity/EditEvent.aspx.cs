@@ -93,6 +93,7 @@ namespace CyberCity
                 
                 if (ddlEvents.Items.Count == 1)
                 {
+                    ddlEvents.Items.Clear();
                     int dummy = -1;
                     ListItem itemNone= new ListItem();
                     itemNone.Text = "No events exist for this program!";
