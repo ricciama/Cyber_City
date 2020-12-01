@@ -2,22 +2,22 @@
     margin: 0;
     padding: 0;
     background-image: url('/Images/contactus.jpg');
-    background-size: cover;
+    background-size: 80%;
     background-repeat: no-repeat;
     font-family: sans-serif;
 }
 
-.Box {
+/*.Box {
     position: absolute;
-    top: 55%;
+    top: 45%;
     left: 50%;
     transform: translate(-90%,-50%);
     width: 500px;
-    height: 600px;
+    height: 950px;*/
     /*padding: 80px;*/
-    box-sizing: border-box;
+    /*box-sizing: border-box;
     background: rgba(0,0,0,0.5);
-}
+}*/
 
 h1 {
     padding:5%;
@@ -37,7 +37,7 @@ p {
     padding:7%;
     margin-top:30px;
     width:90px;
-    /*height:150px;*/
+    /*height:100px;*/
     align-content: center;
     
 }

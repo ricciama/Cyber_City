@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="CyberCity.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-        <link href="css/loginStyle.css" rel="stylesheet" />
+        <link href="ForgotPassword.css" rel="stylesheet" />
     
     <div class="loginbox">
         <asp:Image ID="userLogoin" runat="server" ImageUrl="/Images/loginguy.PNG" CssClass="userPhoto" />
@@ -52,12 +52,12 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
-                    <asp:Label ID="lblIncorrectEmail" runat="server" Text="" ForeColor="Red" Font-Bold="true" Font-Size="Medium" Visible="false"></asp:Label>
+                    <asp:Label ID="lblIncorrectEmail" runat="server" Text="" ForeColor="Red" Font-Bold="true" Font-Size="16px" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblEmailSuccess" runat="server" Text="" ForeColor="Green" Font-Bold="true" Font-Size="Medium" Visible="false"></asp:Label>
+                    <asp:Label ID="lblEmailSuccess" runat="server" Text="" ForeColor="Green" Font-Bold="true" Font-Size="16px" Visible="false"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
 
