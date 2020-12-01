@@ -16,7 +16,7 @@ namespace CyberCity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            tblMessageConfirmation.Visible = false;
+            //tblMessageConfirmation.Visible = false;
             if (Session["UserType"] != null)
             {
                 if (Session["UserType"].ToString().Equals("V"))
@@ -91,6 +91,9 @@ namespace CyberCity
         protected void btnSendMessage_Click(object sender, EventArgs e)
         {
             //Sends email to user with login credentials
+
+           
+
             MailMessage msg = new MailMessage();
             msg.From = new MailAddress("cybercityjmu1@gmail.com");
             msg.To.Add("cybercityjmu1@gmail.com");
@@ -108,7 +111,7 @@ namespace CyberCity
             txtMessage.Text = "";
             txtSubject.Text = "";
             txtEmail.Text = "";
-            tblMessageConfirmation.Visible = true;
+            //tblMessageConfirmation.Visible = true;
 
         }
     }
