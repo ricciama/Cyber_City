@@ -5,6 +5,7 @@
     <link href="css/GridView.css" rel="stylesheet" />
     <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="css/homePageFooter.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/font-awesome/css/all.css">
 
     <div class="jumbotron">
         <div class="box">
@@ -77,9 +78,125 @@
         </div>
     </div>
 
+
+
+    <!-- footer-->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text"><span>Cyber</span> Day</h1>
+                <p>
+                    Stay connected with us and all you need to know about JMU on our social media accounts
+                </p>
+                <div class="contact">
+                    
+                    <span> <i class="fas fa-phone"></i>&nbsp; 540-568-6211</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; 800 S Main Street, Harrisonburg, VA 22807</span>
+                </div>
+                <div class="socials">
+                    <a href="https://www.facebook.com/jamesmadisonuniversity/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/jamesmadisonuniversity/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/JMU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCiaHN4XRxNHjP84tlSAmDyQ"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2 class="links">Quick Links</h2>
+                <br />
+                
+                <a href="About.aspx">About</a>
+                <br />
+                <a href="Contact.aspx">Contact</a>
+                <br />
+                <a href="ParentAccount.aspx">Create Account</a>
+                <br />
+                <a href="Login.aspx">Login</a>
+                    
+            </div>
+            <div class="footer-section contact-form">
+                <h2 >Contact Us</h2>
+                <asp:Table runat="server">
+                   <%-- <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:TextBox ID="txtName" runat="server" CssClass="text-input contact-input" placeholder="Full Name"></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>--%>
+
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:TextBox ID="txtEmail" runat="server" Width="300px" CssClass="text-input contact-input" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:TextBox ID="txtMessage" TextMode="MultiLine" Height="120" Width="300px" runat="server" CssClass="text-input contact-input" placeholder="Type message here.."></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                    <asp:TableRow>
+                        
+
+                        <asp:TableCell>
+                             <asp:Button ID="btnSendMessage" runat="server" CssClass="btn1 btn-big contact-btn" Width="80" Text="Send"/>
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                    <%-- Brian can you check this --%>
+                   <%-- <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="tblMessageConfirmation" runat="server" Text="Message Successfullly Sent!" ForeColor="White" Font-Bold="true"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>--%>
+
+                    
+
+                </asp:Table>
+
+                
+                
+                
+                
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; cyberday.com | Designed by SCoR Consulting
+        </div>
+    </div>
+    <!-- // footer ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Footer -->
 
-    <style>
+<%--    <style>
 
     a:link{
     font-size:medium;
@@ -150,7 +267,7 @@
                           </asp:TableCell>
                       </asp:TableRow>
 
-                  </asp:Table>
+                  </asp:Table>--%>
                   
                   <%--<asp:Table ID="tblMessageConfirmation" runat="server" HorizontalAlign="Center">
                       <asp:TableRow>
@@ -167,10 +284,13 @@
 
 
                   
-              </div>
+       <%--       </div>
             </div>
            </div>
-         </footer>
+         </footer>--%>
+
+
+
 
 
 
