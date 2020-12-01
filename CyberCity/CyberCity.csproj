@@ -137,6 +137,7 @@
     <Content Include="EditOrganization.aspx" />
     <Content Include="EditOrgRep.aspx" />
     <Content Include="EditProgram.aspx" />
+    <Content Include="EditVolunteer.aspx" />
     <Content Include="FirstTimeLoginVolunteer.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="css\GridView.css" />
@@ -406,6 +407,13 @@
     </Compile>
     <Compile Include="EditProgram.aspx.designer.cs">
       <DependentUpon>EditProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditVolunteer.aspx.cs">
+      <DependentUpon>EditVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditVolunteer.aspx.designer.cs">
+      <DependentUpon>EditVolunteer.aspx</DependentUpon>
     </Compile>
     <Compile Include="FirstTimeLoginVolunteer.aspx.cs">
       <DependentUpon>FirstTimeLoginVolunteer.aspx</DependentUpon>

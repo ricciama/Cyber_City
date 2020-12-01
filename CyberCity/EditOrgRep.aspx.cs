@@ -116,7 +116,7 @@ namespace CyberCity
             }
             string gradeTaught = "";
             string orgRepId = ddlOrgReps.SelectedValue.ToString();
-            string orgRep = "select FName, Lname, Email, PhoneNumber, OrganizationID, LunchTicket, GradesTaught from OrgRep ";
+            string orgRep = "select FName, Lname, Email, PhoneNumber, Code, OrganizationID, LunchTicket, GradesTaught from OrgRep ";
             orgRep += "where OrgRepID = " + orgRepId + "";
 
             SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
@@ -134,6 +134,7 @@ namespace CyberCity
                 txtOrgRepLN.Text = (sqlRead["LName"].ToString());
                 txtOrgRepEmail.Text = (sqlRead["Email"].ToString());
                 txtOrgRepPhone.Text = (sqlRead["PhoneNumber"].ToString());
+                txtCode.Text= (sqlRead["Code"].ToString());
                 ddlOrgName.SelectedValue = (sqlRead["OrganizationID"].ToString());
                 int lunch = Int32.Parse(sqlRead["LunchTicket"].ToString());
                 gradeTaught = (sqlRead["GradesTaught"].ToString());
