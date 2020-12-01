@@ -24,6 +24,33 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.Panel Panel2;
 
         /// <summary>
+        /// ScheduleHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ScheduleHeader;
+
+        /// <summary>
+        /// lblOrgRepSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrgRepSchedule;
+
+        /// <summary>
+        /// lblScheduleHelper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblScheduleHelper;
+
+        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
