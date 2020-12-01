@@ -2,6 +2,7 @@
 <asp:Content ID="CoordinatorHomePage" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/GridView.css" rel="stylesheet" />
+    <link href="css/CreatingEntity.css" rel="stylesheet" />
 
     <br />
 
@@ -24,19 +25,19 @@
             </p>
                 <asp:Table ID="Table1" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell ColumnSpan="2">
+                        <asp:TableCell ColumnSpan="2" CssClass="cellPadding">
                             <div class="form-group">
                                 <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control"></asp:DropDownList>
                             </div>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell CssClass="cellPadding">
                             <div class="form-group">
                                 <asp:Button ID="btnStudentRoster" runat="server" Text="Student Roster" CssClass="btn btn-default" OnClick="btnStudentRoster_Click"/>
                             </div>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell CssClass="cellPadding">
                             <div class="form-group">
                                 <asp:Button ID="btnProgramSchedule" runat="server" Text="Program Schedule" CssClass="btn btn-default" OnClick="btnProgramSchedule_Click" />
                             </div>
