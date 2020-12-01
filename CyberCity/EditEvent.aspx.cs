@@ -17,6 +17,7 @@ namespace CyberCity
         {
             if (!IsPostBack)
             {
+                
                 EventTable.Visible = false;
                 tblEventInfo.Visible = false;
                 tblConfirmation.Visible = false;
@@ -59,10 +60,11 @@ namespace CyberCity
             string progID = ddlPrograms.SelectedValue.ToString();
 
             ddlEvents.Items.Clear();
+            
 
             if (progIDint!=-1)
             {
-
+                ddlEvents.Items.Insert(0, new ListItem("Select Event", "-1"));
                 String sqlQuery2 = "Select Name, EventID, ProgramID from Event WHERE ProgramID = " + progID + " order by EventID";
                 String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
 
@@ -80,6 +82,7 @@ namespace CyberCity
                                 ListItem item = new ListItem();
                                 item.Text = sdr["Name"].ToString();
                                 item.Value = sdr["EventID"].ToString();
+                               
                                 ddlEvents.Items.Add(item);
                             }
                             
@@ -87,7 +90,8 @@ namespace CyberCity
                         con.Close();
                     }
                 }
-                if (ddlEvents.Items.Count == 0)
+                
+                if (ddlEvents.Items.Count == 1)
                 {
                     int dummy = -1;
                     ListItem itemNone= new ListItem();
@@ -102,15 +106,17 @@ namespace CyberCity
             {
                 EventTable.Visible = false;
                 tblEventInfo.Visible = false;
+
             }
+            
         }
 
         protected void ddlEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            tblConfirmation.Visible = false;
             String sqlQuery2 = "Select Name, ProgramID from Program order by ProgramID";
             String sqlConnection2 = WebConfigurationManager.ConnectionStrings["CYBERCITY"].ConnectionString;
-            tblConfirmation.Visible = false;
+            ddlProgram.Items.Clear();
 
             using (SqlConnection con = new SqlConnection(sqlConnection2))
             {
