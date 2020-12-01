@@ -4,6 +4,7 @@
 
     <link href="css/GridView.css" rel="stylesheet" />
     <link href="css/CreatingEntity.css" rel="stylesheet" />
+    <link href="css/homePageFooter.css" rel="stylesheet" />
 
     <div class="jumbotron">
         <div class="box">
@@ -16,6 +17,18 @@
         <%--<p><a href="https://www.jmu.edu/cob/cis/about/cyberday.shtml" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>--%>
         </div>
    </div>
+
+    
+    <style>
+
+    .col-md-4 {
+        box-shadow: 0 0 1rem
+        0 rgba(100,110,140,.3);
+        border-radius: 6px; 
+            
+       
+    }
+   </style>
 
     <div class="row">
         <div class="col-md-4">
@@ -33,6 +46,7 @@
             
             
         </div>
+        
         <div class="col-md-4">
             <h2>Upcoming Cyber Days</h2>
             <p>
@@ -69,11 +83,14 @@
 
     a:link{
     font-size:medium;
-    color:black;
+    color:black; 
     }
     .page-footer {
         background-color: #EDE9E8;
-        border: groove
+        border: groove;
+        box-shadow: 0 0 1rem
+        0 rgba(100,110,140,.3);
+        border-radius: 6px; 
             
        
     }
@@ -93,41 +110,114 @@
 
               <!-- Grid column -->
               <div class="col-md-6 mt-md-0 mt-3">
+                  
+                  <asp:Table runat="server" >
+                      <asp:TableRow>
+                          <asp:TableCell HorizontalAlign="Center">
+                              <h5 class=headers> QUESTIONS? SEND A MESSAGE HERE</h5>
+                          </asp:TableCell>
+                      </asp:TableRow>
+                    
+                      <asp:TableRow>
+                          <asp:TableCell >
+                               <asp:TextBox ID="txtName" runat="server" CssClass="FooterFullName" placeholder="Full Name"></asp:TextBox>
+                          </asp:TableCell>
+                          </asp:TableRow>
 
-                <!-- Content -->
+                              <asp:TableRow>
+                          <asp:TableCell>
+                               <asp:TextBox ID="txtEmail" runat="server" CssClass="FooterEmail" placeholder="Email" TextMode="Email"></asp:TextBox>
+                          </asp:TableCell>
+
+                         
+                      </asp:TableRow>
+
+                      <asp:TableRow>
+                          <asp:TableCell>
+                              <asp:TextBox ID="txtSubject" runat="server" CssClass="FooterSubject" placeholder="Subject"></asp:TextBox>
+                          </asp:TableCell>
+                      </asp:TableRow>
+
+                       <asp:TableRow>
+                           <asp:TableCell>
+                              <asp:TextBox ID="txtMessage" TextMode="MultiLine" Height="120" Width="300px" runat="server" CssClass="FooterMessage" placeholder="Type Message here.."></asp:TextBox>
+                          </asp:TableCell>
+                      </asp:TableRow>
+
+                      <asp:TableRow>
+                          <asp:TableCell>
+                                <asp:Button ID="btnSendMessage" runat="server" CssClass="FooterBtn" Text="Send" OnClick="btnSendMessage_Click"  />
+                          </asp:TableCell>
+                      </asp:TableRow>
+
+                  </asp:Table>
+                  
+                  <%--<asp:Table ID="tblMessageConfirmation" runat="server" HorizontalAlign="Center">
+                      <asp:TableRow>
+                          <asp:TableCell>
+                              <asp:Label ID="Confirmation" runat="server" Text="Message Successfullly Sent!" ForeColor="Green" Font-Bold="true" CssClass="FooterBtn"></asp:Label>
+                          </asp:TableCell>
+                      </asp:TableRow>
+                  </asp:Table>--%>
+                 
+
+
+
+
+
+
+                  
+              </div>
+            </div>
+           </div>
+         </footer>
+
+
+
+
+
+
+
+               <%-- <!-- Content -->
                 <h5 class="text-uppercase">Questions? Send a message here.</h5>
                   <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
                       <asp:TableRow>
                           <asp:TableCell>
                               <div class="form-group">
-                                  <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Full Name"></asp:TextBox>
+                                  <asp:TextBox ID="txtName" runat="server" CssClass="form-controls" placeholder="Full Name"></asp:TextBox>
                               </div>
                           </asp:TableCell>
                            <asp:TableCell>
                               <div class="form-group">
-                                  <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+                                  <asp:TextBox ID="txtEmail" runat="server" CssClass="form-controls" placeholder="Email" TextMode="Email"></asp:TextBox>
                               </div>
                           </asp:TableCell>
                       </asp:TableRow>
                       <asp:TableRow>
-                         <asp:TableCell ColumnSpan="12" HorizontalAlign="Center">
+                         <asp:TableCell ColumnSpan="12">
                              <div class="form-group">
-                                 <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control" placeholder="Subject"></asp:TextBox>
+                                 &nbsp;
+                                 &nbsp;
+                                 <asp:TextBox ID="txtSubject" runat="server" CssClass="form-controls1" placeholder="Subject"></asp:TextBox>
                              </div>
                          </asp:TableCell>
                       </asp:TableRow>
+
                       <asp:TableRow>
-                          <asp:TableCell ColumnSpan="12" HorizontalAlign="Center">
+                          <asp:TableCell ColumnSpan="12">
                               <div class="form-group">
-                                  <asp:TextBox ID="txtMessage" TextMode="MultiLine" Height="120" runat="server" CssClass="form-control" placeholder="Type Message here.."></asp:TextBox>
+                                  <asp:TextBox ID="txtMessage" TextMode="MultiLine" Height="120" runat="server" CssClass="form-controls" placeholder="Type Message here.."></asp:TextBox>
                               </div>
                           </asp:TableCell>
                       </asp:TableRow>
+
+
                       <asp:TableRow HorizontalAlign="Right">
                           <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
                               <asp:Button ID="btnSendMessage" Width="150" Height="40" runat="server" CssClass="btn btn-sm btn-primary" Text="Send" OnClick="btnSendMessage_Click" />
                           </asp:TableCell>
                       </asp:TableRow>
+
                     </asp:Table>
                   <asp:Table ID="tblMessageConfirmation" runat="server" HorizontalAlign="Center">
                       <asp:TableRow>
@@ -187,22 +277,22 @@
                   </li>
                 </ul>
 
-              </div>--%>
+              </div>
               <!-- Grid column -->
 
-            </div>
+           <%-- </div>--%>
             <!-- Grid row -->
 
-          </div>
+    <%--      </div>--%>
           <!-- Footer Links -->
 
           <!-- Copyright -->
-          <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <%--<div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="http://cybercity-dev.us-east-1.elasticbeanstalk.com/HomePage.aspx"> Cyber Day</a>
-          </div>
+          </div>--%>
           <!-- Copyright -->
 
-        </footer>
+       
         <!-- Footer -->
 
 
