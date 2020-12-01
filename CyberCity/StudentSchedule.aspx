@@ -8,6 +8,20 @@
     <asp:Panel ID="Panel2" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
         <br />
         <br />
+        <asp:Table ID="ScheduleHeader" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign ="Center">
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center">
+                    <asp:Label ID="lblStudentSchedule" runat="server" Text="" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign ="Center">
+                    <asp:Label ID="lblScheduleHelper" runat ="server" Text ="This is your Student Schedule for CyberDay, if you have any questions feel free to contact us!" Font-Size="Large"<asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <br />
+        <br />
         <asp:Table ID="Table1" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="center">
             <asp:TableRow>
                 <asp:TableCell>
