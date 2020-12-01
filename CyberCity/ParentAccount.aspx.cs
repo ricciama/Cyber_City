@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CyberCity
 {
@@ -109,8 +110,10 @@ namespace CyberCity
                 msg.From = new MailAddress("cybercityjmu1@gmail.com");
                 msg.To.Add(txtParentEmail.Text);
                 msg.Subject = "Cyber Day Credentials For " + txtParentFN.Text + ' ' + txtParentLN.Text;
-                string emailBody = "Welcome to CyberDay! You are receiving this email because you recently created an accouny with JMU Cyber Day ";
-                emailBody += "<br/><br/> Please click this link to view/edit your profile and change your password if necessary.";
+                string emailBody = "Welcome to CyberDay! You are receiving this email because you recently created an account with JMU Cyber Day. ";
+                emailBody += "<br/><br/> Please click the link below to login, view/edit your profile and change your password if necessary.";
+                emailBody += "<br/><br/><b>Reminder: Please fill out the student registration survey when you log in.<b/>";
+                emailBody += "<br/><br/><a href='http://cybercity-dev.us-east-1.elasticbeanstalk.com/Login.aspx'>Login Here</a>";
                 msg.Body = emailBody;
                 msg.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
@@ -128,6 +131,9 @@ namespace CyberCity
                 ddlGender.SelectedIndex = -1;
                 txtParentEmail.Text = "";
                 txtParentPhone.Text = "";
+
+                MessageBox.Show("Profile Created Successfully", "Success");
+
 
                 lblFeedback.Text = "Profile Created Successfully. Please login above!";
                 lblFeedback.ForeColor = Color.Green;
