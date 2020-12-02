@@ -101,6 +101,7 @@
                     <asp:Label ID="lblPassword" runat="server" Text="Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVPassword" runat="server" ControlToValidate="txtPassword" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     </div>
                 </asp:TableCell>
             </asp:TableRow>
@@ -109,6 +110,8 @@
                     <asp:Label ID="Label1" runat="server" Text="Re-Enter Password" Font-Bold="True"></asp:Label>
                     <div class="form-group">
                         <asp:TextBox class="form-control" ID="txtPassword2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVPassword2" runat="server" ControlToValidate="txtPassword2" Text="Required Field" ForeColor="Red" Font-Bold="true" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CVPasswrod" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" Text="Passwords do not match!" ForeColor="Red" Font-Bold="true"></asp:CompareValidator>                        
                     </div>
                 </asp:TableCell>
             </asp:TableRow>

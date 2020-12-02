@@ -98,7 +98,7 @@ namespace CyberCity
             string gradesTaught = "";
             String sqlUpdate = "UPDATE OrgRep SET FName = @FirstName, LName = @LastName, Email = @Email, " +
               "PhoneNumber = @Phone, GradesTaught = @GradesTaught, LunchTicket = @LunchTicket " +
-              "WHERE Username =  " + Username + "";
+              "WHERE Username =  '" + Username + "'";
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());

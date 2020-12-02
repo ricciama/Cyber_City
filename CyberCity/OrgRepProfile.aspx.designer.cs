@@ -240,6 +240,15 @@ namespace CyberCity
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
+        /// RFVPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPassword;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -256,6 +265,24 @@ namespace CyberCity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword2;
+
+        /// <summary>
+        /// RFVPassword2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPassword2;
+
+        /// <summary>
+        /// CVPasswrod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CVPasswrod;
 
         /// <summary>
         /// btnUpdate control.
