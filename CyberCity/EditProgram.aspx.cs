@@ -104,7 +104,7 @@ namespace CyberCity
                 string progID = ddlProgamNames.SelectedValue.ToString();
 
 
-                String sqlQuery2 = "Select ProgramID, Name, Date from Program ";
+                String sqlQuery2 = "Select ProgramID, Name, FORMAT(Date, 'd') as Date from Program ";
                 sqlQuery2 += "where ProgramID = " + progID + "";
 
                 SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
