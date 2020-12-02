@@ -18,7 +18,7 @@ Cyber Day is an opportunity to engage middle school students in animation
 programming and other computer technologies. Students will attend various technology events
 lead by our very own JMU Computer Information System students. Students attending this event 
 will be matched up with a JMU mentor to guide them through the development process and watch their programming 
-knowlege grow from year to year.
+knowledge grow from year to year.
 
             </p>
             <div class="skills">
