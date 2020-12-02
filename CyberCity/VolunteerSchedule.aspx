@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <link href="css/CreatingEntity.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="css/GridView.css" rel="stylesheet" />
     <br />
     <br />
     <asp:Panel ID="Panel2" runat="server"  BorderColor="#cccccc" BorderStyle="Solid">
@@ -27,10 +28,13 @@
                         <asp:GridView 
                             runat="server" 
                             ID="volunteerSchedule" 
-                            AlternatingRowStyle-BackColor="MediumPurple" 
-                            BorderColor="Black" Font-Size="Large" HeaderStyle-CssClass="text-center"
-                            Width="600px" RowStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true"
-                            >         
+                            BorderColor="Black" Font-Size="Large"
+                            Width="800px" 
+                            AutoGenerateColumns="true" 
+                            AllowPaging="true" CssClass="Grid" 
+                            AlternatingRowStyle-CssClass="alt" 
+                            PagerStyle-CssClass="pgr" 
+                            CellPadding="6">        
                         </asp:GridView>                      
                 </asp:TableCell>
             </asp:TableRow>

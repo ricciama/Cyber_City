@@ -94,6 +94,7 @@ namespace CyberCity
 
             sqlConnection.Close();
 
+            lblPasswordSuccess.Visible = false;
             lblConfirmation.Visible = true;
 
         }
@@ -118,6 +119,7 @@ namespace CyberCity
 
             con.Close();
 
+            lblConfirmation.Visible = false;
             lblPasswordSuccess.Visible = true;
 
             //Sends email to user that they changed their password
@@ -133,6 +135,7 @@ namespace CyberCity
             SmtpClient smtp = new SmtpClient();
             smtp.Send(msg);
             msg.Dispose();
+
         }
     }
 }

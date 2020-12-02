@@ -5,7 +5,7 @@
     
     <br />
     <br />
-    <asp:Panel ID="pnlCreateProgram" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="420px">
+    <asp:Panel ID="pnlCreateProgram" runat="server"  BorderColor="#cccccc" BorderStyle="Solid" Height="440px">
         <br />
         <br />
         <asp:Table ID="tblCreateProgram" runat="server" CellPadding="50" CellSpacing="50" HorizontalAlign="Center">
@@ -61,7 +61,6 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-
         &nbsp;
         <br />
     </asp:Panel>
