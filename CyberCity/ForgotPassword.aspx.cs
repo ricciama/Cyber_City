@@ -108,6 +108,7 @@ namespace CyberCity
             }
             else
             {
+                lblEmailSuccess.Visible = false;
                 lblIncorrectEmail.Text = "Email and username do not match. Please try again.";
                 lblIncorrectEmail.Visible = true;
             }
