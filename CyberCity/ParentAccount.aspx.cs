@@ -132,7 +132,7 @@ namespace CyberCity
                 txtParentEmail.Text = "";
                 txtParentPhone.Text = "";
 
-                //MessageBox.Show("Profile Created Successfully", "Success");
+
 
 
                 lblFeedback.Text = "Profile Created Successfully. Please login above!";

@@ -34,7 +34,7 @@ namespace CyberCity
                     studentSchedule.DataBind();
                 }
 
-                MessageBox();
+                //MessageBox();
 
 
             }
