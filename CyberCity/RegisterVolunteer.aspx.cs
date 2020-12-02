@@ -145,6 +145,9 @@ namespace CyberCity
                 }
 
             }
+
+            lblVolunteerError.Visible = false;
+            lblSuccess.Visible = false;
         }
 
 
@@ -183,6 +186,8 @@ namespace CyberCity
 
             }
 
+            lblVolunteerError.Visible = false;
+            lblSuccess.Visible = false;
 
         }
 
@@ -268,6 +273,7 @@ namespace CyberCity
                     lblSuccess.Text = "Succssfully Registered for an Event";
                     lblSuccess.ForeColor = System.Drawing.Color.Green;
                     lblSuccess.Font.Bold = true;
+                    lblSuccess.Visible = true;
 
                     // Rebinds the gridview
                     SqlConnection volCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberCity"].ConnectionString.ToString());
@@ -280,7 +286,7 @@ namespace CyberCity
 
                     //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
 
-                    string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Time, LTRIM(RIGHT(CONVERT(VARCHAR(20), Event.Time, 100), 7)) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Name, LTRIM(RIGHT(CONVERT(VARCHAR(20), Event.Time, 100), 7)) as Time, Event.Location FROM Volunteer INNER JOIN ";
                     queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
                     queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
                     queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue + ")";
@@ -314,6 +320,7 @@ namespace CyberCity
                     lblSuccess.Text = "Volunteer Already Registered For Event!";
                     lblSuccess.ForeColor = System.Drawing.Color.Red;
                     lblSuccess.Font.Bold = true;
+                    lblSuccess.Visible = true;
                 }
 
 

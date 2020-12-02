@@ -123,10 +123,7 @@ namespace CyberCity
                 txtEventLocation.Text = "";
                 txtEventTime.Text = "";
 
-                tblConfirmation.Visible = true;
-                
-                
-            
+                tblConfirmation.Visible = true;   
 
         }
     }
