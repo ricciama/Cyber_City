@@ -84,7 +84,7 @@
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
-                <h1 class="logo-text"><span>Cyber</span> Day</h1>
+                <h1 class="logo-text">Cyber Day</h1>
                 <p>
                     Stay connected with us and all you need to know about JMU on our social media accounts
                 </p>
@@ -161,7 +161,7 @@
         </div>
 
         <div class="footer-bottom">
-            &copy; cyberday.com | Designed by SCoR Consulting
+            &copy; <a href="http://cybercity-dev.us-east-1.elasticbeanstalk.com/HomePage.aspx">cyberday.com</a> | Designed by SCoR Consulting
         </div>
     </div>
     <!-- // footer ->
