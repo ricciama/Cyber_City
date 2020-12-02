@@ -22,13 +22,13 @@
     
     <style>
 
-    .col-md-4 {
+   /* .col-md-4 {
         box-shadow: 0 0 1rem
         0 rgba(100,110,140,.3);
         border-radius: 6px; 
             
        
-    }
+    }*/
    </style>
 
     <div class="row">
