@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="ContactStyle.css" rel="stylesheet" />
     <a href="Contact.aspx">Contact.aspx</a>
-
     <div class ="Box">
+        <br />
         <h1>Get in Touch</h1> 
         <p> Want to get in touch? We'd love to hear from you. <br /> Here's how you can reach us...</p>
 
@@ -31,7 +31,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
-                    <asp:Label ID="loughPhone" runat="server" Text="540-568-5660" CssClass="phone"></asp:Label>
+                    <asp:Label ID="loughPhone" runat="server" Text="540-568-5660" CssClass="phone" ForeColor="White"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -57,7 +57,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center">
-                    <asp:Label ID="Label2" runat="server" Text="540-568-3015" CssClass="phone"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="540-568-3015" CssClass="phone" ForeColor="White"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
