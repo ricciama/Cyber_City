@@ -280,7 +280,7 @@ namespace CyberCity
 
                     //string query = "SELECT * FROM Volunteer WHERE VolunteerID = '" + ddlSelectVolunteer.SelectedValue + "'";
 
-                    string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, LTRIM(RIGHT(CONVERT(VARCHAR(20), Event.Time, 100), 7)) as Time, Event.Location FROM Volunteer INNER JOIN ";
+                    string queryNew = "SELECT VolunteerRegistration.VolunteerRegistrationID AS ID, Event.Time, LTRIM(RIGHT(CONVERT(VARCHAR(20), Event.Time, 100), 7)) as Time, Event.Location FROM Volunteer INNER JOIN ";
                     queryNew += "VolunteerRegistration ON Volunteer.VolunteerID = VolunteerRegistration.VolunteerID INNER JOIN ";
                     queryNew += "Event ON VolunteerRegistration.EventID = Event.EventID INNER JOIN Program on Event.ProgramID = Program.ProgramID ";
                     queryNew += "WHERE(VolunteerRegistration.VolunteerID = " + ddlSelectVolunteer.SelectedValue + ") and (Program.ProgramID = " + ddlSelectProgram.SelectedValue + ")";
