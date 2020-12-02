@@ -138,16 +138,16 @@
                         
 
                         <asp:TableCell>
-                             <asp:Button ID="btnSendMessage" runat="server" CssClass="btn1 btn-big contact-btn" Width="80" Text="Send"/>
+                             <asp:Button ID="btnSendMessage" runat="server" OnClick="btnSendMessage_Click1" CssClass="btn1 btn-big contact-btn" Width="80" Text="Send"/>
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <%-- Brian can you check this --%>
-                   <%-- <asp:TableRow>
+                    <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="tblMessageConfirmation" runat="server" Text="Message Successfullly Sent!" ForeColor="White" Font-Bold="true"></asp:Label>
                         </asp:TableCell>
-                    </asp:TableRow>--%>
+                    </asp:TableRow>
 
                     
 
