@@ -16,7 +16,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign ="Center">
-                    <asp:Label ID="lblScheduleHelper" runat ="server" Text ="This is your Student Schedule for CyberDay, if you have any questions feel free to contact us!" Font-Size="Large"<asp:Label>
+                    <asp:Label ID="lblScheduleHelper" runat="server" Text="This is your Student Schedule for CyberDay, if yoy have any questions feel free to contact us!" Font-Size="Large"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
